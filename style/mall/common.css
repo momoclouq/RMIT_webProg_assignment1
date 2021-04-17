@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -6,13 +8,19 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Poppins", 'Open Sans', sans-serif;
 }
 
 main {
     padding-top: 70px;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
     min-height: 100vh;
+}
+
+.boxWrapper {
+    background-color: #fff;
+    min-height: 100vh;
+    position: relative;
 }
 
 /*Header*/
@@ -22,6 +30,7 @@ main {
     top: 0;
     left: 0;
     transition: top 0.5s;
+    z-index: 20;
 }
 
 .mallHeader.visible {
@@ -203,12 +212,6 @@ main {
 
 /*end header*/
 /*footer*/
-main {
-    padding-top: 70px;
-    padding-bottom: 70px;
-    min-height: 100vh;
-}
-
 footer {
     position: absolute;
     bottom: 0;
@@ -220,7 +223,6 @@ footer {
 
 .mallFooter nav{
     background-color: #222;
-    
 }
 
 .footerheading{
@@ -281,16 +283,20 @@ footer nav .FooterRow{
       justify-content: space-evenly;
     }
   
+    /*
     header {  
       width: 100%;
       max-height: 10vh;
       overflow: hidden;
     }
+    */
   
+    /*
     main {  
       width: 100%;
       max-height: 80vh;
       overflow: scroll;
     }
+    */
   }
   /*end of footer*/
