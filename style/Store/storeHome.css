@@ -1,3 +1,7 @@
+main {
+    width: 100%;
+}
+
 /* horizontal menu */
 .listScrollMenu {
     overflow: auto;
@@ -29,7 +33,7 @@
 }
 
 /*new list*/
-#newStoreList {
+#newProductList {
     padding: 15px;
 }
 
