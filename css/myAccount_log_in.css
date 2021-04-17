@@ -1,0 +1,440 @@
+@media only screen and (max-width: 767px) {
+   /* For phone */
+    
+    .container{
+        max-height: 200px;
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+    
+    .box { 
+        width: 100%;
+        height: 100px;
+        font-size: 13px;
+        position: relative;
+        padding: 15px;
+    }
+    
+    .container h3{
+        font-size: 25px;
+        font-weight: bold;
+        color: #e98832;
+    }
+    
+    .input-field {
+        margin: 20px 0;
+        width: 100%;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .input-field input{
+     
+        width: 100%;
+        height: 150%;
+        left: 0;
+        color: #111;
+        padding-top: 30px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+    
+    .input-field label{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid #e98832;
+        color: #e98832;
+    }
+    
+    
+
+    .input-field label::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -1px;
+        height: 100%;
+        width: 100%;
+        border-bottom: 1px solid rgb(215,105,105);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    }
+    
+    .content-name{
+        font-size: 16px;
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+    
+    .input-field input:focus + .label-name .content-name, .input-field input:valid + .label-name .content-name{
+        transform: translateY(-50%);
+        color: rgb(215,105,105);
+        font-size: 13px;
+    }
+    
+    .input-field input:focus + .label-name::after, .input-field input:valid + .label-name::after{
+        transform: translateX(0%);
+        color: rgb(215,105,105);
+        font-size: 13px;
+    }
+    
+    .submit {
+        position: absolute;
+        right: 25%;
+        font-size: 20px;
+        margin: .75rem 0;
+        width: 50%;
+        height: 40px;
+        background: rgb(215,105,105);
+        background: -moz-linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        background: -webkit-linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        background: linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d76969",endColorstr="#e98832",GradientType=1);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .end-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 8.5rem;
+    }
+    
+    .end-box p {
+        padding: 20px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .end-box p a:link, a:visited{  
+        text-decoration: none;
+        color: #111;
+    }
+    
+    .end-box p a:focus{  
+        text-decoration: none;
+        color: rgb(182, 85, 85);
+    }
+    
+    .end-box p a:hover{  
+        text-decoration: none;
+        color: rgb(215,105,105);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* For Tablet */
+  
+
+    .container{
+        min-height: 300px;
+        max-height: 450px;
+        max-width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+    
+    }
+    
+    .box { 
+        width: 100%;
+        height: 200px;
+        font-size: 1rem;
+        position: relative;
+        padding: 10px;
+    }
+    
+    .container h3{
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #e98832;
+    }
+    
+    .input-field {
+        margin: 30px 0;
+        width: 100%;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .input-field input{
+      
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        color: #111;
+        padding-top: 30px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+    }
+    
+    .input-field label{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 2px solid #e98832;
+        color: #e98832;
+    }
+    
+    
+    .input-field label::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -1px;
+        height: 100%;
+        width: 100%;
+        border-bottom: 1px solid rgb(215,105,105);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    }
+    
+    .content-name{
+        font-size: 1.15rem;
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+    
+    .input-field input:focus + .label-name .content-name, .input-field input:valid + .label-name .content-name{
+        transform: translateY(-100%);
+        color: rgb(215,105,105);
+        font-size: 1rem;
+    }
+    
+    .input-field input:focus + .label-name::after, .input-field input:valid + .label-name::after{
+        transform: translateX(0%);
+        color: rgb(215,105,105);
+        font-size: 1rem;
+    }
+    
+    .submit {
+        font-size: 1.25rem;
+        margin: 5px 0;
+        width: 100%;
+        height: 40px;
+        background: rgb(215,105,105);
+        background: -moz-linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        background: -webkit-linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        background: linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d76969",endColorstr="#e98832",GradientType=1);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .end-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 4rem;
+    }
+    
+    .end-box p {
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.15rem;
+    }
+    
+    .end-box p a:link, a:visited{  
+        text-decoration: none;
+        color: #111;
+    }
+    
+    .end-box p a:focus{  
+        text-decoration: none;
+        color: rgb(182, 85, 85);
+    }
+    
+    .end-box p a:hover{  
+        text-decoration: none;
+        color: rgb(215,105,105);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    /* For Desktop */
+    
+    .container{
+        max-height: 400px;
+        max-width: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 30%);
+        
+    }
+    
+    .box { 
+        width: 100%;
+        height: 250px;
+        font-size: 1rem;
+        position: relative;
+        padding: 30px;
+    }
+    
+    .container h3{
+        padding-top: 10px;
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin: 10px 0;
+        color: #e98832;
+    }
+    
+    .input-field {
+        margin: 1rem 0;
+        width: 100%;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .input-field input{
+        background:rgb(240, 240, 240);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        color: #111;
+        padding-top: 30px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+    }
+    
+    .input-field label{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid #e98832;
+        color: #e98832;
+    }
+    
+    
+    
+    .input-field label::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -1px;
+        height: 100%;
+        width: 100%;
+        border-bottom: 2.5px solid rgb(215,105,105);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    }
+    
+    .content-name{
+        font-size: 1.25rem;
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+    
+    .input-field input:focus + .label-name .content-name, .input-field input:valid + .label-name .content-name{
+        transform: translateY(-90%);
+        color: rgb(215,105,105);
+        font-size: 1rem;
+    }
+    
+    .input-field input:focus + .label-name::after, .input-field input:valid + .label-name::after{
+        transform: translateX(0%);
+        color: rgb(215,105,105);
+        font-size: 1rem;
+    }
+    
+    .submit {
+        font-size: 1.25rem;
+        margin: 2rem 0;
+        width: 100%;
+        height: 50px;
+        background: rgb(215,105,105);
+        background: -moz-linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        background: -webkit-linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        background: linear-gradient(148deg, rgba(215,105,105,1) 5%, rgba(233,136,50,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d76969",endColorstr="#e98832",GradientType=1);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .end-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    .end-box p {
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    
+    .end-box p a:link, a:visited{  
+        text-decoration: none;
+        color: #111;
+    }
+    
+    .end-box p a:focus{  
+        text-decoration: none;
+        color: rgb(182, 85, 85);
+    }
+    
+    .end-box p a:hover{  
+        text-decoration: none;
+        color: rgb(215,105,105);
+        cursor: pointer;
+    }
+} 
+
+ 
+
+
+
+
+
+
+
+
+
+
+

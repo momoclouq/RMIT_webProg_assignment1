@@ -35,51 +35,85 @@
             </header>
 
         <main>
-            <form action="#" method="POST">
-                <label for="purpose">Contact purpose</label>
-                <select name="purpose" id="purpose" required>
-                    <option value="business">Business</option>
-                    <option value="personal">Personal</option>
-                </select>
-                <br>
+            <div class="wrapper">
+                <form action="#" method="POST">
+                    <h3>Contact Form</h3>
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="purpose">Contact purpose</label>
+                        </div>
+                        
+                        <select name="purpose" id="purpose" required>
+                            <option value="business">Business</option>
+                            <option value="personal">Personal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="fullname">Full Name</label>
+                        </div>
+                        
+                        <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
+                    </div>
 
-                <label for="fullname">Full Name</label>
-                <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
-                <br>
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="email">Email</label>
+                        </div>
+                        
+                        <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
+                    </div>
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
-                <br>
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        
+                        <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="0741472941" required>
+                        
+                    </div>
 
-                <label for="phone">Phone Number</label>
-                <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="0999999999" required>
-                <br>
+                    <div class="field-input">
+                        <div class="input_header contact">
+                           Contact Day 
+                        </div>
+                        
+                        <div class="day_selection">
+                            <input type="checkbox" name="contactDay" id="mon" value="monday">
+                            <label for="mon" class="WeekDay">Monday</label>
+                            <input type="checkbox" name="contactDay" id="tues" value="tuesday">
+                            <label for="tues" class="WeekDay">Tuesday</label>
+                            <input type="checkbox" name="contactDay" id="wed" value="wednesday"> 
+                            <label for="wed" class="WeekDay">Wednesday</label>
+                            <input type="checkbox" name="contactDay" id="thurs" value="thursday">          
+                            <label for="thurs" class="WeekDay">Thursday</label>
+                            <input type="checkbox" name="contactDay" id="fri" value="friday">
+                            <label for="fri" class="WeekDay">Friday</label>
+                            <input type="checkbox" name="contactDay" id="sat" value="saturday">
+                            <label for="sat" class="WeekDay">Saturday</label>
+                            <input type="checkbox" name="contactDay" id="sund" value="sunday">
+                            <label for="sun" class="WeekDay">Sunday</label>
+                            
+                        </div>
+                        
+                    </div>
 
+                    <div class="field-input">
+                        <div class="input_header">Message</div>
+                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                    </div>
 
-                <p style="padding-bottom: 20px;"><b>Contact day</b></p>
-                
-                <label for="mon" class="WeekDay">Monday</label>
-                <input type="checkbox" name="contactDay" id="mon" value="monday">
-                <label for="tues" class="WeekDay">Tuesday</label>
-                <input type="checkbox" name="contactDay" id="tues" value="tuesday">
-                <label for="wed" class="WeekDay">Wednesday</label>
-                <input type="checkbox" name="contactDay" id="wed" value="wednesday">
-                <label for="thurs" class="WeekDay">Thursday</label>
-                <input type="checkbox" name="contactDay" id="thurs" value="thursday">
-                <label for="fri" class="WeekDay">Friday</label>
-                <input type="checkbox" name="contactDay" id="fri" value="friday">
-                <label for="sat" class="WeekDay">Saturday</label>
-                <input type="checkbox" name="contactDay" id="sat" value="saturday">
-                <label for="sun" class="WeekDay">Sunday</label>
-                <input type="checkbox" name="contactDay" id="sund" value="sunday">
-                
-                <br>
+                    <div class="btn">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Submit">
+                    </div>
+                   
+                   
 
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-
-                <input type="reset" value="Reset">
-                <input type="submit" value="Submit">
-            </form>
+                </form>
+            </div>
+            
         </main>
         
         <footer class="mallFooter">
