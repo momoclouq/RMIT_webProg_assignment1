@@ -5,7 +5,7 @@ html {
 }
 
 img{
-  max-height: 280px;
+  max-height: 320px;
   width: 100%;
 }
 
@@ -63,16 +63,34 @@ text-align: center;
   .aboutUsHeader{
     line-height: 2;
   }
-
-@media screen and (max-width: 600px) {
-
   img{
-    max-height: 150px;
     width: 100%;
   }
+
+@media screen and (max-width: 880px) {
+
+  img{
+    height: max-content;
+    width: 100%;
+  } 
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
   .TeamColumn {
     width: 100%;
     display: block;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
   }
 
   footer {  
