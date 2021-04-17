@@ -1,5 +1,10 @@
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 main section {
-    background-color: white;
     width: 100%;
 }
 
@@ -158,11 +163,6 @@ main section {
 }
 
 @media all and (min-width: 768px) {
-    body {
-        display: flex;
-        align-items: center;
-    }
-
     main {
         width: 100%;
         flex-direction: row;
