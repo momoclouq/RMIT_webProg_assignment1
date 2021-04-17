@@ -29,6 +29,11 @@
 }
 
 /*new list*/
+main a, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
 #newStoreList {
     padding: 15px;
 }
