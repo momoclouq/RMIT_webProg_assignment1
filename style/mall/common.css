@@ -268,7 +268,7 @@ footer nav .FooterRow{
     
     .mallFooter{
         flex-direction: column;
-        overflow: scroll;
+        ;
     }
 
     footer {  
