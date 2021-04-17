@@ -62,75 +62,6 @@
     padding: 10px;
 } 
 
-/* Featured Stores*/
-
-.list_display_store_card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 5px;
-    min-width: 300px;
-    min-height: 300px;
-}
-
-.list_display_store_icon img{
-    width: 200px;
-    height: 200px;
-    display: block;
-    padding: 10px 0;
-    align-items: center;
-}
-
-.list_display_store_content{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-.list_display_store_content_title{
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-
-@media only screen and (max-width: 767px){
-    /* For Mobile */
-    .list_display_stores{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-left: 10%;
-    }
-}
-@media only screen and (min-width: 768px) and (max-width: 1024px){
-    /* For Tablet */
-    .list_display_stores{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
-@media only screen and (min-width: 1025px){
-    /* For Desktop */
-    .list_display_stores{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
 
 /* Featured Products */
 .list_display_product_card{
@@ -198,8 +129,3 @@
         margin-right: 10%;
     }
 }
-
-
-
-
-

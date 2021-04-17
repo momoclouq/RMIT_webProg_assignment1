@@ -18,9 +18,12 @@ main {
 }
 
 .boxWrapper {
+    width: 100%;
     background-color: #fff;
     min-height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 /*Header*/
