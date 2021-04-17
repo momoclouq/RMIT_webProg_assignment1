@@ -33,6 +33,7 @@ main {
     top: 0;
     left: 0;
     transition: top 0.5s;
+    z-index: 20;
 }
 
 .mallHeader.visible {
@@ -44,7 +45,7 @@ main {
 }
 
 .mallHeader nav {
-    background: #222;
+    background:  rgb(102, 72, 52);
     padding: 5px 20px;
 }
 
@@ -224,7 +225,7 @@ footer {
 }
 
 .mallFooter nav{
-    background-color: #222;
+    background-color: rgb(102, 72, 52);
 }
 
 .footerheading{
@@ -232,7 +233,7 @@ footer {
 }
 
 footer a, footer a:visited{
-    color:#ac9e95; 
+    color:#ffffff; 
     text-decoration:none;
     line-height: 3;
 }
@@ -270,13 +271,10 @@ footer nav .FooterRow{
     
     .mallFooter{
         flex-direction: column;
-        display: contents;
     }
 
     footer {  
       width: 100%;
-      max-height: 20vh;
-      overflow: hidden;
     }
   
     footer nav .FooterRow{

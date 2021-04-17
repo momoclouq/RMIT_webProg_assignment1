@@ -1,3 +1,8 @@
+main {
+    width: 100%;
+}
+
+/* horizontal menu */
 .listScrollMenu {
     overflow: scroll;
     white-space: nowrap;
@@ -28,7 +33,7 @@
 }
 
 /*new list*/
-#newStoreList {
+#newProductList {
     padding: 15px;
 }
 
@@ -89,6 +94,11 @@
 .list_display_product_content_title{
     font-weight: bold;
     font-size: 20px;
+}
+
+main a, a:visited{
+    text-decoration: none;
+    color: inherit;
 }
 
 @media only screen and (max-width: 767px){
