@@ -26,12 +26,12 @@ body {
     top: -70px;
 }
 
-nav {
+.mallHeader nav {
     background: #222;
     padding: 5px 20px;
 }
 
-ul {
+.mallHeader ul {
     list-style-type: none;
 }
 
