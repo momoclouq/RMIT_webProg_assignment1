@@ -33,6 +33,7 @@ main {
     top: 0;
     left: 0;
     transition: top 0.5s;
+    z-index: 20;
 }
 
 .mallHeader.visible {
@@ -276,7 +277,6 @@ footer nav .FooterRow{
     footer {  
       width: 100%;
       max-height: 20vh;
-      overflow: hidden;
     }
   
     footer nav .FooterRow{

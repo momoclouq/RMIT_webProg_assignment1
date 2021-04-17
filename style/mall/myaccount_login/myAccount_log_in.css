@@ -123,7 +123,7 @@
         font-size: 14px;
     }
     
-    .end-box p a:link, a:visited{  
+    .end-box p a:link, .end-box p a a:visited{  
         text-decoration: none;
         color: #111;
     }
