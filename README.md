@@ -8,9 +8,9 @@
 
 # Team members:
 - Pham Hoang Minh (s3871126)
-- Nguyen Thanh Dat (...)
-- Tran Quang Anh (...)
-- Tran Tan Phat (...)
+- Nguyen Thanh Dat (s3870837)
+- Tran Quang Anh (s3836276)
+- Tran Tan Phat (s3836612)
 
 # github link:
 - [Github](https://github.com/momoclouq/RMIT_webProg_assignment1)
