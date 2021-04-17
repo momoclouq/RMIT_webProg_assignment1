@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Mall contact</title>
 
         <link rel="stylesheet" href="../style/mall/common.css">
         <link rel="stylesheet" href="../style/mall/Contact/contact.css">
@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="box">
+        <div class="boxWrapper">
             <header class="mallHeader">
                 <nav>
                     <ul class="menu">
@@ -31,78 +31,79 @@
                 </nav>
             </header>
 
-    <main>
-        <form action="#" method="POST">
-            <label for="purpose">Contact purpose</label>
-            <select name="purpose" id="purpose" required>
-                <option value="business">Business</option>
-                <option value="personal">Personal</option>
-            </select>
-            <br>
+        <main>
+            <form action="#" method="POST">
+                <label for="purpose">Contact purpose</label>
+                <select name="purpose" id="purpose" required>
+                    <option value="business">Business</option>
+                    <option value="personal">Personal</option>
+                </select>
+                <br>
 
-            <label for="fullname">Full Name</label>
-            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
-            <br>
+                <label for="fullname">Full Name</label>
+                <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
+                <br>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
-            <br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
+                <br>
 
-            <label for="phone">Phone Number</label>
-            <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="0999999999" required>
-            <br>
+                <label for="phone">Phone Number</label>
+                <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="0999999999" required>
+                <br>
 
 
-            <p style="padding-bottom: 20px;"><b>Contact day</b></p>
-            
-              <label for="mon" class="WeekDay">Monday</label>
-              <input type="checkbox" name="contactDay" id="mon" value="monday">
-              <label for="tues" class="WeekDay">Tuesday</label>
-              <input type="checkbox" name="contactDay" id="tues" value="tuesday">
-              <label for="wed" class="WeekDay">Wednesday</label>
-              <input type="checkbox" name="contactDay" id="wed" value="wednesday">
-              <label for="thurs" class="WeekDay">Thursday</label>
-              <input type="checkbox" name="contactDay" id="thurs" value="thursday">
-              <label for="fri" class="WeekDay">Friday</label>
-              <input type="checkbox" name="contactDay" id="fri" value="friday">
-              <label for="sat" class="WeekDay">Saturday</label>
-              <input type="checkbox" name="contactDay" id="sat" value="saturday">
-              <label for="sun" class="WeekDay">Sunday</label>
-              <input type="checkbox" name="contactDay" id="sund" value="sunday">
-              
-            <br>
+                <p style="padding-bottom: 20px;"><b>Contact day</b></p>
+                
+                <label for="mon" class="WeekDay">Monday</label>
+                <input type="checkbox" name="contactDay" id="mon" value="monday">
+                <label for="tues" class="WeekDay">Tuesday</label>
+                <input type="checkbox" name="contactDay" id="tues" value="tuesday">
+                <label for="wed" class="WeekDay">Wednesday</label>
+                <input type="checkbox" name="contactDay" id="wed" value="wednesday">
+                <label for="thurs" class="WeekDay">Thursday</label>
+                <input type="checkbox" name="contactDay" id="thurs" value="thursday">
+                <label for="fri" class="WeekDay">Friday</label>
+                <input type="checkbox" name="contactDay" id="fri" value="friday">
+                <label for="sat" class="WeekDay">Saturday</label>
+                <input type="checkbox" name="contactDay" id="sat" value="saturday">
+                <label for="sun" class="WeekDay">Sunday</label>
+                <input type="checkbox" name="contactDay" id="sund" value="sunday">
+                
+                <br>
 
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
 
-            <input type="reset" value="Reset">
-            <input type="submit" value="Submit">
-        </form>
-    </main>
-    <footer class="mallFooter">
-        <nav>
-          <div class="FooterRow">
-          <div class="FooterColumn">
-          <div class="footerheading">Support</div>
-          <ul><a href="/mallPages/FAQs.html">FAQ</a></ul>
-          <ul><a href="/mallPages/contact.html">Contact Form</a></ul>
-          <ul><a href="/mallPages/fees.html">Fee</a></ul>
-          </div>
-          <div class="FooterColumn">
-          <div class="footerheading">Info</div>
-          <ul><a href="/mallPages/aboutUs.html">About us</a></ul>
-          <ul><a href="/mallPages/tos.html">ToS</a></ul>
-          <ul><a href="/mallPages/privacy.html">Privacy Policy</a></ul>
-          <ul><a href="/mallPages/copyright.html">CopyRight</a></ul>
-          </div>
-          <div class="FooterColumn">
-          <div class="footerheading">Join Us</div>
-          <ul><a href="/mallPages/Account/registerAccount.html">Sign up</a></ul>
-          <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
-          <ul><a href="/mallPages/Account/myAccount-Log-in.html">Sign in</a></ul>
-          </div>
-          </div>
-        </nav>
+                <input type="reset" value="Reset">
+                <input type="submit" value="Submit">
+            </form>
+        </main>
+        
+        <footer class="mallFooter">
+            <nav>
+                <div class="FooterRow">
+                    <div class="FooterColumn">
+                        <div class="footerheading">Support</div>
+                        <ul><a href="/mallPages/FAQs.html">FAQ</a></ul>
+                        <ul><a href="/mallPages/contact.html">Contact Form</a></ul>
+                        <ul><a href="/mallPages/fees.html">Fee</a></ul>
+                    </div>
+                    <div class="FooterColumn">
+                        <div class="footerheading">Info</div>
+                        <ul><a href="/mallPages/aboutUs.html">About us</a></ul>
+                        <ul><a href="/mallPages/tos.html">ToS</a></ul>
+                        <ul><a href="/mallPages/privacy.html">Privacy Policy</a></ul>
+                        <ul><a href="/mallPages/copyright.html">CopyRight</a></ul>
+                    </div>
+                    <div class="FooterColumn">
+                        <div class="footerheading">Join Us</div>
+                        <ul><a href="/mallPages/Account/registerAccount.html">Sign up</a></ul>
+                        <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
+                        <ul><a href="/mallPages/Account/myAccount-Log-in.html">Sign in</a></ul>
+                    </div>
+                </div>
+            </nav>
         </footer>
-  </div>
+    </div>
 </body>
 </html>

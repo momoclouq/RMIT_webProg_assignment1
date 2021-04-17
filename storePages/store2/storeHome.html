@@ -4,72 +4,95 @@
         <title>Store 1</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../style/store/common.css">
     </head>
 
     <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li>
-                        <a href="#">Products</a> 
-                        <div>
-                            <a href="#">Browse Products by Category</a>
-                            <a href="#">Browse Products by Created Time</a>
+        <div class="boxWrapper">
+            <header class="mallHeader">
+                <nav>
+                    <ul class="menu">
+                        <li class="logo"><a href="#">Store 1</a></li>
+                        <li class="item mallName"><a href="#">Home</a></li>
+        
+                        <li class="item"><a href="aboutUs.html">About us</a></li>
+                        <li class="item subMenu2"><a href="#">Products</a></li>
+                        <li class="item item2"><a href="#">Browse By Category</a></li>
+                        <li class="item item2"><a href="#">Browse By Created time</a></li>
+                        <li class="item lastItem"><a href="contact.html">Contact</a></li>
+        
+                        <li class="toggle"><span class="bars"></span><li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <main>
+                <section class="storeNewProd">
+                    <div class="product">
+                        <div class="prodName">product 1</div>
+                        <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
+                        <div class="prodPrice">500vnd</div>
+                    </div>
+                    <div class="product">
+                        <div class="prodName">product 2</div>
+                        <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
+                        <div class="prodPrice">200vnd</div>
+                    </div>
+                    <div class="product">
+                        <div class="prodName">product 3</div>
+                        <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
+                        <div class="prodPrice">400vnd</div>
+                    </div>
+                </section>
+    
+                <section class="storeFeaturedProd">
+                    <div class="product">
+                        <div class="prodName">product 1</div>
+                        <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
+                        <div class="prodPrice">500vnd</div>
+                    </div>
+                    <div class="product">
+                        <div class="prodName">product 2</div>
+                        <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
+                        <div class="prodPrice">200vnd</div>
+                    </div>
+                    <div class="product">
+                        <div class="prodName">product 3</div>
+                        <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
+                        <div class="prodPrice">400vnd</div>
+                    </div>
+                </section>
+            </main>
+    
+            <footer class="mallFooter">
+                <nav>
+                    <div class="FooterRow">
+                        <div class="FooterColumn">
+                            <div class="footerheading">Support</div>
+                            <ul><a href="/mallPages/FAQs.html">FAQ</a></ul>
+                            <ul><a href="/mallPages/contact.html">Contact Form</a></ul>
+                            <ul><a href="/mallPages/fees.html">Fee</a></ul>
                         </div>
-                    </li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+                        <div class="FooterColumn">
+                            <div class="footerheading">Info</div>
+                            <ul><a href="/mallPages/aboutUs.html">About us</a></ul>
+                            <ul><a href="/mallPages/tos.html">ToS</a></ul>
+                            <ul><a href="/mallPages/privacy.html">Privacy Policy</a></ul>
+                            <ul><a href="/mallPages/copyright.html">CopyRight</a></ul>
+                        </div>
+                        <div class="FooterColumn">
+                            <div class="footerheading">Join Us</div>
+                            <ul><a href="/mallPages/Account/registerAccount.html">Sign up</a></ul>
+                            <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
+                            <ul><a href="/mallPages/Account/myAccount-Log-in.html">Sign in</a></ul>
+                        </div>
+                    </div>
+                </nav>
+            </footer>
+        </div>
+        
 
-        <main>
-            <section class="storeNewProd">
-                <div class="product">
-                    <div class="prodName">product 1</div>
-                    <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
-                    <div class="prodPrice">500vnd</div>
-                </div>
-                <div class="product">
-                    <div class="prodName">product 2</div>
-                    <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
-                    <div class="prodPrice">200vnd</div>
-                </div>
-                <div class="product">
-                    <div class="prodName">product 3</div>
-                    <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
-                    <div class="prodPrice">400vnd</div>
-                </div>
-            </section>
-
-            <section class="storeFeaturedProd">
-                <div class="product">
-                    <div class="prodName">product 1</div>
-                    <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
-                    <div class="prodPrice">500vnd</div>
-                </div>
-                <div class="product">
-                    <div class="prodName">product 2</div>
-                    <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
-                    <div class="prodPrice">200vnd</div>
-                </div>
-                <div class="product">
-                    <div class="prodName">product 3</div>
-                    <div class="prodImg"><img src="../../../resources/" alt="product1 on display"></div>
-                    <div class="prodPrice">400vnd</div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="#">Copyright</a></li>
-                    <li><a href="#">Tos</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </footer>
+        <script src="../../scripts/store_index.js"></script>
     </body>
 </html>

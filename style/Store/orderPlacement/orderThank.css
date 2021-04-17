@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    min-width: 350px;
+    max-width: 1300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #371b40;
+    color: white;
+}
+
+/*thank you message*/
+.thankMessage {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.thankMessage div {
+    padding: 0 5px;
+}
+
+.thankImg {
+    width: 100px;
+    height: auto;
+}
+
+.thankImg img {
+    width: 100%;
+    height: auto;
+}
+
+.thankWord {
+    font-size: 1.25em;
+}
+
+.line {
+    width: 100%;
+    margin: 10px;
+    border: 0.5px solid white;
+}
+
+/*order details part*/
+.orderDetails {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    line-height: 3em;
+}
+
+.orderDetails a {
+    color: #afb8de;
+}
+
+.orderCode {
+    font-size: 2em;
+}
+
+@media all and (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+
+    .thankMessage {
+        flex-wrap: nowrap;
+        padding-left: 20px;
+    }
+
+    .thankImg {
+        width: 150px;
+        height: auto;
+    }
+
+    .line {
+        display: none;
+    }
+}
+
+@media all and (min-width: 1024px){
+
+}
+

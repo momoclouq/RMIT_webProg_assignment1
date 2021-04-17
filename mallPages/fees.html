@@ -1,52 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <img src="#" alt="logo">
-        <h3>Header</h3>
-        <nav>
-            <ul>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">Fees</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <table>
-            <th>
-                <tr>
-                    <td>Header</td>
-                    <td>Fee1 name</td>
-                    <td>Fee2 name</td>
-                </tr>
-            </th>
+    <title>Subscription plan</title>
 
-            <tbody>
-                <tr>
-                    <td>Contetn</td>
-                    <td>Fee1</td>
-                    <td>Fee2</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
-    <footer>
-        <p>Footer</p>
-        <nav>
-            <ul>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">ToS</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </nav>
-    </footer>
+    <link rel="stylesheet" href="../style/mall/common.css">
+    <link rel="stylesheet" href="../css/fee.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="boxWrapper">
+        <header class="mallHeader">
+            <nav>
+                <ul class="menu">
+                    <li class="logo"><a href="#">Logo</a></li>
+                    <li class="item mallName"><a href="#">Shopping mall</a></li>
+    
+                    <li class="item"><a href="aboutUs.html">About us</a></li>
+                    <li class="item"><a href="fees.html">Copyright</a></li>
+                    <li class="item subMenu2"><a href="#">Browse</a></li>
+                    <li class="item item2"><a href="#">Browse By name</a></li>
+                    <li class="item item2"><a href="#">Browse By category</a></li>
+                    <li class="item"><a href="FAQs.html">FAQs</a></li>
+                    <li class="item"><a href="contact.html">Contact</a></li>
+    
+                    <li class="toggle"><span class="bars"></span><li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main>
+           
+                <section class="main-content">
+                    <div class="introduction">
+                        <h3>Choose your plan</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis, quibusdam eaque sapiente illum ipsa at dolores reprehenderit sequi alias.</p>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="card">
+                            <div class="header">
+                                <div class="plan-name">Silver</div>
+                                <div class="price">
+                                    <div class="dollar-sign">$</div>
+                                    <p>500</p>
+                                    <div class="monthly-fee">/month</div>
+                                </div>
+                            </div>
+                            
+                            <div class="description">
+                                <div class="commission"><span class="verify">&#x261E;</span> Commission 30% per product</div>
+                                <div class="notify"><span class="verify">&#9989;</span>Get discount voucher</div>
+                                <div class="social-analytics"><span class="verify">&#10060;</span>Social Analytics</div>
+                                <div class="advanced-social-analytics"><span class="verify">&#10060;</span>Advanced Social Analytics </div>
+                            </div>
+                            
+                        </div>
+    
+    
+                        <div class="card">
+    
+                            <div class="header">
+                                <div class="plan-name">Gold</div>
+                                <div class="price">
+                                    <div class="dollar-sign">$</div>
+                                    <p>1000</p>
+                                    <div class="monthly-fee">/month</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <div class="commission"><span class="verify">&#x261E;</span> Commission 20% per product</div>
+                                <div class="notify"><span class="verify">&#9989;</span>Get discount voucher</div>
+                                <div class="social-analytics"><span class="verify">&#9989;</span>Social Analytics</div>
+                                <div class="advanced-social-analytics"><span class="verify">&#10060;</span>Advanced Social Analytics</div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="card">
+                            <div class="header">
+                                <div class="plan-name">Platinum</div>
+                                <div class="price">
+                                    <div class="dollar-sign">$</div>
+                                    <p>2000</p>
+                                    <div class="monthly-fee">/month</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <div class="commission"><span class="verify">&#x261E;</span> Commission 15% per product</div>
+                                <div class="notify"><span class="verify">&#9989;</span>Get discount voucher</div>
+                                <div class="social-analytics"><span class="verify">&#9989;</span>Social Analytics</div>
+                                <div class="advanced-social-analytics"><span class="verify">&#9989;</span>Advanced Social Analytics</div>
+                            </div>
+                        </div>
+                   
+                    </div>
+                </section>
+            
+        </main>
+        
+        <footer class="mallFooter">
+            <nav>
+                <div class="FooterRow">
+                    <div class="FooterColumn">
+                        <div class="footerheading">Support</div>
+                        <ul><a href="/mallPages/FAQs.html">FAQ</a></ul>
+                        <ul><a href="/mallPages/contact.html">Contact Form</a></ul>
+                        <ul><a href="/mallPages/fees.html">Fee</a></ul>
+                    </div>
+                    <div class="FooterColumn">
+                        <div class="footerheading">Info</div>
+                        <ul><a href="/mallPages/aboutUs.html">About us</a></ul>
+                        <ul><a href="/mallPages/tos.html">ToS</a></ul>
+                        <ul><a href="/mallPages/privacy.html">Privacy Policy</a></ul>
+                        <ul><a href="/mallPages/copyright.html">CopyRight</a></ul>
+                    </div>
+                    <div class="FooterColumn">
+                        <div class="footerheading">Join Us</div>
+                        <ul><a href="/mallPages/Account/registerAccount.html">Sign up</a></ul>
+                        <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
+                        <ul><a href="/mallPages/Account/myAccount-Log-in.html">Sign in</a></ul>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
+
+    <script src="../scripts/mall_index.js"></script>
 </body>
 </html>

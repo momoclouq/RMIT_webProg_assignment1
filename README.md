@@ -8,5 +8,5 @@
 
 - Main colors: [analogous style](https://www.canva.com/colors/color-wheel/), check amazon.com or tiki.vn for reference
 
-## Class name changes:
-- ?
+## Task division (based on section):
+- [Google docs](https://docs.google.com/document/d/1LaHU4FabRSIzu-2HQgVL1_yfhruxd4raL9T7JeLv0Bk/edit?usp=sharing)
