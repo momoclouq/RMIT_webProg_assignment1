@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 main {
     width: 100%;
 }
 
 /* horizontal menu */
-=======
->>>>>>> 08accf05cfd68cf018392b504d86d2f7ece140c2
 .listScrollMenu {
     overflow: scroll;
     white-space: nowrap;
