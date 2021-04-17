@@ -1,4 +1,3 @@
-/*footer*/
 main {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -12,7 +11,7 @@ footer {
 max-height: 75px;
   margin: 0px auto 0;
   padding: 10px 0 0px;
-  }
+}
 
 .mallFooter nav{
   background-color: #222;
@@ -59,10 +58,11 @@ clear: both;
       display: block;
       text-align: left;
     }
+    
   
   .mallFooter{
       flex-direction: column;
-      overflow: scroll;
+      display: contents;
   }
 
   footer {  
@@ -89,4 +89,3 @@ clear: both;
     overflow: scroll;
   }
 }
-/*end of footer*/
