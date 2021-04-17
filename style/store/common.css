@@ -271,12 +271,10 @@ footer nav .FooterRow{
     
     .mallFooter{
         flex-direction: column;
-        display: contents;
     }
 
     footer {  
       width: 100%;
-      max-height: 20vh;
     }
   
     footer nav .FooterRow{
