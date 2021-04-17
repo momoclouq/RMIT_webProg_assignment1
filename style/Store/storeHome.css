@@ -1,10 +1,13 @@
+<<<<<<< HEAD
 main {
     width: 100%;
 }
 
 /* horizontal menu */
+=======
+>>>>>>> 08accf05cfd68cf018392b504d86d2f7ece140c2
 .listScrollMenu {
-    overflow: auto;
+    overflow: scroll;
     white-space: nowrap;
 }
 
@@ -65,7 +68,6 @@ main {
     justify-content: space-between;
     padding: 10px;
 } 
-
 
 /* Featured Products */
 .list_display_product_card{
