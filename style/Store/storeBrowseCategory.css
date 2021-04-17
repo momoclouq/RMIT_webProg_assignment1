@@ -181,14 +181,7 @@
         border-radius: 50%;
     }
     
-    .card .product-imgage img{
-        transition: transform 0.6s ease ;
-    }
-    
-    .card:hover .product-imgage{
-        transform: scale(1.1);
-        
-    }
+   
     
     .product-price {
         display: inline-block;
@@ -299,15 +292,7 @@
         border-radius: 50%;
     }
     
-    .card .product-imgage img{
-        transition: transform 0.6s ease ;
-    }
-    
-    .card:hover .product-imgage{
-        transform: scale(1.1);
-        
-    }
-    
+       
     .product-price {
         display: inline-block;
         color: #111;
