@@ -93,7 +93,7 @@
     font-size: 20px;
 }
 
-main a, a:visited{
+main a, main a:visited{
     text-decoration: none;
     color:inherit;
 }
