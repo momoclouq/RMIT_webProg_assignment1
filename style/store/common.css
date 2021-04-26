@@ -45,7 +45,7 @@ main {
 }
 
 .mallHeader nav {
-    background: #222;
+    background:  rgb(102, 72, 52);
     padding: 5px 20px;
 }
 
@@ -225,7 +225,7 @@ footer {
 }
 
 .mallFooter nav{
-    background-color: #222;
+    background-color: rgb(102, 72, 52);
 }
 
 .footerheading{
@@ -233,7 +233,7 @@ footer {
 }
 
 footer a, footer a:visited{
-    color:#ac9e95; 
+    color:#ffffff; 
     text-decoration:none;
     line-height: 3;
 }
