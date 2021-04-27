@@ -1,91 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Contact information for mall">
+        <meta name="keywords" content="Contact information mall phone number address email">
+        <meta name="author" content="Team Developers">
+        <title>Mall contact</title>
 
-    <link rel="stylesheet" href="../style/desktop1024.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-</head>
-<body>
-    <header class="mallHeader">
-        <a href="index.html"><img id="mallLogo" src="../resources/images/mallLogo.jpg" alt="mall logo"></a>
-        <h3 class="mallName">Shopping mall</h3>
-        <nav>
-            <ul>
-                <li><a href="aboutUs.html">About us</a></li>
-                <li><a href="copyright.html">Copyright</a></li>
-                <li><a href="fees.html">Fees</a></li>
-                <li><a href="FAQs.html">FAQs</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <link rel="stylesheet" href="../style/mall/common.css">
+        <link rel="stylesheet" href="../style/mall/Contact/contact.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    </head>
 
-    <main>
-        <form action="#" method="POST">
-            <label for="purpose">Contact purpose</label>
-            <select name="purpose" id="purpose" required>
-                <option value="business">Business</option>
-                <option value="personal">Personal</option>
-            </select>
-            <br>
+    <body>
+        <div class="boxWrapper">
+            <header class="mallHeader">
+                <nav>
+                    <ul class="menu">
+                        <li class="logo"><a href="/index.html">Logo</a></li>
+                        <li class="item mallName"><a href="/index.html">Shopping mall</a></li>
+        
+                        <li class="item"><a href="aboutUs.html">About us</a></li>
+                        <li class="item"><a href="fees.html">Fees</a></li>
+                        <li class="item subMenu2"><a href="#">Browse</a></li>
+                        <li class="item item2"><a href="BrowseStoreLetter.html">Browse By name</a></li>
+                        <li class="item item2"><a href="BrowseStoreCategory.html">Browse By category</a></li>
+                        <li class="item"><a href="FAQs.html">FAQs</a></li>
+                        <li class="item"><a href="contact.html">Contact</a></li>
+        
+                        <li class="toggle"><span class="bars"></span><li>
+                    </ul>
+                </nav>
+            </header>
 
-            <label for="fullname">Full Name</label>
-            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
-            <br>
+        <main>
+            <div class="wrapper">
+                <form action="#" method="POST">
+                    <h3>Contact Form</h3>
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="purpose">Contact purpose</label>
+                        </div>
+                        
+                        <select name="purpose" id="purpose" required>
+                            <option value="business">Business</option>
+                            <option value="personal">Personal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="fullname">Full Name</label>
+                        </div>
+                        
+                        <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
+                    </div>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
-            <br>
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="email">Email</label>
+                        </div>
+                        
+                        <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
+                    </div>
 
-            <label for="phone">Phone Number</label>
-            <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="0999999999" required>
-            <br>
+                    <div class="field-input">
+                        <div class="input_header">
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        
+                        <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="0741472941" required>
+                        
+                    </div>
 
-            <p>Contact Method</p>
-            <br>
-            <input type="radio" name="method" id="phoneMethod" value="phone">
-            <label for="phoneMethod">Phone</label>
-            <input type="radio" name="method" id="emailMethod" value="email">
-            <label for="emailMethod">Email</label>
-            <br>
+                    <div class="field-input">
+                        <div class="input_header contact">
+                           Contact Day 
+                        </div>
+                        
+                        <div class="day_selection">
+                            <input type="checkbox" name="contactDay" id="mon" value="monday">
+                            <label for="mon" class="WeekDay">Monday</label>
+                            <input type="checkbox" name="contactDay" id="tues" value="tuesday">
+                            <label for="tues" class="WeekDay">Tuesday</label>
+                            <input type="checkbox" name="contactDay" id="wed" value="wednesday"> 
+                            <label for="wed" class="WeekDay">Wednesday</label>
+                            <input type="checkbox" name="contactDay" id="thurs" value="thursday">          
+                            <label for="thurs" class="WeekDay">Thursday</label>
+                            <input type="checkbox" name="contactDay" id="fri" value="friday">
+                            <label for="fri" class="WeekDay">Friday</label>
+                            <input type="checkbox" name="contactDay" id="sat" value="saturday">
+                            <label for="sat" class="WeekDay">Saturday</label>
+                            <input type="checkbox" name="contactDay" id="sund" value="sunday">
+                            <label for="sun" class="WeekDay">Sunday</label>
+                            
+                        </div>
+                        
+                    </div>
 
-            <p>Contact days</p>
-            <input type="checkbox" name="contactDay" id="mon" value="monday">
-            <label for="mon">Monday</label>
-            <input type="checkbox" name="contactDay" id="tues" value="tuesday">
-            <label for="tues">Tuesday</label>
-            <input type="checkbox" name="contactDay" id="wed" value="wednesday">
-            <label for="wed">Wednesday</label>
-            <input type="checkbox" name="contactDay" id="thurs" value="thursday">
-            <label for="thurs">Thursday</label>
-            <input type="checkbox" name="contactDay" id="fri" value="friday">
-            <label for="fri">Friday</label>
-            <input type="checkbox" name="contactDay" id="sat" value="saturday">
-            <label for="sat">Saturday</label>
-            <input type="checkbox" name="contactDay" id="sund" value="sunday">
-            <label for="sun">Sunday</label>
-            <br>
+                    <div class="field-input">
+                        <div class="input_header">Message</div>
+                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                    </div>
 
-            <textarea name="message" id="message" cols="30" rows="10">Message</textarea>
+                    <div class="btn">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Submit">
+                    </div>
+                   
+                   
 
-            <input type="reset" value="Reset">
-            <input type="submit" value="Submit">
-        </form>
-    </main>
-
-
-    <footer>
-        <p>Footer</p>
-        <nav>
-            <ul>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">ToS</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </nav>
-    </footer>
+                </form>
+            </div>
+            
+        </main>
+        
+        <footer class="mallFooter">
+            <nav>
+                <div class="FooterRow">
+                    <div class="FooterColumn">
+                        <div class="footerheading">Support</div>
+                        <ul><a href="FAQs.html">FAQ</a></ul>
+                        <ul><a href="contact.html">Contact Form</a></ul>
+                        <ul><a href="fees.html">Fee</a></ul>
+                    </div>
+                    <div class="FooterColumn">
+                        <div class="footerheading">Info</div>
+                        <ul><a href="aboutUs.html">About us</a></ul>
+                        <ul><a href="tos.html">ToS</a></ul>
+                        <ul><a href="privacy.html">Privacy Policy</a></ul>
+                        <ul><a href="copyright.html">CopyRight</a></ul>
+                    </div>
+                    <div class="FooterColumn">
+                        <div class="footerheading">Join Us</div>
+                        <ul><a href="Account/registerAccount.html">Sign up</a></ul>
+                        <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
+                        <ul><a href="Account/myAccount-Log-in.html">Sign in</a></ul>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>

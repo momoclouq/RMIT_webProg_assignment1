@@ -3,45 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="information about the developers">
+    <meta name="keywords" content="developers information details team">
+    <meta name="author" content="Team Developers">
+    <title>About us</title>
 
-    <link rel="stylesheet" href="../style/desktop1024.css">
+    <link rel="stylesheet" href="../style/mall/common.css">
+    <link rel="stylesheet" href="../style/mall/AboutUs/AboutUs.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
-    <header class="mallHeader">
-        <a href="index.html"><img id="mallLogo" src="../resources/images/mallLogo.jpg" alt="mall logo"></a>
-        <h3 class="mallName">Shopping mall</h3>
-        <nav>
-            <ul>
-                <li><a href="aboutUs.html">About us</a></li>
-                <li><a href="copyright.html">Copyright</a></li>
-                <li><a href="fees.html">Fees</a></li>
-                <li><a href="FAQs.html">FAQs</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+      <div class="boxWrapper">
+        <header class="mallHeader">
+          <nav>
+              <ul class="menu">
+                  <li class="logo"><a href="/index.html">Logo</a></li>
+                  <li class="item mallName"><a href="/index.html">Shopping mall</a></li>
+  
+                  <li class="item"><a href="aboutUs.html">About us</a></li>
+                  <li class="item"><a href="fees.html">Fees</a></li>
+                  <li class="item subMenu2"><a href="#">Browse</a></li>
+                  <li class="item item2"><a href="BrowseStoreLetter.html">Browse By name</a></li>
+                  <li class="item item2"><a href="BrowseStoreCategory.html">Browse By category</a></li>
+                  <li class="item"><a href="FAQs.html">FAQs</a></li>
+                  <li class="item"><a href="contact.html">Contact</a></li>
+  
+                  <li class="toggle"><span class="bars"></span><li>
+              </ul>
+          </nav>
+      </header>
 
-    <main>
-        <section id="member1"></section>
-        <section id="member2"></section>
-        <section id="member3"></section>
-        <section id="member4"></section>
-    </main>
+          <main class="mallAboutUs">
+            <h1 class="aboutUsHeader">The Team</h1>
+            <section id="AboutUs">
+              <div class="TeamRow">
+                  <div class="TeamColumn">
+                    <div class="card">
+                      <img src="../resources/images/Minh.jpg" alt="Minh">
+                      <div class="container">
+                        <h2>Pham Hoang Minh</h2>
+                        <p class="title">Head Developer</p>
+                        <p>s3871126@rmit.edu.vn</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="TeamColumn">
+                    <div class="card">
+                      <img src="../resources/images/Anh.jpg" alt="Anh">
+                      <div class="container">
+                        <h2>Tran Quang Anh</h2>
+                        <p class="title">Developer & Tester</p>
+                        <p>s3836276@rmit.edu.vn</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="TeamColumn">
+                    <div class="card">
+                      <img src="../resources/images/Dat.jpg" alt="Dat">
+                      <div class="container">
+                        <h2>Nguyen Thanh Dat</h2>
+                        <p class="title">Developer & Manager</p>
+                        <p>s3870837@rmit.edu.vn</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="TeamColumn">
+                    <div class="card">
+                      <img src="../resources/images/Phat.jpg" alt="Phat" style="width:100%">
+                      <div class="container">
+                        <h2>Tran Tan Phat</h2>
+                        <p class="title">Developer</p>
+                        <p>s3836612@rmit.edu.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <section id="member2"></section>
+              <section id="member3"></section>
+              <section id="member4"></section>
+              </section>
+            </main>
 
-    
+            <footer class="mallFooter">
+              <nav>
+                  <div class="FooterRow">
+                      <div class="FooterColumn">
+                          <div class="footerheading">Support</div>
+                          <ul><a href="FAQs.html">FAQ</a></ul>
+                          <ul><a href="contact.html">Contact Form</a></ul>
+                          <ul><a href="fees.html">Fee</a></ul>
+                      </div>
+                      <div class="FooterColumn">
+                          <div class="footerheading">Info</div>
+                          <ul><a href="aboutUs.html">About us</a></ul>
+                          <ul><a href="tos.html">ToS</a></ul>
+                          <ul><a href="privacy.html">Privacy Policy</a></ul>
+                          <ul><a href="copyright.html">CopyRight</a></ul>
+                      </div>
+                      <div class="FooterColumn">
+                          <div class="footerheading">Join Us</div>
+                          <ul><a href="Account/registerAccount.html">Sign up</a></ul>
+                          <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
+                          <ul><a href="Account/myAccount-Log-in.html">Sign in</a></ul>
+                      </div>
+                  </div>
+              </nav>
+          </footer>
+    </div>
 
-
-    <footer>
-        <p>Footer</p>
-        <nav>
-            <ul>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">ToS</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </nav>
-    </footer>
+    <script src="../scripts/mall_index.js"></script>
 </body>
 </html>

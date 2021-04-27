@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../style/store/common.css">
+        <link rel="stylesheet" href="../../style/Store/StoreContact.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    </head>
+
+    <body>
+        <div class="boxWrapper">
+            <header class="mallHeader">
+                <nav>
+                    <ul class="menu">
+                        <li class="logo"><a href="../../storePages/store/storeHome.html">Store</a></li>
+                        <li class="item mallName"><a href="storeHome.html">Home</a></li>
+        
+                        <li class="item"><a href="storeAboutUs.html">About us</a></li>
+                        <li class="item subMenu2"><a href="#">Products</a></li>
+                        <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
+                        <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
+                        <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
+        
+                        <li class="toggle"><span class="bars"></span><li>
+                    </ul>
+                </nav>
+            </header>
+    
+
+            <main>
+                <div class="wrapper">
+                    <form action="#" method="POST">
+                        <h3>Contact Form</h3>
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="purpose">Contact purpose</label>
+                            </div>
+                            
+                            <select name="purpose" id="purpose" required>
+                                <option value="business">Business</option>
+                                <option value="personal">Personal</option>
+                            </select>
+                        </div>
+                        
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="fullname">Full Name</label>
+                            </div>
+                            
+                            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Dai" required>
+                        </div>
+
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="email">Email</label>
+                            </div>
+                            
+                            <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvandai13@gmail.com" required>
+                        </div>
+
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            
+                            <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="07434472941" required>
+                            
+                        </div>
+
+                        <div class="field-input">
+                            <div class="input_header contact">
+                            Contact Day 
+                            </div>
+                            
+                            <div class="day_selection">
+                                <input type="checkbox" name="contactDay" id="mon" value="monday">
+                                <label for="mon" class="WeekDay">Monday</label>
+                                <input type="checkbox" name="contactDay" id="tues" value="tuesday">
+                                <label for="tues" class="WeekDay">Tuesday</label>
+                                <input type="checkbox" name="contactDay" id="wed" value="wednesday"> 
+                                <label for="wed" class="WeekDay">Wednesday</label>
+                                <input type="checkbox" name="contactDay" id="thurs" value="thursday">          
+                                <label for="thurs" class="WeekDay">Thursday</label>
+                                <input type="checkbox" name="contactDay" id="fri" value="friday">
+                                <label for="fri" class="WeekDay">Friday</label>
+                                <input type="checkbox" name="contactDay" id="sat" value="saturday">
+                                <label for="sat" class="WeekDay">Saturday</label>
+                                <input type="checkbox" name="contactDay" id="sund" value="sunday">
+                                <label for="sun" class="WeekDay">Sunday</label>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <div class="field-input">
+                            <div class="input_header">Message</div>
+                            <textarea name="message" id="message" placeholder="Message"></textarea>
+                        </div>
+
+                        <div class="btn">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Submit">
+                        </div>
+                               
+            </main>  
+        
+            <footer class="mallFooter">
+                <nav>
+                <div class="FooterRow">
+                <div class="FooterColumn">
+                <div class="footerheading">Navigation</div>
+                <ul><a href="storeHome.html">Home</a></ul>
+                <ul><a href="storeContact.html">Contact</a></ul>
+                </div>
+                <div class="FooterColumn">
+                <div class="footerheading">Info</div>
+                <ul><a href="storeAboutUs.html">About us</a></ul>
+                <ul><a href="storeCopyright.html">CopyRight</a></ul>
+                </div>
+                <div class="FooterColumn">
+                <div class="footerheading">Back To Mall</div>
+                <ul><a href="../../index.html">Home</a></ul>
+                <ul><a href="../../mallPages/BrowseStoreCategory.html">Browse</a></ul>
+                <ul><a href="../../mallPages/contact.html">Mall Support</a></ul>
+                </div>
+                </div>
+                </nav>
+            </footer>  
+        </div>    
+
+    </body>
+</html>
