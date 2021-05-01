@@ -45,7 +45,6 @@ let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   let menu = document.querySelector(".mallHeader");
   let currentScrollPos = window.pageYOffset;
-  console.log("scrolling");
   if (prevScrollpos > currentScrollPos && !menu.classList.contains("off")) {
     document.querySelector("header").classList.add("visible");
     document.querySelector("header").classList.remove("invisible");
@@ -54,4 +53,38 @@ window.onscroll = function() {
     document.querySelector("header").classList.add("invisible");
   }
   prevScrollpos = currentScrollPos;
+}
+
+
+//Infinite scrolling
+let currentScrollWidth = [0,0];
+
+function isHovering(element){
+    return element.classList.contains("hovering");
+}
+
+const scrollbars = document.querySelectorAll(".listScrollMenu");
+for (let i = 0; i < scrollbars.length; i++){
+    //scrolling effect
+    let offset = 2;
+    setInterval(() => {
+        if (!isHovering(scrollbars[i])){
+            scrollbars[i].scrollLeft += offset;
+            if (scrollbars[i].scrollLeft == currentScrollWidth[i]){
+                console.log("here");
+                scrollbars[i].scroll(0,0);
+            } else currentScrollWidth[i] = scrollbars[i].scrollLeft; 
+        }
+    }, 100);
+
+    //hover effect
+    scrollbars[i].addEventListener("mouseover", function(){
+        console.log("hovering");
+        scrollbars[i].classList.add("hovering");
+    });
+
+    scrollbars[i].addEventListener("mouseout", function(){
+        console.log("not hovering");
+        scrollbars[i].classList.remove("hovering");
+    });
 }

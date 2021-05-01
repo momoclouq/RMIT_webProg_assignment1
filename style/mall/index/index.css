@@ -1,6 +1,6 @@
 /* horizontal menu */
 .listScrollMenu {
-    overflow: auto;
+    overflow-x: scroll;
     white-space: nowrap;
 }
 
