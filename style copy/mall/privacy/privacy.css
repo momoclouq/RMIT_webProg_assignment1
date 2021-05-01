@@ -1,0 +1,66 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 0 10px black;
+    padding: 5px 10px;
+}
+
+/*title*/
+section.pri_title {
+    padding: 20px; 
+    font-weight: 700;
+    font-size: 23px;
+}
+
+
+/*copyright intro*/
+.pri_intro {
+    background: #edebeb;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.pri_intro_text{
+    padding: 10px;
+}
+
+/*copyright content*/
+.pri_content {
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.pri_content_text {
+    margin-left: 20px;
+}
+
+.pri_content_title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.text_item {
+    color: red;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.redColor {
+    color: red;
+}
+
+/*lastword*/
+.pri_lastword {
+    padding: 10px;
+}
+
+.pri_lastword_title {
+    font-weight: 700;
+    font-size: 17px;
+}

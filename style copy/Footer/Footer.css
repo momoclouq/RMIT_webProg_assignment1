@@ -1,0 +1,92 @@
+/*footer*/
+main {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  min-height: 100vh;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 75px;
+  margin: 0px auto 0;
+  padding: 10px 0 0px;
+  }
+
+.mallFooter nav{
+  background-color: #222;
+  
+}
+
+.footerheading{
+  font-weight: 700; color: #fff; margin: 0 0 15px; font-size: 16px;
+}
+
+footer a, footer a:visited{
+  color:#ac9e95; 
+  text-decoration:none;
+  line-height: 3;
+}
+
+footer p{
+  color:white;
+  line-height: 3;
+}
+
+footer nav .FooterRow{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+
+.FooterColumn {
+float: left;
+width: 33.33%;
+padding: 15px;
+}
+
+.FooterRow:after {
+content: " ";
+display: table;
+clear: both;
+}
+
+@media screen and (max-width: 600px) { 
+  .mallFooter a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  
+  .mallFooter{
+      flex-direction: column;
+      overflow: scroll;
+  }
+
+  footer {  
+    width: 100%;
+    max-height: 20vh;
+    overflow: hidden;
+  }
+
+  footer nav .FooterRow{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+  }
+
+  header {  
+    width: 100%;
+    max-height: 10vh;
+    overflow: hidden;
+  }
+
+  main {  
+    width: 100%;
+    max-height: 80vh;
+    overflow: scroll;
+  }
+}
+/*end of footer*/
