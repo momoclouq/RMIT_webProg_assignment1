@@ -124,8 +124,26 @@ text-align: center;
   
   }
 }
-
-
-
-
 /*originally went with the design similar to the FAQ page, ran into display error, resulted in using w3school's design*/
+
+.member_info {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  background: white;
+  padding: 30px;
+  z-index: 100;
+}
+
+.blurBackground {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color:#474747;
+  opacity: 0.8;
+  z-index: 0;
+}
