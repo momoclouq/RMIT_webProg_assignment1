@@ -34,113 +34,138 @@
                 </nav>
             </header>
 
-        <main>
-            <div class="wrapper">
-                <form action="#" method="POST">
-                    <h3>Contact Form</h3>
-                    <div class="field-input">
-                        <div class="input_header">
-                            <label for="purpose">Contact purpose</label>
-                        </div>
-                        
-                        <select name="purpose" id="purpose" required>
-                            <option value="business">Business</option>
-                            <option value="personal">Personal</option>
-                        </select>
-                    </div>
-                    
-                    <div class="field-input">
-                        <div class="input_header">
-                            <label for="fullname">Full Name</label>
-                        </div>
-                        
-                        <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
-                    </div>
+            <main>
+                <div class="wrapper">
+                    <form action="#" method="POST">
+                        <h3>Contact Form</h3>
 
-                    <div class="field-input">
-                        <div class="input_header">
-                            <label for="email">Email</label>
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="purpose">Contact purpose</label>
+                            </div>
+                            
+                            <select name="purpose" id="purpose" required>
+                                <option value="business">Business</option>
+                                <option value="personal">Personal</option>
+                            </select>
                         </div>
                         
-                        <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
-                    </div>
+                        <!-- At least 3 letters -->
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="fullname">Full Name</label>
+                            </div>
+                            
+                            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
+                            <span class='fullname-error'></span>
+                        </div>
 
-                    <div class="field-input">
-                        <div class="input_header">
-                            <label for="phone">Phone Number</label>
-                        </div>
-                        
-                        <input type="number" name="phone" id="phone" minlength="10" maxlength="12" placeholder="0741472941" required>
-                        
-                    </div>
 
-                    <div class="field-input">
-                        <div class="input_header contact">
-                           Contact Day 
+                        <!-- Valid form [name]@[domain]
+                        * [name] at least 3 characacters, consists of letters (a-z A-Z), digits and dots
+                        Dots cannot be next to each other and dot cannot located at the beginning or at the end
+                        * [domain] consists of letters (a-z A-Z), digits and at least one dot (required for dot is the same with the [name])
+                        after the last dot, contains only letters has at least 2 characters and at most 5 characters -->
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="email">Email</label>
+                            </div>
+                            
+                            <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
+                            <span class='email-error'></span>
                         </div>
-                        
-                        <div class="day_selection">
-                            <input type="checkbox" name="contactDay" id="mon" value="monday">
-                            <label for="mon" class="WeekDay">Monday</label>
-                            <input type="checkbox" name="contactDay" id="tues" value="tuesday">
-                            <label for="tues" class="WeekDay">Tuesday</label>
-                            <input type="checkbox" name="contactDay" id="wed" value="wednesday"> 
-                            <label for="wed" class="WeekDay">Wednesday</label>
-                            <input type="checkbox" name="contactDay" id="thurs" value="thursday">          
-                            <label for="thurs" class="WeekDay">Thursday</label>
-                            <input type="checkbox" name="contactDay" id="fri" value="friday">
-                            <label for="fri" class="WeekDay">Friday</label>
-                            <input type="checkbox" name="contactDay" id="sat" value="saturday">
-                            <label for="sat" class="WeekDay">Saturday</label>
-                            <input type="checkbox" name="contactDay" id="sund" value="sunday">
-                            <label for="sun" class="WeekDay">Sunday</label>
+
+                         <!-- Contains 9 to 1  digits, can use space, dot and dash (not at the beginning or at the end, cannot be next to each other)
+                        * Valid: 0123456789, 0-1-2-3.4.5 6.7-8-9, 0123.345-789 
+                        * Invalid: 01234567890123, (0123)456789, 012..3456789 -->
+                        <div class="field-input">
+                            <div class="input_header">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            
+                            <input type="tel" name="phone" id="phone" placeholder="0741472941" required>
+                            <span class='phone-error'></span>
+                        </div>
+
+                        <!-- One option for prefer contact method -->
+                        <!-- One option for prefer contact day -->
+                        <div class="field-input">
+                            <div class="input_header contact">
+                            Contact Day 
+                            </div>
+                            
+                            <div class="day_selection">
+                                <input type="checkbox" name="contactDay" value="monday">
+                                <label for="mon" class="WeekDay">Monday</label>
+                                <input type="checkbox" name="contactDay" value="tuesday">
+                                <label for="tues" class="WeekDay">Tuesday</label>
+                                <input type="checkbox" name="contactDay" value="wednesday"> 
+                                <label for="wed" class="WeekDay">Wednesday</label>
+                                <input type="checkbox" name="contactDay" value="thursday">          
+                                <label for="thurs" class="WeekDay">Thursday</label>
+                                <input type="checkbox" name="contactDay" value="friday">
+                                <label for="fri" class="WeekDay">Friday</label>
+                                <input type="checkbox" name="contactDay" value="saturday">
+                                <label for="sat" class="WeekDay">Saturday</label>
+                                <input type="checkbox" name="contactDay" value="sunday">
+                                <label for="sun" class="WeekDay">Sunday</label>
+                                
+                            </div>
+                            <span class='contactDay-error'></span>
                             
                         </div>
-                        
-                    </div>
 
-                    <div class="field-input">
-                        <div class="input_header">Message</div>
-                        <textarea name="message" id="message" placeholder="Message"></textarea>
-                    </div>
+                        <!-- 50 to 500 letters
+                        * Update continuosly about the current status 
+                        * Too short: You can type zzz more letters
+                        * Too long: Deleting zzz letters is needed
+                        * Can type: You can type zzz more letters -->
+                        <div class="field-input">
+                            <div class="input_header">Message</div>
+                            <textarea name="message" id="message" placeholder="Message"></textarea>
+                            <span class='message-error'></span>
+                        </div>
 
-                    <div class="btn">
-                        <input type="reset" value="Reset">
-                        <input type="submit" value="Submit">
-                    </div>
-                   
-                   
+                        <div class="btn">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Submit">
+                        </div>
+                    
+                    
 
-                </form>
-            </div>
-            
-        </main>
-        
-        <footer class="mallFooter">
-            <nav>
-                <div class="FooterRow">
-                    <div class="FooterColumn">
-                        <div class="footerheading">Support</div>
-                        <ul><a href="FAQs.html">FAQ</a></ul>
-                        <ul><a href="contact.html">Contact Form</a></ul>
-                        <ul><a href="fees.html">Fee</a></ul>
-                    </div>
-                    <div class="FooterColumn">
-                        <div class="footerheading">Info</div>
-                        <ul><a href="aboutUs.html">About us</a></ul>
-                        <ul><a href="tos.html">ToS</a></ul>
-                        <ul><a href="privacy.html">Privacy Policy</a></ul>
-                        <ul><a href="copyright.html">CopyRight</a></ul>
-                    </div>
-                    <div class="FooterColumn">
-                        <div class="footerheading">Join Us</div>
-                        <ul><a href="Account/registerAccount.html">Sign up</a></ul>
-                        <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
-                        <ul><a href="Account/myAccount-Log-in.html">Sign in</a></ul>
-                    </div>
+                    </form>
                 </div>
-            </nav>
-        </footer>
-    </div>
-</body>
+                
+            </main>
+        
+            <footer class="mallFooter">
+                <nav>
+                    <div class="FooterRow">
+                        <div class="FooterColumn">
+                            <div class="footerheading">Support</div>
+                            <ul><a href="FAQs.html">FAQ</a></ul>
+                            <ul><a href="contact.html">Contact Form</a></ul>
+                            <ul><a href="fees.html">Fee</a></ul>
+                        </div>
+                        <div class="FooterColumn">
+                            <div class="footerheading">Info</div>
+                            <ul><a href="aboutUs.html">About us</a></ul>
+                            <ul><a href="tos.html">ToS</a></ul>
+                            <ul><a href="privacy.html">Privacy Policy</a></ul>
+                            <ul><a href="copyright.html">CopyRight</a></ul>
+                        </div>
+                        <div class="FooterColumn">
+                            <div class="footerheading">Join Us</div>
+                            <ul><a href="Account/registerAccount.html">Sign up</a></ul>
+                            <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
+                            <ul><a href="Account/myAccount-Log-in.html">Sign in</a></ul>
+                        </div>
+                    </div>
+                </nav>
+            </footer>
+        </div>
+        <script src="../scripts/mall_index.js"></script>
+        <script src="../scripts/mall_contact.js"></script>
+    </body>
+
 </html>
