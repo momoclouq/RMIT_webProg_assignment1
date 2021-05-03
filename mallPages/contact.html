@@ -88,6 +88,21 @@
                         </div>
 
                         <!-- One option for prefer contact method -->
+                        <div class="field-input">
+                            <div class="input_header contact_method">
+                            Contact Method
+                            </div>
+                            
+                            <div class="method_selection">
+                                <input type="radio" name="contactMethod" value="phone" id="phoneMethod">
+                                <label for="phoneMethod" class="method">Phone</label>
+                                <br>
+                                <input type="radio" name="contactMethod" value="email" id="emailMethod">
+                                <label for="emailMethod" class="method">Email</label>
+                            </div>
+                            <span class='contactMethod-error'></span>
+                            
+                        </div>
                         <!-- One option for prefer contact day -->
                         <div class="field-input">
                             <div class="input_header contact">
@@ -95,20 +110,44 @@
                             </div>
                             
                             <div class="day_selection">
-                                <input type="checkbox" name="contactDay" value="monday">
-                                <label for="mon" class="WeekDay">Monday</label>
-                                <input type="checkbox" name="contactDay" value="tuesday">
-                                <label for="tues" class="WeekDay">Tuesday</label>
-                                <input type="checkbox" name="contactDay" value="wednesday"> 
-                                <label for="wed" class="WeekDay">Wednesday</label>
-                                <input type="checkbox" name="contactDay" value="thursday">          
-                                <label for="thurs" class="WeekDay">Thursday</label>
-                                <input type="checkbox" name="contactDay" value="friday">
-                                <label for="fri" class="WeekDay">Friday</label>
-                                <input type="checkbox" name="contactDay" value="saturday">
-                                <label for="sat" class="WeekDay">Saturday</label>
-                                <input type="checkbox" name="contactDay" value="sunday">
-                                <label for="sun" class="WeekDay">Sunday</label>
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="monday" id="mon">
+                                    <label for="mon" class="WeekDay">Monday</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="tuesday" id="tues">
+                                    <label for="tues" class="WeekDay">Tuesday</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="wednesday" id="wed"> 
+                                    <label for="wed" class="WeekDay">Wednesday</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="thursday" id="thurs">          
+                                    <label for="thurs" class="WeekDay">Thursday</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="friday" id="fri">
+                                    <label for="fri" class="WeekDay">Friday</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="saturday" id="sat">
+                                    <label for="sat" class="WeekDay">Saturday</label> 
+                                </div>
+                               
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="sunday" id="sun">
+                                    <label for="sun" class="WeekDay">Sunday</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="checkbox" name="contactDay" value="sunday" id="all">
+                                    <label for="all" class="WeekDay">Check all</label>
+                                </div>
                                 
                             </div>
                             <span class='contactDay-error'></span>
