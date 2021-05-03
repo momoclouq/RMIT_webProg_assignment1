@@ -24,6 +24,15 @@ label {
         padding: 0px 20px;
         overflow: auto;
     }
+
+    form{
+        width: 100%;
+    }
+
+    .day_selection{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
     
     .wrapper h3{
         text-align: center;
@@ -43,8 +52,13 @@ label {
     }
     
     .field-input .contact{
-        text-align: center;
+       
         font-weight: 600;
+        font-size: 16px;
+    }
+
+    .method_selection .method{
+        font-weight: 400;
         font-size: 16px;
     }
     
@@ -54,15 +68,15 @@ label {
     
     
     .field-input{
-        text-align: center;
+        
         font-size: 16px;
-        padding: 5px 10px;
-        margin: 5px 0;
+        padding: 3px 10px;
+     
         border-radius: 5px;
     }
     
     .field-input:first-child{
-        margin-top: 5px;
+        margin-top: 2px;
     }
     
     .field-input select{
@@ -70,7 +84,7 @@ label {
        padding: 5px;
     }
     
-    .field-input input[type=text],input[type=email],input[type=number], textarea{
+    .field-input input[type=text],input[type=email],input[type=tel], textarea{
         width: 100%;
         padding: 5px;
     }
@@ -110,6 +124,16 @@ label {
         padding: 0px 20px;
         overflow: auto;
     }
+
+    form{
+        width: 100%;
+        
+    }
+
+    .day_selection{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
     
     .wrapper h3{
         text-align: center;
@@ -129,7 +153,6 @@ label {
     }
     
     .field-input .contact{
-        text-align: center;
         font-weight: 600;
         font-size: 18px;
     }
@@ -138,17 +161,19 @@ label {
         font-weight: 400;
     }
     
+    .method_selection .method{
+        font-weight: 400;
+        font-size: 17px;
+    }
     
     .field-input{
-        text-align: center;
         font-size: 16px;
-        padding: 5px 10px;
-        margin: 5px 0;
+        padding: 3px 10px;
         border-radius: 5px;
     }
     
     .field-input:first-child{
-        margin-top: 15pz;
+        margin-top: 15px;
     }
     
     .field-input select{
@@ -156,7 +181,7 @@ label {
        padding: 10px;
     }
     
-    .field-input input[type=text],input[type=email],input[type=number], textarea{
+    .field-input input[type=text],input[type=email],input[type=tel], textarea{
         width: 100%;
         padding: 10px;
     }
@@ -197,6 +222,11 @@ label {
         overflow: auto;
     }
     
+    form{
+        width: 100%;
+        
+    }
+
     .wrapper h3{
         text-align: center;
         font-size: 20px;
@@ -214,27 +244,33 @@ label {
         font-size: 18px;
     }
     
-    .field-input .contact{
-        text-align: center;
-        font-weight: 600;
-        font-size: 18px;
-    }
+    
     
     .day_selection label{
         font-weight: 400;
     }
+
+    .day_selection{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    
+
+    .method_selection .method{
+        font-weight: 400;
+        font-size: 17px;
+    }
     
     
     .field-input{
-        text-align: center;
         font-size: 16px;
-        padding: 5px 10px;
-        margin: 5px 0;
+        padding: 3px 10px;
         border-radius: 5px;
     }
     
     .field-input:first-child{
-        margin-top: 15pz;
+        margin-top: 15px;
     }
     
     .field-input select{
@@ -242,7 +278,7 @@ label {
        padding: 10px;
     }
     
-    .field-input input[type=text],input[type=email],input[type=number], textarea{
+    .field-input input[type=text],input[type=email],input[type=tel], textarea{
         width: 100%;
         padding: 10px;
     }
