@@ -1,6 +1,6 @@
 /* horizontal menu */
 .listScrollMenu {
-    overflow: auto;
+    overflow-x: scroll;
     white-space: nowrap;
 }
 
@@ -29,11 +29,6 @@
 }
 
 /*new list*/
-main a, a:visited{
-    text-decoration: none;
-    color: inherit;
-}
-
 #newStoreList {
     padding: 15px;
 }
@@ -98,7 +93,10 @@ main a, a:visited{
     font-size: 20px;
 }
 
-
+main a, main a:visited{
+    text-decoration: none;
+    color:inherit;
+}
 
 @media only screen and (max-width: 767px){
     /* For Mobile */

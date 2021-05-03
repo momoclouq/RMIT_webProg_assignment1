@@ -1,6 +1,10 @@
+main {
+    width: 100%;
+}
+
 /* horizontal menu */
 .listScrollMenu {
-    overflow: auto;
+    overflow: scroll;
     white-space: nowrap;
 }
 
@@ -29,7 +33,7 @@
 }
 
 /*new list*/
-#newStoreList {
+#newProductList {
     padding: 15px;
 }
 
@@ -62,7 +66,6 @@
     padding: 10px;
 } 
 
-
 /* Featured Products */
 .list_display_product_card{
     display: flex;
@@ -91,6 +94,11 @@
 .list_display_product_content_title{
     font-weight: bold;
     font-size: 20px;
+}
+
+main a, main a:visited{
+    text-decoration: none;
+    color: inherit;
 }
 
 @media only screen and (max-width: 767px){
