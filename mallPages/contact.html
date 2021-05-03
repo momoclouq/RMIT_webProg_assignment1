@@ -56,8 +56,8 @@
                                 <label for="fullname">Full Name</label>
                             </div>
                             
-                            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Ang" required>
-                            <span class='fullname-error'></span>
+                            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Anh" autocomplete="off" required>
+                            <span class='fullname-error errorMessage'></span>
                         </div>
 
 
@@ -72,7 +72,7 @@
                             </div>
                             
                             <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
-                            <span class='email-error'></span>
+                            <span class='errorMessage email-error'></span>
                         </div>
 
                          <!-- Contains 9 to 1  digits, can use space, dot and dash (not at the beginning or at the end, cannot be next to each other)
@@ -84,7 +84,7 @@
                             </div>
                             
                             <input type="tel" name="phone" id="phone" placeholder="0741472941" required>
-                            <span class='phone-error'></span>
+                            <span class='phone-error errorMessage'></span>
                         </div>
 
                         <!-- One option for prefer contact method -->
@@ -100,7 +100,7 @@
                                 <input type="radio" name="contactMethod" value="email" id="emailMethod">
                                 <label for="emailMethod" class="method">Email</label>
                             </div>
-                            <span class='contactMethod-error'></span>
+                            <span class='contactMethod-error errorMessage'></span>
                             
                         </div>
                         <!-- One option for prefer contact day -->
@@ -150,7 +150,7 @@
                                 </div>
                                 
                             </div>
-                            <span class='contactDay-error'></span>
+                            <span class='contactDay-error errorMessage'></span>
                             
                         </div>
 
@@ -162,7 +162,7 @@
                         <div class="field-input">
                             <div class="input_header">Message</div>
                             <textarea name="message" id="message" placeholder="Message"></textarea>
-                            <span class='message-error'></span>
+                            <span class='message-error errorMessage'></span>
                         </div>
 
                         <div class="btn">

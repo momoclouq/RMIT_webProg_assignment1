@@ -10,40 +10,81 @@ let messageNameElement = document.getElementById("message");
 function Validate(){
     if(nameElement){
         nameElement.onblur = function(){
-            const nameErrorMessage = nameValidator();
+            let nameErrorMessage = nameValidator();
+            let nameErrorElemet = document.querySelector('.fullname-error');
             if(nameErrorMessage){
-                console.log(nameErrorMessage);
+                nameErrorElemet.innerHTML = nameErrorMessage;
+                nameElement.classList.add('invalid');
+            } 
+            else {
+                nameErrorElemet.innerHTML = '';
+                nameElement.classList.remove('invalid');
             }
-            console.log('valid');
+            
         } 
 
         nameElement.oninput = function(){
-            const nameErrorMessage = nameValidator();
+            let nameErrorMessage = nameValidator();
+            let nameErrorElemet = document.querySelector('.fullname-error');
+            nameErrorElemet.innerHTML = '';
+            nameElement.classList.remove('invalid');
             if(nameErrorMessage){
-                console.log(nameErrorMessage);
+                nameErrorElemet.innerHTML = nameErrorMessage;
+                nameElement.classList.add('invalid');
             }
-            console.log('valid');
         } 
     }
 
     if(phoneElement){
         phoneElement.onblur = function(){
-            const phoneErrorMessage = phoneValidator();
+            let phoneErrorMessage = phoneValidator();
+            let phoneErrorElemet = document.querySelector('.phone-error');
             if(phoneErrorMessage){
-                console.log(phoneErrorMessage);
+                phoneErrorMessage.innerHTML = nameErrorMessage;
+                phoneElement.classList.add('invalid');
+            } 
+            else {
+                phoneErrorElemet.innerHTML = '';
+                phoneElement.classList.remove('invalid');
             }
-            console.log('valid');
+            
+        } 
+
+        phoneElement.oninput = function(){
+            let phoneErrorMessage = phoneValidator();
+            let phoneErrorElemet = document.querySelector('.phone-error');
+            phoneErrorElemet.innerHTML = '';
+            phoneElement.classList.remove('invalid');
+            if(phoneErrorMessage){
+                phoneErrorElemet.innerHTML = phoneErrorMessage;
+                phoneElement.classList.add('invalid');
+            }
         } 
     }
 
 
     if(emailElement){
         emailElement.onblur = function(){
-            const emailErrorMessage = emailValidator();
+            let emailErrorMessage = emailValidator();
+            let emailErrorElemet = document.querySelector('.email-error');
             if(emailErrorMessage){
-                console.log(emailErrorMessage);
+                emailErrorElemet.innerHTML = emailErrorMessage;
+                emailElement.classList.add('invalid');
+            } else {
+                emailErrorElemet.innerHTML = '';
+                emailElement.classList.remove('invalid');
             }
-            console.log('valid');
+        } 
+
+        emailElement.oninput = function(){
+            let emailErrorMessage = emailValidator();
+            let emailErrorElemet = document.querySelector('.email-error');
+            emailErrorElemet.innerHTML = '';
+            emailElement.classList.remove('invalid');
+            if(emailErrorMessage){
+                emailErrorElemet.innerHTML = emailErrorMessage;
+                emailElement.classList.add('invalid');
+            }
         } 
     }
 
@@ -51,10 +92,11 @@ function Validate(){
 }
 
 function nameValidator(){
-    if(nameElement.value.length < 3){
-        return "The name is too short";
+    const namePattern = /^[\D]{3,}$/;
+    if(namePattern.test(nameElement.value)){
+        return undefined;
     }
-    return undefined;
+    return "The name is invalid";
 }
 
 function phoneValidator(){
@@ -74,6 +116,8 @@ function emailValidator(){
         return undefined;
     }
     return 'The email is invalid';
-}
+    }
+    
+    
 
 Validate();
