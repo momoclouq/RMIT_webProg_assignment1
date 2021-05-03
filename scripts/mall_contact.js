@@ -2,6 +2,7 @@ let nameElement = document.getElementById("fullname");
 let phoneElement = document.getElementById("phone");
 let emailElement = document.getElementById("email");
 let messageNameElement = document.getElementById("message");
+let submitElement = document.querySelector('.submitBtn');
 
 
 // Phone pattern: /^([0-9]{1}[-|.| ]?){9,11}$/
@@ -121,3 +122,4 @@ function emailValidator(){
     
 
 Validate();
+
