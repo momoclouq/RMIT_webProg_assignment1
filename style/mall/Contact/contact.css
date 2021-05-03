@@ -30,48 +30,45 @@ label {
     }
 
     .day_selection{
+        font-size: 13px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
     
     .wrapper h3{
         text-align: center;
-        font-size: 16px;
+        font-size: 15px;
         margin-top: 5px;
     }
     
     .field-input .input_header label{
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 600;
     }
     
     .field-input .input_header{
         text-align: left;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 13px;
     }
     
     .field-input .contact{
-       
         font-weight: 600;
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .method_selection .method{
         font-weight: 400;
-        font-size: 16px;
+        font-size: 13px;
     }
     
     .day_selection label{
         font-weight: 400;
     }
-    
-    
+
     .field-input{
-        
-        font-size: 16px;
-        padding: 3px 10px;
-     
+        font-size: 13px;
+        padding: 2px 10px;
         border-radius: 5px;
     }
     
@@ -87,6 +84,16 @@ label {
     .field-input input[type=text],input[type=email],input[type=tel], textarea{
         width: 100%;
         padding: 5px;
+    }
+
+    .field-input .errorMessage {
+        font-size: 13px;
+        color: rgba(235, 21, 21);
+        
+    }
+
+    .field-input .invalid{
+        border: 1px solid red;
     }
     
     .btn {
@@ -180,6 +187,16 @@ label {
        width: 100%;
        padding: 10px;
     }
+
+    .field-input .errorMessage {
+        font-size: 14px;
+        color: rgba(235, 21, 21);
+        
+    }
+
+    .field-input .invalid{
+        border: 1px solid red;
+    }
     
     .field-input input[type=text],input[type=email],input[type=tel], textarea{
         width: 100%;
@@ -209,6 +226,7 @@ label {
         box-sizing: border-box;
         width: 85%;
         max-width: 600px;
+        
         border: 1px solid #b2bec3;
         display: flex;
         align-items: center;
@@ -265,7 +283,7 @@ label {
     
     .field-input{
         font-size: 16px;
-        padding: 3px 10px;
+        padding: 0 10px;
         border-radius: 5px;
     }
     
@@ -282,6 +300,17 @@ label {
         width: 100%;
         padding: 10px;
     }
+
+    .field-input .invalid{
+        border: 1px solid red;
+    }
+
+    .field-input .errorMessage {
+        font-size: 14px;
+        color: rgba(235, 21, 21);
+        
+    }
+
     
     .btn {
         width: 100%;
