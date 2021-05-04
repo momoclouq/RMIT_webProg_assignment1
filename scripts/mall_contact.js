@@ -192,16 +192,14 @@ function validateContactMethod(){
 
 function checkContactMethod(){
     let radioErrorElemet = document.querySelector('.contactMethod-error');
-    let radioFirstElement = document.getElementById('phoneMethod');
-    let radioSecondElement = document.getElementById('emailMethod');
-    if(!radioFirstElement.checked && !radioSecondElement.checked){
-        radioErrorElemet.innerHTML = 'Please choose at least one option';
+    let radioElements = document.querySelectorAll('input[name="contactMethod"]');
+    if(!Array.prototype.slice.call(radioElements).some(x => x.checked)){
+        radioErrorElemet.innerHTML = "Please choose at least one option";
         return false;
     } else {
-        radioErrorElemet.innerHTML = '';
+        radioErrorElemet.innerHTML = "";
         return true;
-    }
-}
+    }}
 
 function checkContactDay(){
     let checkboxElements = document.querySelectorAll('input[name="contactDay"]');
