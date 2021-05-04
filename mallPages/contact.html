@@ -36,7 +36,7 @@
 
             <main>
                 <div class="wrapper">
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" novalidate>
                         <h3>Contact Form</h3>
 
                         <div class="field-input">
@@ -56,7 +56,7 @@
                                 <label for="fullname">Full Name</label>
                             </div>
                             
-                            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Anh" autocomplete="off" required>
+                            <input type="text" name="fullname" id="fullname" maxlength="50" placeholder="Nguyen Van Anh" autocomplete="off">
                             <span class='fullname-error errorMessage'></span>
                         </div>
 
@@ -71,7 +71,7 @@
                                 <label for="email">Email</label>
                             </div>
                             
-                            <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com" required>
+                            <input type="email" name="email" id="email" maxlength="100" placeholder="nguyenvanang@gmail.com">
                             <span class='errorMessage email-error'></span>
                         </div>
 
@@ -83,7 +83,7 @@
                                 <label for="phone">Phone Number</label>
                             </div>
                             
-                            <input type="tel" name="phone" id="phone" placeholder="0741472941" required>
+                            <input type="tel" name="phone" id="phone" placeholder="0741472941">
                             <span class='phone-error errorMessage'></span>
                         </div>
 
@@ -145,8 +145,7 @@
                                 </div>
                                 
                                 <div>
-                                    <input type="checkbox" name="contactDay" value="sunday" id="all">
-                                    <label for="all" class="WeekDay">Check all</label>
+                                    <input type="button" class="checkAll_btn" id="checkAll" value="Check All">
                                 </div>
                                 
                             </div>

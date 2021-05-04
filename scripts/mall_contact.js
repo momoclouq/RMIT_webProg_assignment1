@@ -2,27 +2,66 @@ let nameElement = document.getElementById("fullname");
 let phoneElement = document.getElementById("phone");
 let emailElement = document.getElementById("email");
 let messageNameElement = document.getElementById("message");
-let submitElement = document.querySelector('.submitBtn');
+let formElement = document.querySelector('form');
+let checkAllElement = document.getElementById('checkAll');
 
 
 // Phone pattern: /^([0-9]{1}[-|.| ]?){9,11}$/
 // email pattern: /^([a-zA-Z0-9]{1}[.]?){2,}([a-zA-Z0-9]{1})@([a-zA-Z0-9]{1}[.]?){1,}[.][a-zA-Z]{2,5}$/
 
-function Validate(){
+function ValidateBehaviour(){
+    validateName();
+    validatePhone();
+    validateEmail();
+}
+
+function checkPhone(){
+    let phoneErrorMessage = phoneValidator();
+    let phoneErrorElemet = document.querySelector('.phone-error');
+    if(phoneErrorMessage){
+        phoneErrorElemet.innerHTML = phoneErrorMessage;
+        phoneElement.classList.add('invalid');
+        return false;
+    } 
+    else {
+        phoneErrorElemet.innerHTML = '';
+        phoneElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+function checkEmail(){
+    let emailErrorMessage = emailValidator();
+    let emailErrorElemet = document.querySelector('.email-error');
+    if(emailErrorMessage){
+        emailErrorElemet.innerHTML = emailErrorMessage;
+        emailElement.classList.add('invalid');
+        return false;
+    } else {
+        emailErrorElemet.innerHTML = '';
+        emailElement.classList.remove('invalid');
+        return true;
+    }
+
+}
+
+function checkName(){
+    let nameErrorMessage = nameValidator();
+    let nameErrorElemet = document.querySelector('.fullname-error');
+    if(nameErrorMessage){
+        nameErrorElemet.innerHTML = nameErrorMessage;
+        nameElement.classList.add('invalid');
+        return false;
+    } else {
+        nameErrorElemet.innerHTML = '';
+        nameElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+function validateName(){
     if(nameElement){
-        nameElement.onblur = function(){
-            let nameErrorMessage = nameValidator();
-            let nameErrorElemet = document.querySelector('.fullname-error');
-            if(nameErrorMessage){
-                nameErrorElemet.innerHTML = nameErrorMessage;
-                nameElement.classList.add('invalid');
-            } 
-            else {
-                nameErrorElemet.innerHTML = '';
-                nameElement.classList.remove('invalid');
-            }
-            
-        } 
+        nameElement.onblur = checkName;
 
         nameElement.oninput = function(){
             let nameErrorMessage = nameValidator();
@@ -35,21 +74,11 @@ function Validate(){
             }
         } 
     }
+}
 
+function validatePhone(){
     if(phoneElement){
-        phoneElement.onblur = function(){
-            let phoneErrorMessage = phoneValidator();
-            let phoneErrorElemet = document.querySelector('.phone-error');
-            if(phoneErrorMessage){
-                phoneErrorMessage.innerHTML = nameErrorMessage;
-                phoneElement.classList.add('invalid');
-            } 
-            else {
-                phoneErrorElemet.innerHTML = '';
-                phoneElement.classList.remove('invalid');
-            }
-            
-        } 
+        phoneElement.onblur = checkPhone;
 
         phoneElement.oninput = function(){
             let phoneErrorMessage = phoneValidator();
@@ -62,20 +91,11 @@ function Validate(){
             }
         } 
     }
+}
 
-
+function validateEmail(){
     if(emailElement){
-        emailElement.onblur = function(){
-            let emailErrorMessage = emailValidator();
-            let emailErrorElemet = document.querySelector('.email-error');
-            if(emailErrorMessage){
-                emailErrorElemet.innerHTML = emailErrorMessage;
-                emailElement.classList.add('invalid');
-            } else {
-                emailErrorElemet.innerHTML = '';
-                emailElement.classList.remove('invalid');
-            }
-        } 
+        emailElement.onblur = checkEmail;
 
         emailElement.oninput = function(){
             let emailErrorMessage = emailValidator();
@@ -88,9 +108,9 @@ function Validate(){
             }
         } 
     }
-
-
 }
+
+
 
 function nameValidator(){
     const namePattern = /^[\D]{3,}$/;
@@ -118,8 +138,45 @@ function emailValidator(){
     }
     return 'The email is invalid';
     }
-    
-    
 
-Validate();
+
+function check(checked = true) {
+    const alala = document.querySelectorAll('input[name="contactDay"]');
+    alala.forEach((cb) => {
+        cb.checked = checked;
+    });
+}
+
+
+    
+ValidateBehaviour();
+formElement.addEventListener('submit', function(event){
+    event.preventDefault();
+    let isEmailValid = checkEmail();
+    let isNameValid = checkName();
+    let isPhoneValid = checkPhone();
+    if (isEmailValid && isNameValid && isPhoneValid){
+        alert('Pass');
+    } else {
+        console.log('Fail');
+    }
+})
+
+checkAllElement.onclick = checkAll;
+
+function checkAll(){
+    check();
+    this.onclick = uncheckAll;
+}
+
+function uncheckAll() {
+    check(false);
+    // reassign click event handler
+    this.onclick = checkAll;
+}
+
+
+
+
+
 
