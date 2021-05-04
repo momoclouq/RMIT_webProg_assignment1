@@ -71,11 +71,6 @@ btn = document.querySelector("#submitBtn");
         btn.addEventListener("click", function (ev){
         // Check any 10 digits
         phone_pattern = /^([0-9]{1}[-|.| ]?){9,11}$/;
-                        /*********backup***********
-                        // Check phone number with "-"
-                        // phone_pattern_2 = /^(([0-9]+\W){8,10})[0-9]$/;
-                        // phone_pattern_3 = /^([0-9]+\W)([0-9]+\W)([0-9]{3,5})$/;
-                        *********backup***********/
         value = document.querySelector("#phone").value;
 
         if (!phone_pattern.test(value)){
@@ -86,6 +81,11 @@ btn = document.querySelector("#submitBtn");
             alert("Invalid phone number");
         }
         });
+        /*********backup***********
+                        // Check phone number with "-"
+                        // phone_pattern_2 = /^(([0-9]+\W){8,10})[0-9]$/;
+                        // phone_pattern_3 = /^([0-9]+\W)([0-9]+\W)([0-9]{3,5})$/;
+                        *********backup***********/
 
 
 // Check password
@@ -114,8 +114,7 @@ btn = document.querySelector("#submitBtn");
 // check email
 btn = document.querySelector("#submitBtn");
       btn.addEventListener("click", function (ev){
-          //regular expression
-          email_pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        email_pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         value = document.querySelector("#emailAddress").value;
         if (!email_pattern.test(value)){
         /**********testing***********
@@ -126,17 +125,48 @@ btn = document.querySelector("#submitBtn");
             alert("Invalid Email address.");
         }
 
-        })
+        });
 //check name, city, address
 btn = document.querySelector("#submitBtn");
-        brn.addEventListener("click", function (ev){
+        btn.addEventListener("click", function (ev){
             name_pattern = /^[\D]{3,}$/;
-            value = document.querySelector("#firstName").value;
-            if(name_pattern.test(value)){
-                alert("Valid")                
+            fname = document.querySelector("#firstName").value;
+            if(!name_pattern.test(fname)){
+                alert("First name must have more than 3 characters.")                
             }
-            else{
-                alert("Invalid")
+        });
+
+btn = document.querySelector("#submitBtn");
+        btn.addEventListener("click", function (ev){
+            name_pattern = /^[\D]{3,}$/;
+            lname = document.querySelector("#lastName").value;
+            if(!name_pattern.test(lname)){
+                alert("Last name must have more than 3 charaters.")                
             }
-            
-        })
+        });
+btn = document.querySelector("#submitBtn");
+        btn.addEventListener("click", function (ev){
+            name_pattern = /^[\D]{3,}$/;
+            city = document.querySelector("#city").value;
+            if(!name_pattern.test(city)){
+                alert("City must have more than 3 charaters.")                
+            }
+        });
+btn = document.querySelector("#submitBtn");
+        btn.addEventListener("click", function (ev){
+            name_pattern = /^[\D]{3,}$/;
+            address = document.querySelector("#address").value;
+            if(!name_pattern.test(address)){
+                alert("Address must have more than 3 charaters.")                
+            }
+        });
+
+// Zipcode check
+btn = document.querySelector("#submitBtn");
+        btn.addEventListener("click", function (ev){
+            code_pattern = /^[\d]{4,6}$/;
+            zipcode = document.querySelector("#zipcode").value;
+            if(!code_pattern.test(zipcode)){
+                alert("Zipcode must have 4-6 digits.")                
+            }
+        });
