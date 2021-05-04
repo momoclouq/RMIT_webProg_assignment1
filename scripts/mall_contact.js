@@ -4,6 +4,36 @@ let emailElement = document.getElementById("email");
 let messageNameElement = document.getElementById("message");
 let formElement = document.querySelector('form');
 let checkAllElement = document.getElementById('checkAll');
+let textareaElement = document.getElementById('message');
+let textareaErrorElement = document.querySelector('.message-error');
+
+
+textareaElement.oninput = function(){
+    const upperLimit = 500;
+    const lowerLimit = 50;
+    console.log(textareaElement);
+    console.log(textareaErrorElement);
+    if(textareaElement.value.length < lowerLimit){
+        
+        textareaErrorElement.innerHTML = "You have to type " + (lowerLimit - textareaElement.value.length) + " more";
+    } 
+
+    if(textareaElement.value.length > upperLimit){
+        
+        textareaErrorElement.innerHTML = "You have to delete " + (textareaElement.value.length - upperLimit) + " letters";
+    }
+
+    if(textareaElement.value.length == upperLimit){
+        
+        textareaErrorElement.innerHTML = "You have reach the words limit";
+    }
+
+    if(textareaElement.value.length < upperLimit && textareaElement.value.length >= lowerLimit){
+        
+        textareaErrorElement.innerHTML = "You can type more " + (upperLimit - textareaElement.value.length) + " letters";
+    }
+
+}
 
 
 // Phone pattern: /^([0-9]{1}[-|.| ]?){9,11}$/
