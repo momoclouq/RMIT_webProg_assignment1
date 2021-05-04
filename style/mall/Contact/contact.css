@@ -134,7 +134,7 @@ label {
 
     form{
         width: 100%;
-        
+        height: auto;
     }
 
     .day_selection{
@@ -224,25 +224,19 @@ label {
     .wrapper{
         background: rgba(230, 230, 230, 0.667);
         box-sizing: border-box;
-        width: 85%;
-        max-width: 600px;
-        
         border: 1px solid #b2bec3;
         display: flex;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         border-radius: 5px;
         box-shadow: 0px 10px 5px #b2bec3;
         padding: 0px 20px;
         overflow: auto;
+        margin: 0 30%;
+        margin-top: 5%;
     }
     
     form{
         width: 100%;
-        
+        height: auto;
     }
 
     .wrapper h3{
@@ -270,7 +264,7 @@ label {
 
     .day_selection{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 26%);
     }
 
     
