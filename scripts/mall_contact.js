@@ -13,6 +13,8 @@ function ValidateBehaviour(){
     validateName();
     validatePhone();
     validateEmail();
+    validateContactMethod();
+    validateContactDay();
 }
 
 function checkPhone(){
@@ -155,7 +157,10 @@ formElement.addEventListener('submit', function(event){
     let isEmailValid = checkEmail();
     let isNameValid = checkName();
     let isPhoneValid = checkPhone();
-    if (isEmailValid && isNameValid && isPhoneValid){
+    let isContactMethodChecked = checkContactMethod();
+    let isContactDayChecked = checkContactDay();
+    checkContactDay();
+    if (isEmailValid && isNameValid && isPhoneValid && isContactMethodChecked && isContactDayChecked){
         alert('Pass');
     } else {
         console.log('Fail');
@@ -166,14 +171,62 @@ checkAllElement.onclick = checkAll;
 
 function checkAll(){
     check();
+    checkContactDay();
     this.onclick = uncheckAll;
 }
 
 function uncheckAll() {
     check(false);
+    checkContactDay();
     // reassign click event handler
     this.onclick = checkAll;
 }
+
+function validateContactMethod(){
+    let radioElements = document.querySelectorAll('input[name="contactMethod"]');
+    radioElements.forEach((radio) => {
+        radio.addEventListener("change", checkContactMethod);
+    })
+
+}
+
+function checkContactMethod(){
+    let radioErrorElemet = document.querySelector('.contactMethod-error');
+    let radioFirstElement = document.getElementById('phoneMethod');
+    let radioSecondElement = document.getElementById('emailMethod');
+    if(!radioFirstElement.checked && !radioSecondElement.checked){
+        radioErrorElemet.innerHTML = 'Please choose at least one option';
+        return false;
+    } else {
+        radioErrorElemet.innerHTML = '';
+        return true;
+    }
+}
+
+function checkContactDay(){
+    let checkboxElements = document.querySelectorAll('input[name="contactDay"]');
+    let checkboxErrorElemet = document.querySelector('.contactDay-error');
+    
+    if(!Array.prototype.slice.call(checkboxElements).some(x => x.checked)){
+        checkboxErrorElemet.innerHTML = "Please choose at least one day";
+        return false;
+    } else {
+        checkboxErrorElemet.innerHTML = "";
+        return true;
+    }
+    
+}
+
+
+function validateContactDay(){
+    let checkboxElements = document.querySelectorAll('input[name="contactDay"]');
+    checkboxElements.forEach((checkbox) => {
+        checkbox.addEventListener("click", checkContactDay);
+    })
+}
+
+
+
 
 
 
