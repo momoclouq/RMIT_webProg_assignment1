@@ -8,6 +8,7 @@
     padding: 0 32px;
     overflow: visible;
     box-shadow: 0 -2px 16px rgba(22, 21, 27, 0.418);
+    z-index: 2;
     /* overflow: visible; */
 
     transition: 400ms;
