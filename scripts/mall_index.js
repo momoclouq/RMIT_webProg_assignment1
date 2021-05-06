@@ -56,6 +56,7 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
+// User Authentication for My Account Page
 let myAccountElement = document.querySelector(".account_mall_nav");
 console.log(myAccountElement);
  myAccountElement.onclick = function(){
@@ -69,3 +70,37 @@ console.log(myAccountElement);
     }
  
  }
+
+ 
+//Infinite scrolling
+let currentScrollWidth = [0,0];
+
+function isHovering(element){
+    return element.classList.contains("hovering");
+}
+
+const scrollbars = document.querySelectorAll(".listScrollMenu");
+for (let i = 0; i < scrollbars.length; i++){
+    //scrolling effect
+    let offset = 2;
+    setInterval(() => {
+        if (!isHovering(scrollbars[i])){
+            scrollbars[i].scrollLeft += offset;
+            if (scrollbars[i].scrollLeft == currentScrollWidth[i]){
+                console.log("here");
+                scrollbars[i].scroll(0,0);
+            } else currentScrollWidth[i] = scrollbars[i].scrollLeft; 
+        }
+    }, 100);
+
+    //hover effect
+    scrollbars[i].addEventListener("mouseover", function(){
+        console.log("hovering");
+        scrollbars[i].classList.add("hovering");
+    });
+
+    scrollbars[i].addEventListener("mouseout", function(){
+        console.log("not hovering");
+        scrollbars[i].classList.remove("hovering");
+    });
+}
