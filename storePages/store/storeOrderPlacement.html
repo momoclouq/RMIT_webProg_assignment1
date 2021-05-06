@@ -24,6 +24,8 @@
                         <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
                         <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
                         <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
+                        <li class="item "><a data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</a><a class="clear-cart btn btn-danger">Clear Cart</a></li>
+
         
                         <li class="toggle"><span class="bars"></span><li>
                     </ul>
@@ -39,58 +41,71 @@
                 <section class="storeCart">
                     <ul>
                         <li class="product">
-                            <div class="prodImg"><img src="../../resources/images/flower.jpg" alt="product1 on display"></div>
+                            <div class="prodImg"><img src="../../resources/images/Product Image/product_1.jpeg" alt="product1 on display"></div>
                             <div class="prodContent">
                                 <div class="prodDesc">
-                                    <div class="prodName"><a href="product/cate1prod1.html">2 kittens in a blue jar</a></div>
-                                    <div class="prodPrice">500.000vnd</div>
+                                    <div class="prodName"><a href="product/cate1prod1.html">A blue baggy checker shirt</a></div>
+                                    <div class="prodPrice">$12.9</div>
                                 </div>
+                              
                                 <div class="prodQuanity">
-                                    <button>Remove</button>
-                                    <label for="quanity">Quanity: <input type="number" id="quanity" name="quanity" value="1"></label>
+                                    <div class="quantity">
+                                        <button class="btn minus-btn disabled" type="button">-</button>
+                                        <input type="text" id="quantity" value="1">
+                                        <button class="btn plus-btn" type="button">+</button>
+                                    </div>
+                                    
                                 </div>
                             </div>
+                            
                         </li>
                         <li class="product">
-                            <div class="prodImg"><img src="../../resources/images/item_3kittensInABlueJar.jpg" alt="product1 on display"></div>
+                            <div class="prodImg"><img src="../../resources/images/Product Image/product_2.jpeg" alt="product1 on display"></div>
                             <div class="prodContent">
                                 <div class="prodDesc">
-                                    <div class="prodName"><a href="product/cate1prod1.html">2 kittens in a blue jar</a></div>
-                                    <div class="prodPrice">500.000vnd</div>
+                                    <div class="prodName"><a href="product/cate1prod1.html">Colorful shoes</a></div>
+                                    <div class="prodPrice">$12.99</div>
                                 </div>
+                              
                                 <div class="prodQuanity">
-                                    <button>Remove</button>
-                                    <label for="quanity">Quanity: <input type="number" id="quanity" name="quanity" value="1"></label>
+                                    <div class="quantity">
+                                        <button class="btn minus-btn disabled" type="button">-</button>
+                                        <input type="text" id="quantity" value="1">
+                                        <button class="btn plus-btn" type="button">+</button>
+                                    </div>
+                                    
                                 </div>
                             </div>
-                        </li>
-                        <li class="product">
-                            <div class="prodImg"><img src="../../resources/images/item_3kittensInABlueJar.jpg" alt="product1 on display"></div>
-                            <div class="prodContent">
-                                <div class="prodDesc">
-                                    <div class="prodName"><a href="product/cate1prod1.html">2 kittens in a blue jar</a></div>
-                                    <div class="prodPrice">500.000vnd</div>
-                                </div>
-                                <div class="prodQuanity">
-                                    <button>Remove</button>
-                                    <label for="quanity">Quanity: <input type="number" id="quanity" name="quanity" value="1"></label>
-                                </div>
-                            </div>
+                            
                         </li>
                     </ul>
                 </section>
     
                 <section class="checkout">
-                    <div class="summary">
-                        <span class="priceText">Total amount:</span>
-                        <span class="priceTotal">1.500.000vnd</span>
-                    </div>
+                    
+                
+                    <!--will calculate price---->
+                    
+                   
     
                     <form class="options">
-                        <button class="continueBtn">Back to Shop</button>
-                        <button class="orderBtn">Order</button>
+                        <div class="total-price">
+                            <P>Total-price:</P>
+                            <span><i class="fa fa-vn"></i></span>
+                            <span id="price">12.99</span>
+                        </div>
+                        <div class="navigate_button">
+                            </a> <button class="continueBtn" ><a href="/storePages/store/product/cate1prod1.html">Back to Shop</a></button>
+                            <button  class="orderBtn">Order</button>
+                        </div>
+                       
                     </form>
+                   
                 </section>
+                
+
+ 
+
             </main>
     
             <footer class="mallFooter">
@@ -118,5 +133,8 @@
         </div>
         
         <script src="../../scripts/store_index.js"></script>
+     
     </body>
 </html>
+
+

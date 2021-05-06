@@ -156,6 +156,7 @@ main section {
 
 .orderBtn {
     background-color: #ba133a;
+    grid-row: 3;
 }
 
 .continueBtn {
@@ -221,4 +222,58 @@ main section {
     .prodQuanity button {
         padding: 10px;
     }
+}
+
+
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    background: #272a36;
+    margin-top: 50px;
+}
+
+
+/***************/
+
+.quantity {
+
+    justify-content: center;
+}
+
+.quantity button {
+    width: 20px;
+    height: 31px;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 0;
+    background: #fff
+    
+}
+
+.quantity input {
+    border: none;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
+    text-align: center;
+    width: 100px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 200;
+}
+
+.total-price {
+    text-align:left ;
+    font-size: 30px;
+    color: black;
+    position: relative;
+    font-size: 20px;
 }

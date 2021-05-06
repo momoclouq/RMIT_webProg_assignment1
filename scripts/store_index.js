@@ -55,3 +55,79 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+   //setting default attribute to disabled of minus button
+   document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+
+   //taking value to increment decrement input value
+   var valueCount;
+
+   //taking price value in variable
+   var price = document.getElementById("price").innerText;
+
+   //price calculation function
+   function priceTotal() {
+       var total = valueCount * price;
+       document.getElementById("price").innerText = total
+       console.log(Math.ceil(.95));
+   };
+
+
+
+
+   let allIncreaseButton = document.querySelectorAll(".plus-btn");
+   //plus button
+   allIncreaseButton.forEach((button) => {
+        button.addEventListener("click", function() {
+            //getting value of input
+            valueCount = document.getElementById("quantity").value;
+    
+            //input value increment by 1
+    
+            valueCount++;
+    
+            //setting increment input value
+            document.getElementById("quantity").value = valueCount;
+    
+            if (valueCount > 1) {
+                document.querySelector(".minus-btn").removeAttribute("disabled");
+                document.querySelector(".minus-btn").classList.remove("disabled")
+            }
+    
+            //calling price function
+            priceTotal()
+        })
+   });
+   
+    let allminusButton = document.querySelectorAll(".minus-btn");
+    allminusButton.forEach((button) => {
+        button.addEventListener("click", function() {
+            //getting value of input
+            valueCount = document.getElementById("quantity").value;
+     
+            //input value increment by 1
+            valueCount--;
+     
+            //setting increment input value
+            document.getElementById("quantity").value = valueCount
+     
+            if (valueCount == 1) {
+                document.querySelector(".minus-btn").setAttribute("disabled", "disabled")
+            }
+     
+            //calling price function
+            priceTotal()
+        })
+    })
+     
+        
+    
+
+
+
+
+    
+
+    
+
+    
+ 

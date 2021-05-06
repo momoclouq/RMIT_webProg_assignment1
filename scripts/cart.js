@@ -143,10 +143,11 @@ var shoppingCart = (function() {
 // ***************************************** 
 // Add item
 $('.add-to-cart').click(function(event) {
+  let quantityElement = document.getElementById("product1_number");
   event.preventDefault();
   var name = $(this).data('name');
   var price = Number($(this).data('price'));
-  shoppingCart.addItemToCart(name, price, 1);
+  shoppingCart.addItemToCart(name, price, quantityElement.value);
   displayCart();
 });
 
