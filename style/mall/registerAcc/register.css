@@ -137,4 +137,13 @@ input[type="submit"], input[type="reset"] {
     label[for=profilePic]{
         max-width: 600px;
     }
+} 
+
+.ErrorMessage{
+    color: red;
+    font-size: 14px;
+}
+    
+input[type=radio]:link{
+    background-color: red;
 }

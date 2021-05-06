@@ -66,107 +66,525 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
-// check phone number
-btn = document.querySelector("#submitBtn");
-        btn.addEventListener("click", function (ev){
-        // Check any 10 digits
-        phone_pattern = /^([0-9]{1}[-|.| ]?){9,11}$/;
-        value = document.querySelector("#phone").value;
+// Validator
+let fnameElement = document.getElementById("firstName");
+let lnameElement = document.getElementById("lastName");
+let phoneElement = document.getElementById("phone");
+let emailElement = document.getElementById("emailAddress");
+let cityElement = document.getElementById("city");
+let zipcodeElement = document.getElementById("zipcode");
+let addressElement = document.getElementById("address")
+let passwordElement = document.getElementById("password");
+let passwordReElement = document.getElementById("passwordRe");
+let formElement = document.querySelector('form');
+let statusElement = document.querySelector('.status');
+// Add event to check Name Element
+//FirstName
+function validateFName(){
+    if(fnameElement){
+        fnameElement.onblur = checkFName;
 
-        if (!phone_pattern.test(value)){
-        /*********testing************
-        //     alert("Valid phone number");
-        // } else {
-        **********testing***********/
-            alert("Invalid phone number");
+        fnameElement.oninput = function(){
+            let fnameErrorMessage = fnameValidator();
+            let fnameErrorElemet = document.querySelector('.errorFnameMSG');
+            fnameErrorElemet.innerHTML = '';
+            fnameElement.classList.remove('invalid');
+            if(fnameErrorMessage){
+                fnameErrorElemet.innerHTML = fnameErrorMessage;
+                fnameElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+//LastName
+function validateLName(){
+    if(fnameElement){
+        lnameElement.onblur = checkLName;
+
+        lnameElement.oninput = function(){
+            let lnameErrorMessage = lnameValidator();
+            let lnameErrorElemet = document.querySelector('.errorLnameMSG');
+            lnameErrorElemet.innerHTML = '';
+            lnameElement.classList.remove('invalid');
+            if(lnameErrorMessage){
+                lnameErrorElemet.innerHTML = lnameErrorMessage;
+                lnameElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the name element to satisfied with the requirement
+//First Name
+function checkFName(){
+    let fnameErrorMessage = fnameValidator();
+    let fnameErrorElemet = document.querySelector('.errorFnameMSG');
+    if(fnameErrorMessage){
+        fnameErrorElemet.innerHTML = fnameErrorMessage;
+        fnameElement.classList.add('invalid');
+        return false;
+    } else {
+        fnameErrorElemet.innerHTML = '';
+        fnameElement.classList.remove('invalid');
+        return true;
+    }
+}
+// Last Name
+function checkLName(){
+    let lnameErrorMessage = lnameValidator();
+    let lnameErrorElemet = document.querySelector('.errorLnameMSG');
+    if(lnameErrorMessage){
+        lnameErrorElemet.innerHTML = lnameErrorMessage;
+        lnameElement.classList.add('invalid');
+        return false;
+    } else {
+        lnameErrorElemet.innerHTML = '';
+        lnameElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the name
+//First Name
+function fnameValidator(){
+    const fnamePattern = /^[\D]{3,}$/;
+    if(fnamePattern.test(fnameElement.value)){
+        return undefined;
+    }
+    return "Name must have more than 3 charaters";
+}
+//Last Name
+function lnameValidator(){
+    const lnamePattern = /^[\D]{3,}$/;
+    if(lnamePattern.test(lnameElement.value)){
+        return undefined;
+    }
+    return "Name must have more than 3 charaters";
+}
+
+// Add event to check Phone Element
+function validatePhone(){
+    if(phoneElement){
+        phoneElement.onblur = checkPhone;
+
+        phoneElement.oninput = function(){
+            let phoneErrorMessage = phoneValidator();
+            let phoneErrorElemet = document.querySelector('.errorPhoneMSG');
+            phoneErrorElemet.innerHTML = '';
+            phoneElement.classList.remove('invalid');
+            if(phoneErrorMessage){
+                phoneErrorElemet.innerHTML = phoneErrorMessage;
+                phoneElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the phone element to satisfied with the requirement
+function checkPhone(){
+    let phoneErrorMessage = phoneValidator();
+    let phoneErrorElemet = document.querySelector('.errorPhoneMSG');
+    if(phoneErrorMessage){
+        phoneErrorElemet.innerHTML = phoneErrorMessage;
+        phoneElement.classList.add('invalid');
+        return false;
+    } 
+    else {
+        phoneErrorElemet.innerHTML = '';
+        phoneElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the phone
+function phoneValidator(){
+    const phonePattern = /^([0-9]{1}[-|.| ]?){9,11}$/;
+    if(phonePattern.test(phoneElement.value)){
+        return undefined;
+    }
+    else {
+        return 'Phone number is invalid'
+    }
+    
+}
+
+// Add event to check Address Element
+function validateAddress(){
+    if(addressElement){
+        addressElement.onblur = checkAddress;
+
+        addressElement.oninput = function(){
+            let addressErrorMessage = addressValidator();
+            let addressErrorElemet = document.querySelector('.errorAddressMSG');
+            addressErrorElemet.innerHTML = '';
+            addressElement.classList.remove('invalid');
+            if(addressErrorMessage){
+                addressErrorElemet.innerHTML = addressErrorMessage;
+                addressElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the address element to satisfied with the requirement
+function checkAddress(){
+    let addressErrorMessage = addressValidator();
+    let addressErrorElemet = document.querySelector('.errorAddressMSG');
+    if(addressErrorMessage){
+        addressErrorElemet.innerHTML = addressErrorMessage;
+        addressElement.classList.add('invalid');
+        return false;
+    } else {
+        addressErrorElemet.innerHTML = '';
+        addressElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the address
+function addressValidator(){
+    const addressPattern = /^[\D]{3,}$/;
+    if(addressPattern.test(addressElement.value)){
+        return undefined;
+    }
+    return "The address is invalid";
+}
+
+// Add event to check Email Element
+function validateEmail(){
+    if(emailElement){
+        emailElement.onblur = checkEmail;
+
+        emailElement.oninput = function(){
+            let emailErrorMessage = emailValidator();
+            let emailErrorElemet = document.querySelector('.errorEmailMSG');
+            emailErrorElemet.innerHTML = '';
+            emailElement.classList.remove('invalid');
+            if(emailErrorMessage){
+                emailErrorElemet.innerHTML = emailErrorMessage;
+                emailElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the email element to satisfied with the requirement
+function checkEmail(){
+    let emailErrorMessage = emailValidator();
+    let emailErrorElemet = document.querySelector('.errorEmailMSG');
+    if(emailErrorMessage){
+        emailErrorElemet.innerHTML = emailErrorMessage;
+        emailElement.classList.add('invalid');
+        return false;
+    } else {
+        emailErrorElemet.innerHTML = '';
+        emailElement.classList.remove('invalid');
+        return true;
+    }
+
+}
+
+// Pattern to check the email
+function emailValidator(){
+    const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(emailPattern.test(emailElement.value)){
+        return undefined;
+    }
+    return 'The email is invalid';
+}
+
+// Add event to check city Element
+function validateCity(){
+    if(cityElement){
+        cityElement.onblur = checkCity;
+
+        cityElement.oninput = function(){
+            let cityErrorMessage = cityValidator();
+            let cityErrorElemet = document.querySelector('.errorCityMSG');
+            cityErrorElemet.innerHTML = '';
+            cityElement.classList.remove('invalid');
+            if(cityErrorMessage){
+                cityErrorElemet.innerHTML = cityErrorMessage;
+                cityElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the city element to satisfied with the requirement
+function checkCity(){
+    let cityErrorMessage = cityValidator();
+    let cityErrorElemet = document.querySelector('.errorCityMSG');
+    if(cityErrorMessage){
+        cityErrorElemet.innerHTML = cityErrorMessage;
+        cityElement.classList.add('invalid');
+        return false;
+    } else {
+        cityErrorElemet.innerHTML = '';
+        cityElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the city
+function cityValidator(){
+    const cityPattern = /^[\D]{3,}$/;
+    if(cityPattern.test(cityElement.value)){
+        return undefined;
+    }
+    return "The city name is invalid";
+}
+
+// Add event to check zipcode Element
+function validateZipcode(){
+    if(zipcodeElement){
+        zipcodeElement.onblur = checkZipcode;
+
+        zipcodeElement.oninput = function(){
+            let zipcodeErrorMessage = zipcodeValidator();
+            let zipcodeErrorElemet = document.querySelector('.errorZipcodeMSG');
+            zipcodeErrorElemet.innerHTML = '';
+            zipcodeElement.classList.remove('invalid');
+            if(zipcodeErrorMessage){
+                zipcodeErrorElemet.innerHTML = zipcodeErrorMessage;
+                zipcodeElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the zipcode element to satisfied with the requirement
+function checkZipcode(){
+    let zipcodeErrorMessage = zipcodeValidator();
+    let zipcodeErrorElemet = document.querySelector('.errorZipcodeMSG');
+    if(zipcodeErrorMessage){
+        zipcodeErrorElemet.innerHTML = zipcodeErrorMessage;
+        zipcodeElement.classList.add('invalid');
+        return false;
+    } 
+    else {
+        zipcodeErrorElemet.innerHTML = '';
+        zipcodeElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the zipcode
+function zipcodeValidator(){
+    const zipcodePattern = /^[\d]{4,6}$/;
+    if(zipcodePattern.test(zipcodeElement.value)){
+        return undefined;
+    }
+    else {
+        return 'Zipcode number is invalid'
+    }
+    
+}
+
+// Add event to check zipcode Element
+function validateZipcode(){
+    if(zipcodeElement){
+        zipcodeElement.onblur = checkZipcode;
+
+        zipcodeElement.oninput = function(){
+            let zipcodeErrorMessage = zipcodeValidator();
+            let zipcodeErrorElemet = document.querySelector('.errorZipcodeMSG');
+            zipcodeErrorElemet.innerHTML = '';
+            zipcodeElement.classList.remove('invalid');
+            if(zipcodeErrorMessage){
+                zipcodeErrorElemet.innerHTML = zipcodeErrorMessage;
+                zipcodeElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the zipcode element to satisfied with the requirement
+function checkZipcode(){
+    let zipcodeErrorMessage = zipcodeValidator();
+    let zipcodeErrorElemet = document.querySelector('.errorZipcodeMSG');
+    if(zipcodeErrorMessage){
+        zipcodeErrorElemet.innerHTML = zipcodeErrorMessage;
+        zipcodeElement.classList.add('invalid');
+        return false;
+    } 
+    else {
+        zipcodeErrorElemet.innerHTML = '';
+        zipcodeElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the zipcode
+function zipcodeValidator(){
+    const zipcodePattern = /^[\d]{4,6}$/;
+    if(zipcodePattern.test(zipcodeElement.value)){
+        return undefined;
+    }
+    else {
+        return 'Zipcode number is invalid'
+    }
+    
+}
+
+// Add event to check password Element
+function validatePassword(){
+    if(passwordElement){
+        passwordElement.onblur = checkPassword;
+
+        passwordElement.oninput = function(){
+            let passwordErrorMessage = passwordValidator();
+            let passwordErrorElemet = document.querySelector('.errorPasswordMSG');
+            passwordErrorElemet.innerHTML = '';
+            passwordElement.classList.remove('invalid');
+            if(passwordErrorMessage){
+                passwordErrorElemet.innerHTML = passwordErrorMessage;
+                passwordElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the password element to satisfied with the requirement
+function checkPassword(){
+    let passwordErrorMessage = passwordValidator();
+    let passwordErrorElemet = document.querySelector('.errorPasswordMSG');
+    if(passwordErrorMessage){
+        passwordErrorElemet.innerHTML = passwordErrorMessage;
+        passwordElement.classList.add('invalid');
+        return false;
+    } 
+    else {
+        passwordErrorElemet.innerHTML = '';
+        passwordElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the password
+function passwordValidator(){
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+    if(passwordPattern.test(passwordElement.value)){
+        return undefined;
+    }
+    else {
+        return 'Password must be 8-20 charaters with at least 1 upper and lower case and atleast 1 special character and no space'
+    }
+    
+}
+
+// Add event to recheck password Element
+function validateRePassword(){
+    if(passwordReElement){
+        passwordReElement.onblur = checkRePassword;
+
+        passwordReElement.oninput = function(){
+            let passwordReErrorMessage = passwordReValidator();
+            let passwordReErrorElemet = document.querySelector('.errorPasswordReMSG');
+            passwordReErrorElemet.innerHTML = '';
+            passwordReElement.classList.remove('invalid');
+            if(passwordReErrorMessage){
+                passwordReErrorElemet.innerHTML = passwordReErrorMessage;
+                passwordReElement.classList.add('invalid');
+            }
+        } 
+    }
+}
+
+// Check the password element to satisfied with the requirement
+function checkRePassword(){
+    let passwordReErrorMessage = passwordReValidator();
+    let passwordReErrorElemet = document.querySelector('.errorPasswordReMSG');
+    if(passwordReErrorMessage){
+        passwordReErrorElemet.innerHTML = passwordReErrorMessage;
+        passwordReElement.classList.add('invalid');
+        return false;
+    } 
+    else {
+        passwordReErrorElemet.innerHTML = '';
+        passwordReElement.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Pattern to check the password
+function passwordReValidator(){
+    let passwordReErrorElemet = document.querySelector('#passwordRe');
+    if(passwordElement.value){
+        console.log(passwordElement.value);
+        console.log(passwordReErrorElemet.value);
+        if(passwordElement.value === passwordReErrorElemet.value){
+            return undefined;
+        } else {
+            return "Password did not match!"
         }
-        });
-        /*********backup***********
-                        // Check phone number with "-"
-                        // phone_pattern_2 = /^(([0-9]+\W){8,10})[0-9]$/;
-                        // phone_pattern_3 = /^([0-9]+\W)([0-9]+\W)([0-9]{3,5})$/;
-                        *********backup***********/
+    }
+    else {
+        return 'Please enter the password first'
+    }
+    
+}
+
+// Assign all behaviour of all element 
+function ValidateBehaviour(){
+    validateFName();
+    validateLName();
+    validateAddress();
+    validateCity();
+    validatePhone();
+    validateZipcode();
+    validateEmail();
+    validatePassword();
+    validateRePassword();
+}
+
+// Call the function to add all event listener to all elements
+ValidateBehaviour();
+
+// Handle the submit event
+formElement.addEventListener('submit', function(event){
+    event.preventDefault();
+    let isEmailValid = checkEmail();
+    let isFNameValid = checkFName();
+    let isLNameValid = checkLName();
+    let isPhoneValid = checkPhone();
+    let isZipcodeValid = checkZipcode();
+    let isAddressValid = checkAddress();
+    let isPasswordValid = checkPassword();
+    let isPasswordReValid = checkRePassword();
+    let isCityValid = checkCity();
+    if (isEmailValid && isFNameValid && isLNameValid && isPhoneValid && isAddressValid && isCityValid && isZipcodeValid && isPasswordValid && isPasswordReValid){
+        statusElement.innerHTML = 'Form send!';
+    } else {
+        statusElement.innerHTML = '';
+    }
+})
+
+// Handle the reset event 
+formElement.addEventListener('reset', function(event){
+    let fnameErrorElemet = document.querySelector('.errorFnameMSG');
+    let lnameErrorElemet = document.querySelector('.errorLnameMSG');
+    let emailErrorElemet = document.querySelector('.errorEmailMSG');
+    let phoneErrorElemet = document.querySelector('.errorPhoneMSG');
+    let zipcodeErrorElemet = document.querySelector(".errorZipcodeMSG");
+    let addressErrorElemet = document.querySelector(".errorAddressMSG");
+    let passwordErrorElemet= document.querySelector(".errorPasswordMSG");
+    let passwordReErrorElemet= document.querySelector(".errorPasswordReMSG");
+    let cityErrorElemet= document.querySelector(".errorCityMSG");
+
+    // let phoneErrorElemet = document.querySelector('.phone-error');
 
 
-// Check password
-btn = document.querySelector("#submitBtn");
-      btn.addEventListener("click", function (ev){
-        //   Check password pattern
-          password_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
-        var password = document.querySelector("#password").value,
-            confirmPassword = document.querySelector("#passwordRe").value;
-            //check password strength
-            if (!password_pattern.test(password)){
-            /*********testing************    
-            //     alert("Valid password.");}
-            // else{
-            */
-                alert("Password must be 8-20 charaters with at least 1 upper and lower case and atleast 1 special character and no space")
-            };
-            //confirm password
-            if (password == ""){
-                alert("Password cannot be empty.");
-            }
-            else if(password != confirmPassword){
-                alert("Password didn't match.")
-            }
-      });
-// check email
-btn = document.querySelector("#submitBtn");
-      btn.addEventListener("click", function (ev){
-        email_pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        value = document.querySelector("#emailAddress").value;
-        if (!email_pattern.test(value)){
-        /**********testing***********
-        //     alert("Valid Email address.");
-        // }
-        //else{
-            **********testing***********/
-            alert("Invalid Email address.");
-        }
+    fnameErrorElemet.innerHTML = '';
+    lnameErrorElemet.innerHTML = '';
+    emailErrorElemet.innerHTML = '';
+    passwordErrorElemet.innerHTML = '';
+    zipcodeErrorElemet.innerHTML = '';
+    phoneErrorElemet.innerHTML = '';
+    addressErrorElemet.innerHTML = '';
+    passwordReErrorElemet.innerHTML = '';
+    cityErrorElemet.innerHTML = '';
+    // phoneErrorElemet.innerHTML = '';
 
-        });
-//check name, city, address
-btn = document.querySelector("#submitBtn");
-        btn.addEventListener("click", function (ev){
-            name_pattern = /^[\D]{3,}$/;
-            fname = document.querySelector("#firstName").value;
-            if(!name_pattern.test(fname)){
-                alert("First name must have more than 3 characters.")                
-            }
-        });
-
-btn = document.querySelector("#submitBtn");
-        btn.addEventListener("click", function (ev){
-            name_pattern = /^[\D]{3,}$/;
-            lname = document.querySelector("#lastName").value;
-            if(!name_pattern.test(lname)){
-                alert("Last name must have more than 3 charaters.")                
-            }
-        });
-btn = document.querySelector("#submitBtn");
-        btn.addEventListener("click", function (ev){
-            name_pattern = /^[\D]{3,}$/;
-            city = document.querySelector("#city").value;
-            if(!name_pattern.test(city)){
-                alert("City must have more than 3 charaters.")                
-            }
-        });
-btn = document.querySelector("#submitBtn");
-        btn.addEventListener("click", function (ev){
-            name_pattern = /^[\D]{3,}$/;
-            address = document.querySelector("#address").value;
-            if(!name_pattern.test(address)){
-                alert("Address must have more than 3 charaters.")                
-            }
-        });
-
-// Zipcode check
-btn = document.querySelector("#submitBtn");
-        btn.addEventListener("click", function (ev){
-            code_pattern = /^[\d]{4,6}$/;
-            zipcode = document.querySelector("#zipcode").value;
-            if(!code_pattern.test(zipcode)){
-                alert("Zipcode must have 4-6 digits.")                
-            }
-        });
+    statusElement.innerHTML = '';
+})
