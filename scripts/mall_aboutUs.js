@@ -3,26 +3,26 @@ const data = {
     Minh: {
         otherName: "momocloud",
         age: 21,
-        experience: "Web development and anime related stuff",
-        hobby: "read books and play games"
+        experience: "Web development and App environment development",
+        hobby: "Read books and play games"
     },
     Dat: {
-        otherName: "dat",
-        age: 21,
+        otherName: "Jaaaay",
+        age: 20,
         experience: "Web development",
-        hobby: "read books and play games"
+        hobby: "Read books and play games"
     },
     Anh: {
-        otherName: "quang anh",
-        age: 21,
-        experience: "Web development",
-        hobby: "read books and play games"
+        otherName: "Devsain",
+        age: 20,
+        experience: "Web development and Testing",
+        hobby: "DIY and Game related stuff"
     },
     Phat: {
-        otherName: "phat",
-        age: 21,
+        otherName: "COS",
+        age: 20,
         experience: "Web development",
-        hobby: "read books and play games"
+        hobby: "Read books and play games"
     }
 }
 
@@ -33,21 +33,20 @@ for (let i = 0; i < allImgs.length; i++){
     console.log(allImgs[i]);
     allImgs[i].addEventListener("click", () => {
         let box = document.createElement("div");
-
         let otherName = document.createElement("div");
-        otherName.textContent = data[allImgs[i].alt].otherName;
+        otherName.textContent = "Nickname: " + data[allImgs[i].alt].otherName;
         box.appendChild(otherName);
 
         let age = document.createElement("div");
-        age.textContent = data[allImgs[i].alt].age;
+        age.textContent = "Age: " + data[allImgs[i].alt].age;
         box.appendChild(age);
 
         let experience = document.createElement("div");
-        experience.textContent = data[allImgs[i].alt].experience;
+        experience.textContent = "Experience: " + data[allImgs[i].alt].experience;
         box.appendChild(experience);
 
         let hobby = document.createElement("div");
-        hobby.textContent = data[allImgs[i].alt].hobby;
+        hobby.textContent = "Hobbies: " + data[allImgs[i].alt].hobby;
         box.appendChild(hobby);
 
         box.classList.add("member_info");
@@ -65,6 +64,7 @@ for (let i = 0; i < allImgs.length; i++){
 
         body.appendChild(blurBackground);
         body.appendChild(box);
+       
     }); 
 }
 
