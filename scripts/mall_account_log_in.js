@@ -11,7 +11,7 @@ function logIn(){
        if(passwordErrorMessage === undefined){     
          sessionStorage.setItem("LogInStatus", "In");
          sessionStorage.setItem("user", userNameElement.value);
-         console.log(sessionStorage.getItem("user"));
+         
          navigate();
        } 
     }
@@ -30,6 +30,7 @@ function passwordValidator(){
 
 function navigate(){
     window.location.href = "myAccount-logged-in.html";
+    
 }
 
 submitElement.addEventListener('click', function(e){
