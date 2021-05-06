@@ -34,23 +34,49 @@
         <main>
           <!----------------------------------------single product--------------------------------------------->
           <div id="listDetail">
-            <h2 style="text-align:center">Product Card</h2>
-              <div class="card">
-                <img src="../../../resources/images/Product Image/product_1.jpeg" alt="product1 on display" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$12.99</p>
-                <p style="line-height: 2;">A blue baggy checker shirt</p>                
-                <select>
-                  <option>XL</option>
-                  <option>L</option>
-                  <option>M</option>
-                  <option>S</option>
-                </select>
-                <input type="number" value="1">
-                <p><button id="product">Add to Cart</button> <button>Buy Now</button></p>
+            
+            <div class="card">
+              <div class="card_img">
+                  <img src="../../../resources/images/Product Image/product_1.jpeg" alt="Tailored Jeans">
               </div>
-          <!------------------------------------end of single product-------------------------------------->
-              <section class="recommended">
+                
+              <div class="card_content">
+
+                  <div class="card_content_product_title">
+                    <h3>Tailored Jeans</h3>
+                    
+                  </div>
+
+                  <div class="card_content_product_price">
+                    $12.99
+                  </div>
+
+                  <div class="card_content_product_description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nesciunt totam similique quasi commodi tempora ab earum! Dignissimos, accusantium. Repellat delectus rerum, illum nam accusantium nostrum nemo tempore. Itaque fugiat animi omnis enim recusandae, labore vero veniam ullam numquam esse totam molestiae explicabo dolorum tenetur quia fugit praesentium id laudantium?     
+                  </div>
+
+                  <div class="card_content_buying">
+                    <div class="card_content_buying_option">
+                      <select>
+                        <option>XL</option>
+                        <option>L</option>
+                        <option>M</option>
+                        <option>S</option>
+                      </select>
+                      <input type="number" min="1" placeholder="Quantity">
+                      <div class="card_content_buying_button">
+                        <button id="product">Add to Cart</button> 
+                        <button>Buy Now</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+              </div>
+                
+            </div>
+         
+              <!-- <section class="recommended">
                 <h1 style="padding-top: 18px; padding-bottom: 18px; text-align: center;">Recommended Item</h1>
                 <div class="section">
                   <div class="grid-container">
@@ -58,8 +84,9 @@
                     <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_4.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Cute teddy bear</p></a> </div>
                     <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_5.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Toy phone</p></a> </div>
                 </div>  
-              </section>
-          </div> 
+              </section> -->
+            
+          </div>
         </main>
 
         <footer class="mallFooter">

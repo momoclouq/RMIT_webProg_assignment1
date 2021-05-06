@@ -1,14 +1,116 @@
 /*main item*/
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
+  width: 80%;
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.card_img {
+  width: 50%;
   text-align: center;
-  font-family: sans-serif;
+  display: block;
+}
+
+.card_img img{
+  min-width: 250px;
+  max-width: 500px;
+  max-height: 600px;
+  min-width: 200px;
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin-top: 2%;
+  width: 50%;
+}
+
+.card_content_product_title{
+  font-size: 30px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid black;
+  margin-top: 2%;
 }
 
 
-#listDetail{
+
+.card_content_product_price {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 2%;
+}
+
+.card_content_product_description{
+  margin-top: 5%;
+  font-size: 17px;
+}
+
+.card_content_buying_option{
+  width: 100%;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.card_content_buying_option input[type="number"]{
+  width: 30%;
+  padding: 15px;
+  margin-right: 10px;
+}
+
+.card_content_buying_option select{
+  text-align: center;
+  width: 10%;
+  padding: 15px 5px;
+  margin-right: 10px;
+}
+
+
+.card_content_buying{
+  margin-top: 15%;
+  
+}
+
+.card_content_buying_button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+
+.card_content_buying_button button{
+  width: 50%;
+  display: inline-block;
+  padding: 15px 20px;  
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card_content_buying_button button:hover{
+  background-color: rgba(32, 30, 30, 0.8);
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* #listDetail{
   max-width: 700px;
   padding: 1em;
   margin-bottom: 15px;
@@ -108,4 +210,4 @@ footer {
 
 #ItemDesc{
   color: #000;
-}
+} */
