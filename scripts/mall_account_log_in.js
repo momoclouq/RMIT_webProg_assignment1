@@ -7,9 +7,9 @@ function logIn(){
 
     if(passwordElement) {
        let passwordErrorMessage = passwordValidator();
-       console.log(passwordErrorMessage);
+  
        if(passwordErrorMessage === undefined){     
-         errorElement.innerHTML = "Password is invalid";
+         errorElement.innerHTML = "";
          sessionStorage.setItem("LogInStatus", "In");
          sessionStorage.setItem("user", userNameElement.value);
          navigate();
@@ -23,6 +23,7 @@ function logIn(){
 
 }
 
+// Pattern to check the password
 function passwordValidator(){
     const passwordPattern = /^password$/;
     if(passwordPattern.test(passwordElement.value)){

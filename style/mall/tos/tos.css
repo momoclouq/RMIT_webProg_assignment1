@@ -8,6 +8,7 @@ main {
     max-width: 1000px;
     box-shadow: 0 0 10px black;
     padding: 5px;
+    margin-top: 2%;
 }
 
 /*title*/

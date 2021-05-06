@@ -94,6 +94,9 @@ main a, main a:visited{
     text-decoration: none;
     color:inherit;
 }
+.cookie-container a {
+    color: rgb(35, 200, 187);
+}
 
 @media only screen and (max-width: 767px){
     /* For Mobile */
