@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
-    <div class="box">
+  <div class="boxWrapper">
       <header class="mallHeader">
         <nav>
             <ul class="menu">
@@ -29,11 +29,11 @@
                 <li class="toggle"><span class="bars"></span><li>
             </ul>
         </nav>
-    </header>
+      </header>
 
         <main>
-          <!----------------------------------------single product--------------------------------------------->
-          <div id="listDetail">
+          
+          <section id="listDetail">
             
             <div class="card">
               <div class="card_img">
@@ -72,45 +72,75 @@
                     
                   </div>
                   
-              </div>
-                
             </div>
-         
-              <!-- <section class="recommended">
-                <h1 style="padding-top: 18px; padding-bottom: 18px; text-align: center;">Recommended Item</h1>
-                <div class="section">
-                  <div class="grid-container">
-                    <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_2.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Colorful shoes</p></a></div>
-                    <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_4.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Cute teddy bear</p></a> </div>
-                    <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_5.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Toy phone</p></a> </div>
-                </div>  
-              </section> -->
+                
+          </section>
             
-          </div>
+          <section class="recommended_items">
+              <div class="recommended_items_heading">
+                <h3>Recommended Items</h3>
+              </div>
+              
+              <div class="recommended_items_container">
+                <div class="grid-item">
+                  <a href="cate1prod1.html">
+                    <div class="grid-item-image">
+                      <img src="../../../resources/images/Product Image/product_8.jpeg" alt="recommend1" class="recommendation">
+                    </div>
+                    <div class="grid-item-title">
+                      <p id="ItemDesc">Cute Blue Toaster</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid-item">
+                  <a href="cate1prod1.html" >
+                    <div class="grid-item-image">
+                      <img src="../../../resources/images/Product Image/product_4.jpeg" alt="recommend1" class="recommendation">
+                    </div>
+                    <div class="grid-item-title">
+                      <p id="ItemDesc">Soft Teddy Bear</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid-item">
+                  <a href="cate1prod1.html" >
+                    <div class="grid-item-image">
+                      <img src="../../../resources/images/Product Image/product_5.jpeg" alt="recommend1" class="recommendation">
+                    </div>
+                    <div class="grid-item-title">
+                      <p id="ItemDesc">Colorful Phone</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+          </section>
+
         </main>
 
         <footer class="mallFooter">
           <nav>
             <div class="FooterRow">
-            <div class="FooterColumn">
-            <div class="footerheading">Navigation</div>
-            <ul><a href="../../store/storeHome.html">Home</a></ul>
-            <ul><a href="../../store/storeContact.html">Contact</a></ul>
+              <div class="FooterColumn">
+              <div class="footerheading">Navigation</div>
+              <ul><a href="../../store/storeHome.html">Home</a></ul>
+              <ul><a href="../../store/storeContact.html">Contact</a></ul>
             </div>
             <div class="FooterColumn">
-            <div class="footerheading">Info</div>
-            <ul><a href="../storeAboutUs.html">About us</a></ul>
-            <ul><a href="../storeCopyright.html">CopyRight</a></ul>
+              <div class="footerheading">Info</div>
+              <ul><a href="../storeAboutUs.html">About us</a></ul>
+              <ul><a href="../storeCopyright.html">CopyRight</a></ul>
             </div>
             <div class="FooterColumn">
-            <div class="footerheading">Back To Mall</div>
-            <ul><a href="../../../index.html">Home</a></ul>
-            <ul><a href="../../../mallPages/BrowseStoreCategory.html">Browse</a>></ul>
-            <ul><a href="../../../mallPages/contact.html">Mall Support</a></ul>
-            </div>
+              <div class="footerheading">Back To Mall</div>
+              <ul><a href="../../../index.html">Home</a></ul>
+              <ul><a href="../../../mallPages/BrowseStoreCategory.html">Browse</a></ul>
+              <ul><a href="../../../mallPages/contact.html">Mall Support</a></ul>
+              </div>
             </div>
           </nav>
-          </footer>
-    </div>
-    </body>
+        </footer>
+  </div>
+</body>
 </html>

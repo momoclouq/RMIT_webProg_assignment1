@@ -3,80 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product 2</title>
+    <meta name="description" content="item 1 from store">
+      <meta name="keywords" content="item product store">
+      <meta name="author" content="Team Developers">
+    <title>Product 1</title>
 
-    <link rel="stylesheet" href="../../../style/mall/common.css">
+    <link rel="stylesheet" href="../../../style/Store/common.css">
     <link rel="stylesheet" href="../../../style/mall/Product/product.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
-    <div class="box">
+  <div class="boxWrapper">
       <header class="mallHeader">
         <nav>
             <ul class="menu">
                 <li class="logo"><a href="#">Store 1</a></li>
-                <li class="item mallName"><a href="storeHome.html">Home</a></li>
+                <li class="item mallName"><a href="../storeHome.html">Home</a></li>
 
-                <li class="item"><a href="storeAboutUs.html">About us</a></li>
+                <li class="item"><a href="../storeAboutUs.html">About us</a></li>
                 <li class="item subMenu2"><a href="#">Products</a></li>
-                <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
-                <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
-                <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
-
+                <li class="item item2"><a href="../storeBrowseCategory.html">Browse By Category</a></li>
+                <li class="item item2"><a href="../storeBrowseTime.html">Browse By Created time</a></li>
+                <li class="item lastItem"><a href="../storeContact.html">Contact</a></li>
+                <li class="item account_mall_nav"><a>My Account</a></li>
                 <li class="toggle"><span class="bars"></span><li>
             </ul>
         </nav>
-    </header>
+      </header>
 
         <main>
-          <!----------------------------------------single product--------------------------------------------->
-          <div id="listDetail">
-            <h2 style="text-align:center">Product Card</h2>
-              <div class="card">
-                <img src="../../../resources/images/product.jpeg" alt="product1 on display" style="width:100%">
-                <h1>MacBook Pro 2020</h1>
-                <p class="price">33.000.000vnd</p>
-                <p>Highly productive laptop made by Apple</p>                
-                <select>
-                  <option>256GB</option>
-                <input type="number" value="1">
-                <p><button id="product">Add to Cart</button> <button>Buy Now</button></p>
+          
+          <section id="listDetail">
+            
+            <div class="card">
+              <div class="card_img">
+                  <img src="../../../resources/images/Product Image/product_3.webp" alt="Tailored Jeans">
               </div>
-          <!------------------------------------end of single product-------------------------------------->
-              <section class="recommended">
-                <h1 style="padding-top: 18px; padding-bottom: 18px; text-align: center;">Recommended Item</h1>
-                <div class="section">
-                  <div class="grid-container">
-                    <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_4.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Teddy Bear</p></a></div>
-                    <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_5.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Toy Phone</p></a> </div>
-                    <div class="grid-item"><a href="cate1prod1.html" ><img src="../../../resources/images/Product Image/product_2.jpeg" alt="recommend1" class="recommendation"><p id="ItemDesc">Colorful Shoes</p></a> </div>
-                </div>  
-              </section>
-          </div> 
+                
+              <div class="card_content">
+
+                  <div class="card_content_product_title">
+                    <h3>Black Nike Shoes</h3>
+                    
+                  </div>
+
+                  <div class="card_content_product_price">
+                    $200.00
+                  </div>
+
+                  <div class="card_content_product_description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nesciunt totam similique quasi commodi tempora ab earum! Dignissimos, accusantium. Repellat delectus rerum, illum nam accusantium nostrum nemo tempore. Itaque fugiat animi omnis enim recusandae, labore vero veniam ullam numquam esse totam molestiae explicabo dolorum tenetur quia fugit praesentium id laudantium?     
+                  </div>
+
+                  <div class="card_content_buying">
+                    <div class="card_content_buying_option">
+                      <select>
+                        <option>4 US</option>
+                        <option>5 US</option>
+                        <option>6 US</option>
+                        <option>7 US</option>
+                        <option>8 US</option>
+                        <option>9 US</option>
+                        <option>10 US</option>
+                        <option>11 US</option>
+                        <option>12 US</option>
+                      </select>
+                      <input type="number" min="1" placeholder="Quantity">
+                      <div class="card_content_buying_button">
+                        <button id="product">Add to Cart</button> 
+                        <button>Buy Now</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+            </div>
+                
+          </section>
+            
+          <section class="recommended_items">
+              <div class="recommended_items_heading">
+                <h3>Recommended Items</h3>
+              </div>
+              
+              <div class="recommended_items_container">
+                <div class="grid-item">
+                  <a href="cate1prod1.html">
+                    <div class="grid-item-image">
+                      <img src="../../../resources/images/Product Image/product_8.jpeg" alt="recommend1" class="recommendation">
+                    </div>
+                    <div class="grid-item-title">
+                      <p id="ItemDesc">Cute Blue Toaster</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid-item">
+                  <a href="cate1prod1.html" >
+                    <div class="grid-item-image">
+                      <img src="../../../resources/images/Product Image/product_4.jpeg" alt="recommend1" class="recommendation">
+                    </div>
+                    <div class="grid-item-title">
+                      <p id="ItemDesc">Soft Teddy Bear</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid-item">
+                  <a href="cate1prod1.html" >
+                    <div class="grid-item-image">
+                      <img src="../../../resources/images/Product Image/product_5.jpeg" alt="recommend1" class="recommendation">
+                    </div>
+                    <div class="grid-item-title">
+                      <p id="ItemDesc">Colorful Phone</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+          </section>
+
         </main>
 
         <footer class="mallFooter">
           <nav>
             <div class="FooterRow">
-            <div class="FooterColumn">
-            <div class="footerheading">Navigation</div>
-            <ul><a href="../../storePages/store/storeHome.html">Home</a></ul>
-            <ul><a href="../../storePages/store/storeContact.html">Contact</a></ul>
+              <div class="FooterColumn">
+              <div class="footerheading">Navigation</div>
+              <ul><a href="../../store/storeHome.html">Home</a></ul>
+              <ul><a href="../../store/storeContact.html">Contact</a></ul>
             </div>
             <div class="FooterColumn">
-            <div class="footerheading">Info</div>
-            <ul><a href="../storeAboutUs.html">About us</a></ul>
-            <ul><a href="../storePages/store/storeCopyright.html">CopyRight</a></ul>
+              <div class="footerheading">Info</div>
+              <ul><a href="../storeAboutUs.html">About us</a></ul>
+              <ul><a href="../storeCopyright.html">CopyRight</a></ul>
             </div>
             <div class="FooterColumn">
-            <div class="footerheading">Back To Mall</div>
-            <ul><a href="../../../mallPages/index.html">Home</a></ul>
-            <ul><a href="../../../mallPages/BrowseStoreCategory.html"><p>Browse</p></ul>
-            <ul><a href="/RMIT_webProg_assignment1/mallPages/contact.html">Mall Support</a></ul>
-            </div>
+              <div class="footerheading">Back To Mall</div>
+              <ul><a href="../../../index.html">Home</a></ul>
+              <ul><a href="../../../mallPages/BrowseStoreCategory.html">Browse</a></ul>
+              <ul><a href="../../../mallPages/contact.html">Mall Support</a></ul>
+              </div>
             </div>
           </nav>
-          </footer>
-    </div>
-    </body>
+        </footer>
+  </div>
+</body>
 </html>
