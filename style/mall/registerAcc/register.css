@@ -115,6 +115,14 @@ input:focus {
     display: none;
 }
 
+.status {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(12, 211, 98);
+    margin-top: 20px;
+}
+
 input[type="submit"], input[type="reset"] {
     border:none;
     background-color: #661226;
@@ -137,4 +145,13 @@ input[type="submit"], input[type="reset"] {
     label[for=profilePic]{
         max-width: 600px;
     }
+} 
+
+.ErrorMessage{
+    color: red;
+    font-size: 14px;
+}
+    
+input[type=radio]:link{
+    background-color: red;
 }
