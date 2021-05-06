@@ -1,7 +1,7 @@
 const cookieContainer = document.querySelector(".cookie-container");
 const cookieButton = document.querySelector(".cookie-butn");
 
-cookieButton.addEventListener("click", () =>{
+cookieButton.addEventListener("click", () => {
     cookieContainer.classList.remove("active");
     localStorage.setItem("cookieBannerDisplayed", "true")
 });
