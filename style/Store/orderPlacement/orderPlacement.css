@@ -59,6 +59,13 @@ main section {
     font-weight: 300;
 }
 
+.prodName a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+
 .prodPrice {
     text-align: end;
     height: 100%;
@@ -68,14 +75,12 @@ main section {
 }
 
 .prodQuanity {
-    border-top: 0.5px solid black;
     height: 30%;
     width: 100%;
     padding: 5px 10px;
-    background-color: #e4e6eb;
     display: flex;
     justify-content: space-between;
-    align-items:  center;
+    align-items: center;
 }
 
 .prodQuanity button {
@@ -83,7 +88,7 @@ main section {
     padding: 5px;
     border-radius: 5px;
     font-weight: 400;
-    color: white;
+    color: rgb(10, 10, 10);
 }
 
 .prodQuanity button:hover{

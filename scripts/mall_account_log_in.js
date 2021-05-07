@@ -14,7 +14,7 @@ function logIn(){
          sessionStorage.setItem("user", userNameElement.value);
          navigate();
        } else {
-            errorElement.innerHTML = "Passwrod is invalid";
+            errorElement.innerHTML = "Password is invalid";
             errorElement.style.color = "red";
             errorElement.style.textAlign = "center";
        }
