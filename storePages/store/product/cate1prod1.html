@@ -27,6 +27,7 @@
                 <li class="item item2"><a href="../storeBrowseTime.html">Browse By Created time</a></li>
                 <li class="item lastItem"><a href="../storeContact.html">Contact</a></li>
                 <li class="item account_mall_nav"><a>My Account</a></li>
+                <li class="item cart_mall_nav"><a href="../storeOrderPlacement.html">Cart<span id="cart_nav"></span></a></li>
                 <li class="toggle"><span class="bars"></span><li>
             </ul>
         </nav>
@@ -44,12 +45,12 @@
               <div class="card_content">
 
                   <div class="card_content_product_title">
-                    <h3>Tailored Jeans</h3>
+                    <h3>Blue Flannel</h3>
                     
                   </div>
 
                   <div class="card_content_product_price">
-                    $12.99
+                    $40.00
                   </div>
 
                   <div class="card_content_product_description">
@@ -64,10 +65,10 @@
                         <option>M</option>
                         <option>S</option>
                       </select>
-                      <input type="number" min="1" placeholder="Quantity">
+                      <input type="number" min="1" placeholder="Quantity" value="1" id="product1_quantity">
                       <div class="card_content_buying_button">
-                        <button id="product">Add to Cart</button> 
-                        <button>Buy Now</button>
+                        <button id="add_product_to_cart1">Add to Cart</button> 
+                        <button id="buy_now_product1">Buy Now</button>
                       </div>
                     </div>
                     
@@ -84,7 +85,7 @@
               
               <div class="recommended_items_container">
                 <div class="grid-item">
-                  <a href="cate1prod1.html">
+                  <a href="cate1prod2.html">
                     <div class="grid-item-image">
                       <img src="../../../resources/images/Product Image/product_8.jpeg" alt="recommend1" class="recommendation">
                     </div>
@@ -95,7 +96,7 @@
                 </div>
 
                 <div class="grid-item">
-                  <a href="cate1prod1.html" >
+                  <a href="cate1prod2.html" >
                     <div class="grid-item-image">
                       <img src="../../../resources/images/Product Image/product_4.jpeg" alt="recommend1" class="recommendation">
                     </div>
@@ -150,7 +151,8 @@
         </footer>
         <script src="../../../scripts/cookie-consent.js"></script>
         <script src="../../../scripts/store_index.js"></script>
-        
+        <script src="../../../scripts/product-detail1.js"></script>
+        <script src="../../../scripts/cart_quantity.js"></script>
   </div>
 </body>
 </html>
