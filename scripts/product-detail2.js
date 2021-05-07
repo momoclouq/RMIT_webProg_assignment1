@@ -25,6 +25,16 @@ addElementProduct2.addEventListener('click', () =>{
     }
 })
 
+buyNowElementProduct2.addEventListener('click', () => {
+    
+    if(sessionStorage.getItem("LogInStatus")){
+        cartNumbers();
+        window.location.href = "../storeOrderPlacement.html";
+    } else {
+        window.location.href = "../../../mallPages/Account/myAccount-Log-in.html";
+    }
+})
+
 function cartNumbers(){
     let productNumbers = sessionStorage.getItem("cartNumbers");
     let newQuantityValue2 = product2QuantityElement.value;

@@ -45,10 +45,20 @@
     
                 <section class="checkout">
                     <div class="summary">
-                        <span class="priceText">Total amount: </span>
-                        <span class="priceTotal"></span>
+                        <div>
+                            <span class="priceText">Total amount: <span class="priceTotalText"></span></span>
+                            <span class="priceTotal"></span>
+                        </div>
+                        
+                        <div class="checkout_coupon">
+                            <input type="text" name="coupon" id="coupon" placeholder="Coupon">
+                            <button class = "couponBtn">Apply</button>
+                            
+                        </div>
+                        <span class="errorCoupon"></span>
                     </div>
-    
+                    
+                    
                     <form class="options">
                         <button class="continueBtn">Continue Shopping</button>
                         <button class="orderBtn">Order</button>

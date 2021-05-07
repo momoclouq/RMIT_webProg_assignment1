@@ -25,6 +25,16 @@ addElementProduct1.addEventListener('click', () =>{
     }
 })
 
+buyNowElementProduct1.addEventListener('click', () => {
+    
+    if(sessionStorage.getItem("LogInStatus")){
+        cartNumbers();
+        window.location.href = "../storeOrderPlacement.html";
+    } else {
+        window.location.href = "../../../mallPages/Account/myAccount-Log-in.html";
+    }
+})
+
 
 
 function cartNumbers(){
@@ -87,7 +97,6 @@ function totalCost(){
     sessionStorage.setItem("product1TotalCost", newCostProduct1);
     console.log(sessionStorage.getItem("product1TotalCost"));
 }
-
 
 
 
