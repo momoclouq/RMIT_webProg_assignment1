@@ -216,7 +216,7 @@ function couponDiscount(){
     let currentFinalPrice = sessionStorage.getItem("totalPriceCart");
     currentFinalPrice = Number.parseInt(currentFinalPrice, 10);
     
-    if(couponValueElement && totalPriceElement){
+    if(couponValueElement && currentFinalPrice != null){
         applyCouponElement.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -246,6 +246,8 @@ function couponDiscount(){
             }
             
         })
+
+        
     }
 }
 
