@@ -50,7 +50,9 @@ function cartNumbers(){
         document.querySelector("#cart_nav").innerHTML = `(${sessionStorage.getItem("cartNumbers")})`;
     }
 
-
+    //popup success add to cart message
+    //???
+    
     setItems();
 }
 
