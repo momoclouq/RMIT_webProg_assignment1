@@ -3,7 +3,7 @@ if (cartNavQuantity){
     if(sessionStorage.getItem("cartNumbers")){
         cartNavQuantity.innerHTML = `(${sessionStorage.getItem("cartNumbers")})`;
     }else {
-        cartNavQuantity.textContent = "0";    
+        cartNavQuantity.textContent = "(0)";    
     } 
 }
 
