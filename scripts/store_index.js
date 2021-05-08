@@ -85,7 +85,7 @@ if (sessionStorage.getItem('LogInStatus') != null) {
     logOutBtn.appendChild(logOutLink);
 
     let menu = document.querySelector(".menu");
-    let toggleBtn = document.querySelector(".lastItem");
-    menu.insertBefore(logOutBtn, toggleBtn);
+    let cartBtn = document.querySelector(".cart_mall_nav");
+    menu.insertBefore(logOutBtn, cartBtn);
     console.log(menu);
 }
