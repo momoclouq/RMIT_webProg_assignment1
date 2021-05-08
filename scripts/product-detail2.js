@@ -35,6 +35,20 @@ buyNowElementProduct2.addEventListener('click', () => {
     }
 })
 
+function showPopupSuccessAddToCart(){
+    let popup = document.createElement("div");
+    popup.classList.add("successPopup");
+
+    popup.textContent = "Item added to cart";
+
+    let body = document.querySelector("body");
+    body.appendChild(popup);
+
+    setTimeout(() => {
+        popup.remove();
+    }, 2000);
+}
+
 function cartNumbers(){
     let productNumbers = sessionStorage.getItem("cartNumbers");
     let newQuantityValue2 = product2QuantityElement.value;
@@ -47,6 +61,9 @@ function cartNumbers(){
         sessionStorage.setItem("cartNumbers", newQuantityValue2);
         document.querySelector("#cart_nav").textContent = `(${sessionStorage.getItem("cartNumbers")})`;
     }
+
+    //show success popup message
+    showPopupSuccessAddToCart();
 
     setItems();
 }

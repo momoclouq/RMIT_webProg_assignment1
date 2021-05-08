@@ -149,6 +149,21 @@
   }
 }
 
+/*popup panel*/
+.successPopup {
+  position: fixed;
+  top: 80px;
+  z-index: 20;
+  border-radius: 10px;
+  padding: 20px;
+  background: #283c86; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #283c86, #45a247); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #283c86, #45a247);
+  border: 1px solid white;
+  color: white;
+  right: 20px;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   /* For tablet device */
   .card {
@@ -438,4 +453,3 @@
     
   }
 }
-

@@ -35,7 +35,19 @@ buyNowElementProduct1.addEventListener('click', () => {
     }
 })
 
+function showPopupSuccessAddToCart(){
+    let popup = document.createElement("div");
+    popup.classList.add("successPopup");
 
+    popup.textContent = "Item added to cart";
+
+    let body = document.querySelector("body");
+    body.appendChild(popup);
+
+    setTimeout(() => {
+        popup.remove();
+    }, 2000);
+}
 
 function cartNumbers(){
     let productNumbers = sessionStorage.getItem("cartNumbers");
@@ -51,7 +63,7 @@ function cartNumbers(){
     }
 
     //popup success add to cart message
-    //???
+    showPopupSuccessAddToCart();
     
     setItems();
 }
