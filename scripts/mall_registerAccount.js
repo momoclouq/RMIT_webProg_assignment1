@@ -1,3 +1,4 @@
+//extra form for business owner
 function handleClick(evt){
     let formForOwner = document.querySelector(".forOwner");
 
