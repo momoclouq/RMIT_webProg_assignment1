@@ -74,30 +74,21 @@ main section {
     padding: 5px 10px;
     background-color: #e4e6eb;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items:  center;
 }
 
-.prodQuanity button {
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 400;
-    color: white;
+.adjustBtn {
+    padding: 3px;
 }
 
-.prodQuanity button:hover{
+.adjustBtn:hover{
     box-shadow: 0 0 10px white;
 }
 
-.prodQuanity label {
-    font-weight: 300;
-    font-size: 0.75em;
-}
-
-.prodQuanity input[type=number]{
+.prodQuanity input[type=tel]{
     width: 40px;
-    margin-left: 10px;
+    margin: 0 10px;
     border: none;
     padding: 2px;
     box-shadow: 0px 0px 2px grey;
@@ -165,6 +156,39 @@ main section {
 
 .continueBtn {
     background: darkgray;
+}
+
+/*coupon section*/
+.checkout_coupon {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: 0 0 1px grey;
+}
+
+#coupon {
+    padding: 3px;
+    margin-right: 5px;
+}
+
+.couponBtn {
+    padding: 3px;
+
+}
+
+.errorCoupon {
+    display: none;
+    padding: 10px;
+    background-color: snow;
+    text-align: center;
+}
+
+.isValid {
+    color: #077524;
+}
+
+.isInvalid {
+    color: red;
 }
 
 @media all and (min-width: 768px) {

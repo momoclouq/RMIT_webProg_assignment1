@@ -18,19 +18,16 @@ function displayCart(){
                         <div class="prodName">
                             <h3>${item.name}</h3>    
                         </div>
-
-                    </div>
-                    <div class="prodDetails">
                         <div class="productPrice">
                             $${item.price}.00
                         </div>
-                        <div class="productQuantity">
-                            <ion-icon class="decreaseQuantity decrease${item.tag}" name="remove-outline"></ion-icon>
-                            <input type="tel" id="quanity${item.tag}" name="quanity" maxlength="10" readonly value="${item.inCart}">
-                            <ion-icon class="increaseQuantity increase${item.tag}" name="add-outline"></ion-icon>
-                        </div>
-                                    
                     </div>
+
+                        <div class="prodQuanity">
+                            <ion-icon class="adjustBtn decreaseQuantity decrease${item.tag}" name="remove-outline"></ion-icon>
+                            <input type="tel" id="quanity${item.tag}" name="quanity" maxlength="10" readonly value="${item.inCart}">
+                            <ion-icon class="adjustBtn increaseQuantity increase${item.tag}" name="add-outline"></ion-icon>
+                        </div>
                 </div>
                 </li>
             `
@@ -211,20 +208,26 @@ function couponDiscount(){
     let currentFinalPrice = sessionStorage.getItem("totalPriceCart");
     currentFinalPrice = Number.parseInt(currentFinalPrice, 10);
 
+    let errorCouponElement = document.querySelector(".errorCoupon");
+
     applyCouponElement.addEventListener('click', function(){
         let couponValue = coupons[couponValueElement.value];
         console.log(couponValue);
+
+        errorCouponElement.style.display = "block";
 
         if (couponValue){
             currentFinalPrice = currentFinalPrice - (currentFinalPrice*couponValue);
             sessionStorage.setItem("totalPriceCart", currentFinalPrice);
             totalPriceElement.innerHTML = `$${currentFinalPrice}.00`;
-
+            errorCouponElement.textContent = "Coupon " + couponValueElement.value + " selected. Deducted " + (couponValue * 100) + "%";
+            errorCouponElement.classList.add("isValid");
+            errorCouponElement.classList.remove("isInvalid");
 
             applyCouponElement.disabled = true;
         } else {
-            let errorCouponElement = document.querySelector(".errorCoupon");
-            errorCouponElement.textContent = "The coupon is invalid";
+            errorCouponElement.textContent = "Coupon is invalid";
+            errorCouponElement.classList.add("isInvalid");
         }
     });
 }
