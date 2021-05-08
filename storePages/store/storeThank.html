@@ -8,14 +8,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../../style/store/common.css">
-        <link rel="stylesheet" href="../../style/store/orderPlacement/orderThank.css">
+        <link rel="stylesheet" href="../../style/Store/common.css">
+        <link rel="stylesheet" href="../../style/Store/orderPlacement/orderThank.css">
+        <link rel="stylesheet" href="../../style/cookie-consent/cookie-consent.css">
     <body>
         <div class="boxWrapper">
             <header class="mallHeader">
                 <nav>
                     <ul class="menu">
-                        <li class="logo"><a href="#">Store 1</a></li>
+                        <li class="logo"><a href="storeHome.html">Store 1</a></li>
                         <li class="item mallName"><a href="storeHome.html">Home</a></li>
         
                         <li class="item"><a href="storeAboutUs.html">About us</a></li>
@@ -23,7 +24,8 @@
                         <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
                         <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
                         <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
-        
+                        <li class="item account_mall_nav"><a>My Account</a></li>
+                        <li class="item cart_mall_nav"><a href="storeOrderPlacement.html">Cart<span id="cart_nav"></span></a></li>
                         <li class="toggle"><span class="bars"></span><li>
                     </ul>
                 </nav>
@@ -42,6 +44,12 @@
                     <div class="orderCode">XKTAIFLAMFK</div>
                     <div>You can visit your order <a href="#">here</a> </div>
                 </section>
+                <div class="cookie-container">
+                    <p>
+                        We use cookie to store the data given to us stored locally on your machine to give you the best experience the site. To find out more, please read our <a href="mallPages/privacy.html">privacy policy</a>.
+                    </p>
+                    <button class="cookie-butn">Okay</button>
+                </div>
             </main>
     
             <footer class="mallFooter">
@@ -69,5 +77,7 @@
         </div>
 
         <script src="../../scripts/store_index.js"></script>
+        <script src="../../scripts/cookie-consent.js"></script>
+        <script src="../../scripts/cart_quantity.js"></script>
     </body>
 </html>

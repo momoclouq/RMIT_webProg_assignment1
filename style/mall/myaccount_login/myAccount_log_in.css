@@ -258,6 +258,7 @@
         align-items: center;
         justify-content: center;
         padding-top: 4rem;
+        margin-top: 20px;
     }
     
     .end-box p {
@@ -402,6 +403,7 @@
         align-items: center;
         justify-content: center;
         padding: 20px;
+        margin-top: 30px;
     }
     
     .end-box p {
@@ -426,6 +428,7 @@
         color: rgb(215,105,105);
         cursor: pointer;
     }
+    
 } 
 
  

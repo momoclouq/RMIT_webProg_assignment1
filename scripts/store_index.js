@@ -55,3 +55,18 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+
+// User Authentication for My Account Page
+let myAccountElement = document.querySelector(".account_mall_nav");
+
+ myAccountElement.onclick = function(){
+    //Is the user authenticated?
+    if (sessionStorage.getItem('LogInStatus') === null) {
+     window.location.pathname = "mallPages/Account/myAccount-Log-in.html";
+    }
+    else {
+    //The user is authenticated and the authentication has not expired.
+        window.location.pathname = "mallPages/Account/myAccount-logged-in.html";
+    }
+ 
+ }

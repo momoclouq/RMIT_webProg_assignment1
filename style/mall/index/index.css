@@ -44,7 +44,7 @@
 
 .listScrollMenu {
     padding: 5px;
-    background-color: darkgray;
+    
 }
 
 .listScrollMenu_item_store {
@@ -65,13 +65,10 @@
 /* Featured Stores*/
 
 .list_display_store_card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: inline-block;
     border: 1px solid black;
-    border-radius: 5px;
-    min-width: 300px;
-    min-height: 300px;
+    background-color: white;
+    padding: 10px 30px;
 }
 
 .list_display_store_icon img{
@@ -97,58 +94,50 @@ main a, main a:visited{
     text-decoration: none;
     color:inherit;
 }
+.cookie-container a {
+    color: rgb(35, 200, 187);
+}
 
 @media only screen and (max-width: 767px){
     /* For Mobile */
     .list_display_stores{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-left: 10%;
+        display: inline-block;
+        border: 1px solid black;
+        background-color: white;
+        padding: 10px 30px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
     /* For Tablet */
     .list_display_stores{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
+        display: inline-block;
+        border: 1px solid black;
+        background-color: white;
+        padding: 10px 30px;
     }
 }
 @media only screen and (min-width: 1025px){
     /* For Desktop */
     .list_display_stores{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
+        display: inline-block;
+        border: 1px solid black;
+        background-color: white;
+        padding: 10px 30px;
     }
 }
 
 /* Featured Products */
 .list_display_product_card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: inline-block;
     border: 1px solid black;
-    border-radius: 5px;
-    min-width: 300px;
-    min-height: 300px;
+    background-color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
 }
 
 .list_display_product_icon img{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     display: block;
     padding: 10px 0;
     align-items: center;
@@ -167,38 +156,51 @@ main a, main a:visited{
 
 @media only screen and (max-width: 767px){
     /* For Mobile */
-    .list_display_products{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-left: 10%;
+    .list_display_stores{
+        display: inline-block;
+        border: 1px solid black;
+        background-color: white;
+        padding: 10px 30px;
+    }
+
+    .list_display_product_card{
+        display: inline-block;
+        border: 1px solid black;
+        background-color: white;
+        padding: 10px 15px;
+        margin: 0 10px;
+    }
+
+    .list_display_product_icon img{
+        width: 200px;
+        height: 200px;
+        display: block;
+        padding: 10px 10px;
+        align-items: center;
+    }
+
+    .list_display_product_content{
+        text-align: center;
+        margin-top: 5px;
+        font-size: 13px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
     /* For Tablet */
-    .list_display_products{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
+    .list_display_stores{
+        display: inline-block;
+        border: 1px solid black;
+        background-color: white;
+        padding: 10px 30px;
     }
 }
 @media only screen and (min-width: 1025px){
     /* For Desktop */
-    .list_display_products{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
+    .list_display_stores{
+        display: inline-block;
+        border: 1px solid black;
+        background-color: white;
+        padding: 10px 30px;
     }
 }
 

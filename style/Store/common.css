@@ -18,12 +18,15 @@ main {
 }
 
 .boxWrapper {
-    width: 100%;
+    /* width: 100%;
     background-color: #fff;
     min-height: 100vh;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: center; */
+    background-color: #fff;
+    min-height: 100vh;
+    position: relative;
 }
 
 /*Header*/
@@ -271,6 +274,7 @@ footer nav .FooterRow{
     
     .mallFooter{
         flex-direction: column;
+        display: contents;
     }
 
     footer {  
