@@ -23,7 +23,7 @@ addElementProduct2.addEventListener('click', () =>{
     } else {
         window.location.href = "../../../mallPages/Account/myAccount-Log-in.html";
     }
-})
+});
 
 buyNowElementProduct2.addEventListener('click', () => {
     
@@ -42,10 +42,10 @@ function cartNumbers(){
 
     if(productNumbers){
         sessionStorage.setItem("cartNumbers", totalCartNumbers);
-        document.querySelector("#cart_nav").innerHTML = `(${sessionStorage.getItem("cartNumbers")})`;
+        document.querySelector("#cart_nav").textContent = `(${sessionStorage.getItem("cartNumbers")})`;
     } else {
         sessionStorage.setItem("cartNumbers", newQuantityValue2);
-        document.querySelector("#cart_nav").innerHTML = `(${sessionStorage.getItem("cartNumbers")})`;
+        document.querySelector("#cart_nav").textContent = `(${sessionStorage.getItem("cartNumbers")})`;
     }
 
     setItems();
@@ -82,7 +82,7 @@ function setItems(){
     }
 
     sessionStorage.setItem("productsInCart", JSON.stringify(cartItems));
-    totalCost()
+    totalCost();
 }
 
 function totalCost(){

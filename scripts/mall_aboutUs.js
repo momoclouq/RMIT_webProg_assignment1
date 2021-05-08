@@ -3,7 +3,7 @@ const data = {
     Minh: {
         otherName: "momocloud",
         age: 21,
-        experience: "Web development and App environment development",
+        experience: "Web development and Java",
         hobby: "Read books and play games"
     },
     Dat: {
@@ -33,6 +33,12 @@ for (let i = 0; i < allImgs.length; i++){
     console.log(allImgs[i]);
     allImgs[i].addEventListener("click", () => {
         let box = document.createElement("div");
+
+        let title = document.createElement("div");
+        title.textContent = "Personal information";
+        title.classList.add("boxTitle");
+        box.appendChild(title);
+
         let otherName = document.createElement("div");
         otherName.textContent = "Nickname: " + data[allImgs[i].alt].otherName;
         box.appendChild(otherName);

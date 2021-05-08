@@ -1,12 +1,9 @@
-
-
 function displayCart(){
     // Get the price and calculate the total price
     let totalNumberHeading = document.querySelector(".title");
     let cartItems = sessionStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
     let productList = document.querySelector(".product-list");
-   
 
     if(cartItems && productList){
         productList.innerHTML = "";
@@ -15,7 +12,7 @@ function displayCart(){
           
             productList.innerHTML += `
             <li class="product ${item.tag}_cart">
-                <div class="prodImg"><img src="../../resources/images/Product Image/${item.tag}.jpeg" alt="product1 on display"></div>
+                <div class="prodImg"><img src="../../resources/images/Product Image/${item.tag}.jpeg" alt="${item.tag} on display"></div>
                 <div class="prodContent">
                     <div class="prodDesc">
                         <div class="prodName">
@@ -37,11 +34,9 @@ function displayCart(){
                 </div>
                 </li>
             `
-        })
+        });
 
         displayTotalPrice();
-      
-
     }
 }
 
@@ -50,12 +45,10 @@ function orderDone(){
  
     orderDoneElement.addEventListener('click', function(e) {
         e.preventDefault();
-        let product1TotalPrice = sessionStorage.getItem("product1TotalCost");
-        let product2TotalPrice = sessionStorage.getItem("product2TotalCost");
-        if(product1TotalPrice || product2TotalPrice){
+        if (sessionStorage.getItem("productsInCart")) {
             window.location.href = "storeThank.html";
-        }  
-    })
+        }
+    });
 }
 
 function continueShopping(){
@@ -63,19 +56,16 @@ function continueShopping(){
     
     continueShoppingElement.addEventListener('click', function(e) {
         e.preventDefault();
-        let product1TotalPrice = sessionStorage.getItem("product1TotalCost");
-        let product2TotalPrice = sessionStorage.getItem("product2TotalCost");
-        if(product1TotalPrice || product2TotalPrice){
+        if(sessionStorage.getItem("productsInCart")){
             history.go(-1);
         }  
-    })
+    });
 }
 
 function increaseQuantity(){
     let increase1Element = document.querySelector(".increaseproduct_1");
     let increase2Element = document.querySelector(".increaseproduct_2");
   
-
     if(increase1Element){
         increase1Element.addEventListener('click', function() {
             let product1QuantityCart = document.getElementById("quanityproduct_1");
@@ -206,8 +196,13 @@ function displayTotalPrice(){
         totalPriceElement.innerHTML = `$${product2TotalPrice}.00`;
         sessionStorage.setItem("totalPriceCart", product2TotalPrice);
     }
-    
 }
+
+//coupon sections
+const coupons = {
+    "COSC2430-HD": 0.2,
+    "COSC2430-DI": 0.1
+};
 
 function couponDiscount(){
     let couponValueElement = document.getElementById("coupon");
@@ -215,42 +210,24 @@ function couponDiscount(){
     let totalPriceElement = document.querySelector(".priceTotalText");
     let currentFinalPrice = sessionStorage.getItem("totalPriceCart");
     currentFinalPrice = Number.parseInt(currentFinalPrice, 10);
-    
-    if(couponValueElement && currentFinalPrice != null){
-        applyCouponElement.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            let couponValue = couponValueElement.value;
-           
-            // COSC2430-DI
-            if(couponValue === "COSC2430-HD"){
-                let errorCouponElement = document.querySelector(".errorCoupon");
-                currentFinalPrice = currentFinalPrice - (currentFinalPrice*0.2);
-                sessionStorage.setItem("totalPriceCart", currentFinalPrice);
-                totalPriceElement.innerHTML = `$${currentFinalPrice}.00`;
-                applyCouponElement.disabled = true;
-                errorCouponElement.innerHTML = "";
-            }
 
-            else if(couponValue === "COSC2430-DI"){
-                let errorCouponElement = document.querySelector(".errorCoupon");
-                currentFinalPrice = currentFinalPrice - (currentFinalPrice*0.1);
-                sessionStorage.setItem("totalPriceCart", currentFinalPrice);
-                totalPriceElement.innerHTML = `$${currentFinalPrice}.00`;
-                applyCouponElement.disabled = true;
-                errorCouponElement.innerHTML = "";
-            }
-            else{
-                let errorCouponElement = document.querySelector(".errorCoupon");
-                errorCouponElement.innerHTML = "The coupon is invalid";
-            }
-            
-        })
+    applyCouponElement.addEventListener('click', function(){
+        let couponValue = coupons[couponValueElement.value];
+        console.log(couponValue);
 
-        
-    }
+        if (couponValue){
+            currentFinalPrice = currentFinalPrice - (currentFinalPrice*couponValue);
+            sessionStorage.setItem("totalPriceCart", currentFinalPrice);
+            totalPriceElement.innerHTML = `$${currentFinalPrice}.00`;
+
+
+            applyCouponElement.disabled = true;
+        } else {
+            let errorCouponElement = document.querySelector(".errorCoupon");
+            errorCouponElement.textContent = "The coupon is invalid";
+        }
+    });
 }
-
 
 displayCart();
 increaseQuantity();

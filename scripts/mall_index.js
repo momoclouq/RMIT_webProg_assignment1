@@ -67,8 +67,7 @@ console.log(myAccountElement);
     //The user is authenticated and the authentication has not expired.
         window.location.pathname = "mallPages/Account/myAccount-logged-in.html";
     }
- 
- }
+}
 
  
 //Infinite scrolling

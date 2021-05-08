@@ -68,5 +68,24 @@ let myAccountElement = document.querySelector(".account_mall_nav");
     //The user is authenticated and the authentication has not expired.
         window.location.pathname = "mallPages/Account/myAccount-logged-in.html";
     }
- 
- }
+}
+
+//log out functionality
+if (sessionStorage.getItem('LogInStatus') != null) {
+    let logOutBtn = document.createElement("li");
+    let logOutLink = document.createElement("a");
+    logOutLink.href="#";
+    logOutLink.textContent = "Log out";
+    logOutLink.addEventListener("click", function(){
+        sessionStorage.removeItem('LogInStatus');
+    });
+
+    logOutBtn.classList.add("item");
+
+    logOutBtn.appendChild(logOutLink);
+
+    let menu = document.querySelector(".menu");
+    let toggleBtn = document.querySelector(".lastItem");
+    menu.insertBefore(logOutBtn, toggleBtn);
+    console.log(menu);
+}

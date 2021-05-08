@@ -122,6 +122,11 @@ main section {
 }
 
 /*checkout section*/
+.checkout {
+    display: flex;
+    flex-direction: column;
+}
+
 .summary {
     padding: 15px;
     display: flex;

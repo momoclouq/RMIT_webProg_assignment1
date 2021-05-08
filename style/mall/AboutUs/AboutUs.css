@@ -139,6 +139,18 @@ text-align: center;
   flex-direction: column;
   align-items: flex-start;
   justify-content: start;
+  border-radius: 5px;
+}
+
+.member_info div {
+  font-size: 1.2em;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.boxTitle {
+  font-weight: 700 !important;
+  color: #303030;
 }
 
 .blurBackground {
