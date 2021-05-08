@@ -4,6 +4,11 @@
     white-space: nowrap;
 }
 
+.listScrollMenu_center {
+    display: flex;
+    justify-content: center;
+}
+
 .listScrollMenu_item {
     display: inline-block;
     border: 1px solid black;
@@ -30,6 +35,10 @@
 
 /*new list*/
 #newStoreList {
+    padding: 15px;
+}
+
+#newProductList {
     padding: 15px;
 }
 
@@ -63,6 +72,9 @@
 } 
 
 /* Featured Stores*/
+#featureProductList {
+    padding: 15px;
+}
 
 .list_display_store_card{
     display: inline-block;

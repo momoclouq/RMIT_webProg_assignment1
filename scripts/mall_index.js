@@ -78,28 +78,47 @@ function isHovering(element){
     return element.classList.contains("hovering");
 }
 
+//check desktop and tablet screen
+function isTabletDesktop(){
+    return window.innerWidth > 767;
+}
+
 const scrollbars = document.querySelectorAll(".listScrollMenu");
 for (let i = 0; i < scrollbars.length; i++){
     //scrolling effect
     let offset = 2;
-    setInterval(() => {
-        if (!isHovering(scrollbars[i])){
-            scrollbars[i].scrollLeft += offset;
-            if (scrollbars[i].scrollLeft == currentScrollWidth[i]){
-                console.log("here");
-                scrollbars[i].scroll(0,0);
-            } else currentScrollWidth[i] = scrollbars[i].scrollLeft; 
-        }
-    }, 100);
 
-    //hover effect
-    scrollbars[i].addEventListener("mouseover", function(){
-        console.log("hovering");
-        scrollbars[i].classList.add("hovering");
-    });
+    //calculate if the list is scrollable 
+    let totalChildrenWidth = 0;
+    let totalChildren = scrollbars[i].children;
+    for (let k = 0; k < totalChildren.length; k++){
+        let element = totalChildren[k];
 
-    scrollbars[i].addEventListener("mouseout", function(){
-        console.log("not hovering");
-        scrollbars[i].classList.remove("hovering");
-    });
+        totalChildrenWidth += element.offsetWidth;
+    }
+
+    //if the list is scrollable then set up events
+    if (totalChildrenWidth > scrollbars[i].offsetWidth){
+        setInterval(() => {
+            if (isTabletDesktop() && !isHovering(scrollbars[i]) || !isTabletDesktop()){
+                scrollbars[i].scrollLeft += offset;
+    
+                if (scrollbars[i].scrollLeft == currentScrollWidth[i]){
+                    scrollbars[i].scroll(0,0);
+                } else currentScrollWidth[i] = scrollbars[i].scrollLeft; 
+            }
+        }, 100);
+    
+        //hover effect
+        scrollbars[i].addEventListener("mouseover", function(){
+            scrollbars[i].classList.add("hovering");
+        });
+    
+        scrollbars[i].addEventListener("mouseout", function(){
+            scrollbars[i].classList.remove("hovering");
+        });
+    } else {
+        //center the list if the list is not scrollable (too short)
+        scrollbars[i].classList.add("listScrollMenu_center");
+    }
 }
