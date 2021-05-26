@@ -27,142 +27,81 @@
                         <form>
                             <div class="catergory">
                                 <h3>Choose a category</h3>
-                                <select name="products" id="products">
-                                <option value="clothes">Clothes</option>
-                                <option value="kitchen">Kitchen</option>
-                                <option value="beauty">Beauty</option>
-                                <option value="toys">Toys</option>
-                                <option value="electtronics">Electronics</option>
-                                </select>
+                                <form action="" method="get">
+                                    <select name="products" id="products" onchange="this.form.submit()">
+                                    <option selected disabled>Choose store type</option>
+                                    <?php
+                                        //get all the selection from categories file
+                                        $file = fopen("../../files/given_data/categories.csv", "r");
+                                        flock($file, LOCK_SH);
+                                        $title = fgets($file);
+                                        while($line = fgets($file)){
+                                            //split the data
+                                            $items = explode(",", $line);
+        
+                                            $output = 0;
+                                            if($items[0] == $_GET["products"]){
+                                                $output = <<<"HTML"
+                                                    <option value="$items[0]" selected>$items[1]</option>
+                                                HTML;
+                                            } else {
+                                                $output = <<<"HTML"
+                                                    <option value="$items[0]">$items[1]</option>
+                                                HTML;
+                                            }
+                                            
+                                            echo $output;
+                                        }
+                                        flock($file, LOCK_UN);
+                                        fclose($file);
+                                    ?>
+                                    </select>
+                                </form>
                             </div>
                         </form>
                     </div>
     
                     <div class="product-list">
                         <!--a random list of products-->
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store1.jpeg" alt="Luxury Cloth Louis Vution"></a>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">Louis Vuition</a>
-                                    </div>
-                                    <div class="product-description">Luxury Clothing</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_2.jpeg" alt="Luxury Cloth Gucci"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">Gucci</a>
-                                    </div>
-                                    <div class="product-description">Luxury Clothing</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_3.jpeg" alt="Furniture Store"></a>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">IKEA</a>
-                                    </div>
-                                    <div class="product-description">Funiture Store</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_4.png" alt="Best Buy Retailer"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">Best Buy</a>
-                                    </div>
-                                    <div class="product-description">Home Gadget</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store5.jpeg" alt="Fast Fashion H&M"></a>    
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">H&M</a>
-                                    </div>
-                                    <div class="product-description">Fast Fashion</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_6.png" alt="Fast Fashion Zara"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">Zara</a>
-                                    </div>
-                                    <div class="product-description">Fast Fashion</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_7.png" alt="Electronic Gear Bosch"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">Bosch</a>
-                                    </div>
-                                    <div class="product-description">Electronics</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_8.png" alt="Apple Store"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="#">Apple</a>
-                                    </div>
-                                    <div class="product-description">Electronic Devices</div>
-                                </div>     
-                            </div>   
-                        </div>
+                        <?php
+                        //print all stores with the correct category
+                            function print_all_stores($category_id = "?"){
+                                //file preparation
+                                $file = fopen("../../files/given_data/stores.csv", "r");
+                                flock($file, LOCK_SH);
+                                $title = fgets($file);
+                                while($line = fgets($file)){
+                                    //split the data
+                                    $items = explode(",", $line);
+
+                                    //check the get value for store category id
+                                    if ($category_id == "?" || $items[2] == $category_id){
+                                        $output = <<<"HTML"
+                                            <div class="card">
+                                                <div class="product-imgage">
+                                                    <a href="../storePages/store/storeHome.html "><img src="../resources/images/Store Image/store1.jpeg" alt="$items[1]"></a>
+                                                </div>
+                                                <div class="product-content">
+                                                    <div class="product-text">
+                                                        <div class="product-title">
+                                                            <a href="../storePages/store/storeHome.html">$items[1]</a>
+                                                        </div>
+                                                        <div class="product-description">fake description</div>
+                                                    </div>     
+                                                </div>   
+                                            </div>
+                                        HTML;
+
+                                        echo $output;
+                                    }
+                                }
+                                flock($file, LOCK_UN);
+                                fclose($file);
+                            }
+                            
+                            if(!isset($_GET["products"])) print_all_stores();
+                            else print_all_stores($_GET["products"]);    
+                        ?>
     
                     </div>
                 </div>

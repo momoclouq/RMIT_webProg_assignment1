@@ -23,163 +23,59 @@
                 <div class="main-content">
                     <div class="upper-container">
                         <h3>Browse Stores By Name</h3>
-                        <div class="letters-container">
-                            <button>A</button>
-                            <button>B</button>
-                            <button>C</button>
-                            <button>D</button>
-                            <button>E</button>
-                            <button>F</button>
-                            <button>G</button>
-                            <button>H</button>
-                            <button>I</button>
-                            <button>J</button>
-                            <button>K</button>
-                            <button>L</button>
-                            <button>M</button>
-                            <button>N</button>
-                            <button>O</button>
-                            <button>P</button>
-                            <button>Q</button>
-                            <button>R</button>
-                            <button>S</button>
-                            <button>T</button>
-                            <button>U</button>
-                            <button>V</button>
-                            <button>W</button>
-                            <button>X</button>
-                            <button>Y</button>
-                            <button>Z</button>
-                    </div>
-                    
-                   
+                        <form action="#" method="get">
+                            <div class="letters-container">
+                                <?php
+                                    $alphabet = range('a', 'z');
+                                    foreach($alphabet as $character){
+                                        echo "<button type=\"submit\" name=\"character\" value=\"$character\">" . strtoupper($character) . "</button>";
+                                    }
+                                ?>
+                            </div>
+                        </form>
+                        
                     
                     
                     <div class="product-list">
                         <!--a random list of products-->
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store1.jpeg" alt="Luxury Cloth Louis Vution"></a>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">Louis Vuition</a>
-                                    </div>
-                                    <div class="product-description">Luxury Clothing</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_2.jpeg" alt="Luxury Cloth Gucci"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">Gucci</a>
-                                    </div>
-                                    <div class="product-description">Luxury Clothing</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_3.jpeg" alt="Furniture Store"></a>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">IKEA</a>
-                                    </div>
-                                    <div class="product-description">Funiture Store</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_4.png" alt="Best Buy Retailer"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">Best Buy</a>
-                                    </div>
-                                    <div class="product-description">Home Gadget</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store5.jpeg" alt="Fast Fashion H&M"></a>    
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">H&M</a>
-                                    </div>
-                                    <div class="product-description">Fast Fashion</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_6.png" alt="Fast Fashion Zara"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">Zara</a>
-                                    </div>
-                                    <div class="product-description">Fast Fashion</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_7.png" alt="Electronic Gear Bosch"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">Bosch</a>
-                                    </div>
-                                    <div class="product-description">Electronics</div>
-                                </div>     
-                            </div>   
-                        </div>
-    
-    
-    
-                        <div class="card">
-                            <div class="product-imgage">
-                                <a href="../storePages/store/storeHome.html"><img src="../resources/images/Store Image/store_8.png" alt="Apple Store"></a>
-                                
-                            </div>
-                            <div class="product-content">
-                                <div class="product-text">
-                                    <div class="product-title">
-                                        <a href="../storePages/store/storeHome.html">Apple</a>
-                                    </div>
-                                    <div class="product-description">Electronic Devices</div>
-                                </div>     
-                            </div>   
-                        </div>
+                        <?php
+                            function print_all_stores($character = "?"){
+                                //file preparation
+                                $file = fopen("../../files/given_data/stores.csv", "r");
+                                flock($file, LOCK_SH);
+                                $title = fgets($file);
+                                while($line = fgets($file)){
+                                    //split the data
+                                    $items = explode(",", $line);
+
+                                    //check the get value for store character
+                                    if ($character == "?" || strtolower($items[1][0]) == $character){
+                                        $output = <<<"HTML"
+                                            <div class="card">
+                                                <div class="product-imgage">
+                                                    <a href="../storePages/store/storeHome.html "><img src="../resources/images/Store Image/store1.jpeg" alt="$items[1]"></a>
+                                                </div>
+                                                <div class="product-content">
+                                                    <div class="product-text">
+                                                        <div class="product-title">
+                                                            <a href="../storePages/store/storeHome.html">$items[1]</a>
+                                                        </div>
+                                                        <div class="product-description">fake description</div>
+                                                    </div>     
+                                                </div>   
+                                            </div>
+                                        HTML;
+
+                                        echo $output;
+                                    }
+                                }
+                                flock($file, LOCK_UN);
+                                fclose($file);
+                            }
+                            
+                            if(!isset($_GET["character"])) print_all_stores();
+                            else print_all_stores($_GET["character"]);    
+                        ?>
     
     
                     </div>
