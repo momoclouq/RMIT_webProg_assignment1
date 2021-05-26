@@ -5,8 +5,11 @@
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]["type"] != "admin"){
         header('location: ../Account/myAccount-Log-in.php');
     }
-?>
 
+    //get data from file
+    $source_json = file_get_contents("../../../files/common_pages/tos.json");
+    $source = json_decode($source_json);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,16 +27,23 @@
 </head>
 
 <body>
-    <?php require '../components/navbar.php' ?>
+    <?php require '../components/navbar.php'; ?>
 
     <main>
-        <h1 class="dashboard_title">Dashboard for Admin</h1>
-        <section class="dashboard_options">
-            <div><a href="admin_tos.php">Change Term of service content</a></div>
-            <div><a href="admin_copyright.php">Change copyright terms</a></div>
-            <div><a href="admin_privacy.php">Change privacy terms</a></div>
-            <div><a href="admin_aboutus.php">Change about us photo</a></div>
-        </section>
+        <div><a href="admin_dashboard.php">Back to dashboard</a></div>
+        <h1 class="dashboard_title">Adjust term of service</h1>
+        <form action="admin_tos.php" method="post">
+            <section>
+                <label for="title">Title</label>
+                <textarea id="title" name="title" rows="1" cols="50"><?php echo $source->title; ?></textarea>
+            </section>
+
+            <section>
+                <label for="intro_text">Intro content</label>
+                <textarea id="intro_title" name="intro_title" rows="1" cols="50"><?php echo $source->title; ?></textarea>
+            </section>
+            
+        </form>
     </main>
 
     <?php require '../components/footer.php' ?>
@@ -43,4 +53,3 @@
 </body>
 
 </html>
-    

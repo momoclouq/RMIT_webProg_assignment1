@@ -23,6 +23,12 @@
         return false;
      }
 
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]["type"] == "admin"){
+        header('location: ../admin/admin_dashboard.php');
+    } else if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]["type"] == "user"){
+        header('location: myAccount-logged-in.php');
+    }
+
      if (isset($_POST['act'])){
          if (isset($_POST['username']) && isset($_POST['password'])){
              $username = htmlentities($_POST['username']);
