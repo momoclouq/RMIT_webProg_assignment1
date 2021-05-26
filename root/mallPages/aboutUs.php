@@ -15,24 +15,9 @@
 </head>
 <body>
       <div class="boxWrapper">
-        <header class="mallHeader">
-          <nav>
-              <ul class="menu">
-                  <li class="logo"><a href="/index.html">Logo</a></li>
-                  <li class="item mallName"><a href="/index.html">Shopping mall</a></li>
-  
-                  <li class="item"><a href="aboutUs.html">About us</a></li>
-                  <li class="item"><a href="fees.html">Fees</a></li>
-                  <li class="item subMenu2"><a href="#">Browse</a></li>
-                  <li class="item item2"><a href="BrowseStoreLetter.html">Browse By name</a></li>
-                  <li class="item item2"><a href="BrowseStoreCategory.html">Browse By category</a></li>
-                  <li class="item"><a href="FAQs.html">FAQs</a></li>
-                  <li class="item"><a href="contact.html">Contact</a></li>
-                  <li class="item account_mall_nav"><a href="#">My Account</a></li>
-                  <li class="toggle"><span class="bars"></span><li>
-              </ul>
-          </nav>
-      </header>
+      <?php
+          require './components/navbar.php';
+      ?>
 
           <main class="mallAboutUs">
             <h1 class="aboutUsHeader">The Team</h1>
@@ -93,7 +78,7 @@
             </div>
             </main>
 
-            <footer class="mallFooter">
+            <!-- <footer class="mallFooter">
               <nav>
                   <div class="FooterRow">
                       <div class="FooterColumn">
@@ -117,7 +102,10 @@
                       </div>
                   </div>
               </nav>
-          </footer>
+          </footer> -->
+          <?php
+            require './components/footer.php';
+          ?>
     </div>
     <script src="../scripts/cookie-consent.js"></script>
     <script src="../scripts/mall_index.js"></script>

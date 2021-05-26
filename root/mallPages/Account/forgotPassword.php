@@ -18,16 +18,16 @@
         <header class="mallHeader">
             <nav>
                 <ul class="menu">
-                    <li class="logo"><a href="/index.html">Logo</a></li>
-                    <li class="item mallName"><a href="/index.html">Shopping mall</a></li>
+                    <li class="logo"><a href="/index.php">Logo</a></li>
+                    <li class="item mallName"><a href="/index.php">Shopping mall</a></li>
     
-                    <li class="item"><a href="../aboutUs.html">About us</a></li>
-                    <li class="item"><a href="../fees.html">Copyright</a></li>
+                    <li class="item"><a href="/mallPages/aboutUs.php">About us</a></li>
+                    <li class="item"><a href="/mallPages/fees.php">Copyright</a></li>
                     <li class="item subMenu2"><a href="#">Browse</a></li>
-                    <li class="item item2"><a href="/mallPages/BrowseStoreLetter.html">Browse By name</a></li>
-                    <li class="item item2"><a href="/mallPages/BrowseStoreCategory.html">Browse By category</a></li>
-                    <li class="item"><a href="../FAQs.html">FAQs</a></li>
-                    <li class="item"><a href="../contact.html">Contact</a></li>
+                    <li class="item item2"><a href="/mallPages/BrowseStoreLetter.php">Browse By name</a></li>
+                    <li class="item item2"><a href="/mallPages/BrowseStoreCategory.php">Browse By category</a></li>
+                    <li class="item"><a href="/mallPages/FAQs.php">FAQs</a></li>
+                    <li class="item"><a href="/mallPages/contact.php">Contact</a></li>
                     <li class="item account_mall_nav"><a>My Account</a></li>
                     <li class="toggle"><span class="bars"></span><li>
                 </ul>
@@ -65,31 +65,9 @@
             </div>
         </main>
         
-        <footer class="mallFooter">
-            <nav>
-                <div class="FooterRow">
-                    <div class="FooterColumn">
-                        <div class="footerheading">Support</div>
-                        <ul><a href="../FAQs.html">FAQ</a></ul>
-                        <ul><a href="../contact.html">Contact Form</a></ul>
-                        <ul><a href="../fees.html">Fee</a></ul>
-                    </div>
-                    <div class="FooterColumn">
-                        <div class="footerheading">Info</div>
-                        <ul><a href="../aboutUs.html">About us</a></ul>
-                        <ul><a href="../tos.html">ToS</a></ul>
-                        <ul><a href="../privacy.html">Privacy Policy</a></ul>
-                        <ul><a href="../copyright.html">CopyRight</a></ul>
-                    </div>
-                    <div class="FooterColumn">
-                        <div class="footerheading">Join Us</div>
-                        <ul><a href="../Account/registerAccount.html">Sign up</a></ul>
-                        <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
-                        <ul><a href="../Account/myAccount-Log-in.html">Sign in</a></ul>
-                    </div>
-                </div>
-            </nav>
-        </footer>
+        <?php
+            require '../components/footer.php';
+        ?>
     </div>
     <script src="../../scripts/cookie-consent.js"></script>
     <script src="../../scripts/mall_index.js"></script>

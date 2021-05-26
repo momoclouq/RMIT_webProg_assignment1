@@ -3,56 +3,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Search stores with category">
-        <meta name="keywords" content="Search store category different">
+        <meta name="description" content="Search stores with alphabet">
+        <meta name="keywords" content="Search store alphabet letter different">
         <meta name="author" content="Team Developers">
-        <title>Store Category</title>
-
+        <title>Store by Letter</title>
         <link rel="stylesheet" href="../style/mall/common.css">
-        <link rel="stylesheet" href="../style/mall/browseStore_cate/browseStoreCatergory.css">
+        <link rel="stylesheet" href="../style/mall/browseStore_letter/browseStoreLetter.css">
         <link rel="stylesheet" href="../style/cookie-consent/cookie-consent.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
     </head>
 
     <body>
         <div class="boxWrapper">
-            <header class="mallHeader">
-                <nav>
-                    <ul class="menu">
-                        <li class="logo"><a href="/index.html">Logo</a></li>
-                        <li class="item mallName"><a href="/index.html">Shopping mall</a></li>
-        
-                        <li class="item"><a href="aboutUs.html">About us</a></li>
-                        <li class="item"><a href="fees.html">Fees</a></li>
-                        <li class="item subMenu2"><a href="#">Browse</a></li>
-                        <li class="item item2"><a href="BrowseStoreLetter.html">Browse By name</a></li>
-                        <li class="item item2"><a href="BrowseStoreCategory.html">Browse By category</a></li>
-                        <li class="item"><a href="FAQs.html">FAQs</a></li>
-                        <li class="item"><a href="contact.html">Contact</a></li>
-                        <li class="item account_mall_nav"><a>My Account</a></li>
-                        <li class="toggle"><span class="bars"></span><li>
-                    </ul>
-                </nav>
-            </header>
+            <?php
+                require './components/navbar.php';
+            ?>
     
             <main>
                 <div class="main-content">
-    
-                    <div class="left-container">
-                        <form>
-                            <div class="catergory">
-                                <h3>Choose a category</h3>
-                                <select name="products" id="products">
-                                <option value="clothes">Clothes</option>
-                                <option value="kitchen">Kitchen</option>
-                                <option value="beauty">Beauty</option>
-                                <option value="toys">Toys</option>
-                                <option value="electtronics">Electronics</option>
-                                </select>
-                            </div>
-                        </form>
+                    <div class="upper-container">
+                        <h3>Browse Stores By Name</h3>
+                        <div class="letters-container">
+                            <button>A</button>
+                            <button>B</button>
+                            <button>C</button>
+                            <button>D</button>
+                            <button>E</button>
+                            <button>F</button>
+                            <button>G</button>
+                            <button>H</button>
+                            <button>I</button>
+                            <button>J</button>
+                            <button>K</button>
+                            <button>L</button>
+                            <button>M</button>
+                            <button>N</button>
+                            <button>O</button>
+                            <button>P</button>
+                            <button>Q</button>
+                            <button>R</button>
+                            <button>S</button>
+                            <button>T</button>
+                            <button>U</button>
+                            <button>V</button>
+                            <button>W</button>
+                            <button>X</button>
+                            <button>Y</button>
+                            <button>Z</button>
                     </div>
-    
+                    
+                   
+                    
+                    
                     <div class="product-list">
                         <!--a random list of products-->
                         <div class="card">
@@ -62,7 +64,7 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">Louis Vuition</a>
+                                        <a href="../storePages/store/storeHome.html">Louis Vuition</a>
                                     </div>
                                     <div class="product-description">Luxury Clothing</div>
                                 </div>     
@@ -77,7 +79,7 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">Gucci</a>
+                                        <a href="../storePages/store/storeHome.html">Gucci</a>
                                     </div>
                                     <div class="product-description">Luxury Clothing</div>
                                 </div>     
@@ -91,7 +93,7 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">IKEA</a>
+                                        <a href="../storePages/store/storeHome.html">IKEA</a>
                                     </div>
                                     <div class="product-description">Funiture Store</div>
                                 </div>     
@@ -106,7 +108,7 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">Best Buy</a>
+                                        <a href="../storePages/store/storeHome.html">Best Buy</a>
                                     </div>
                                     <div class="product-description">Home Gadget</div>
                                 </div>     
@@ -121,7 +123,7 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">H&M</a>
+                                        <a href="../storePages/store/storeHome.html">H&M</a>
                                     </div>
                                     <div class="product-description">Fast Fashion</div>
                                 </div>     
@@ -138,7 +140,7 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">Zara</a>
+                                        <a href="../storePages/store/storeHome.html">Zara</a>
                                     </div>
                                     <div class="product-description">Fast Fashion</div>
                                 </div>     
@@ -155,7 +157,7 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">Bosch</a>
+                                        <a href="../storePages/store/storeHome.html">Bosch</a>
                                     </div>
                                     <div class="product-description">Electronics</div>
                                 </div>     
@@ -172,12 +174,13 @@
                             <div class="product-content">
                                 <div class="product-text">
                                     <div class="product-title">
-                                        <a href="#">Apple</a>
+                                        <a href="../storePages/store/storeHome.html">Apple</a>
                                     </div>
                                     <div class="product-description">Electronic Devices</div>
                                 </div>     
                             </div>   
                         </div>
+    
     
                     </div>
                 </div>
@@ -190,33 +193,10 @@
                 
             </main>
     
-            <footer class="mallFooter">
-                <nav>
-                    <div class="FooterRow">
-                        <div class="FooterColumn">
-                            <div class="footerheading">Support</div>
-                            <ul><a href="FAQs.html">FAQ</a></ul>
-                            <ul><a href="contact.html">Contact Form</a></ul>
-                            <ul><a href="fees.html">Fee</a></ul>
-                        </div>
-                        <div class="FooterColumn">
-                            <div class="footerheading">Info</div>
-                            <ul><a href="aboutUs.html">About us</a></ul>
-                            <ul><a href="tos.html">ToS</a></ul>
-                            <ul><a href="privacy.html">Privacy Policy</a></ul>
-                            <ul><a href="copyright.html">CopyRight</a></ul>
-                        </div>
-                        <div class="FooterColumn">
-                            <div class="footerheading">Join Us</div>
-                            <ul><a href="Account/registerAccount.html">Sign up</a></ul>
-                            <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
-                            <ul><a href="Account/myAccount-Log-in.html">Sign in</a></ul>
-                        </div>
-                    </div>
-                </nav>
-            </footer>
+            <?php
+                require './components/footer.php';
+            ?>
         </div>
         <script src="../scripts/cookie-consent.js"></script>
         <script src="../scripts/mall_index.js"></script>
     </body>
-</html>

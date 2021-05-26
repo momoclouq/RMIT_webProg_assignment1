@@ -15,24 +15,9 @@
 </head>
 <body>
     <div class="boxWrapper">
-        <header class="mallHeader">
-            <nav>
-                <ul class="menu">
-                    <li class="logo"><a href="/index.html">Logo</a></li>
-                    <li class="item mallName"><a href="/index.html">Shopping mall</a></li>
-    
-                    <li class="item"><a href="aboutUs.html">About us</a></li>
-                    <li class="item"><a href="fees.html">Fees</a></li>
-                    <li class="item subMenu2"><a href="#">Browse</a></li>
-                    <li class="item item2"><a href="BrowseStoreLetter.html">Browse By name</a></li>
-                    <li class="item item2"><a href="BrowseStoreCategory.html">Browse By category</a></li>
-                    <li class="item"><a href="FAQs.html">FAQs</a></li>
-                    <li class="item"><a href="contact.html">Contact</a></li>
-                    <li class="item account_mall_nav"><a>My Account</a></li>
-                    <li class="toggle"><span class="bars"></span><li>
-                </ul>
-            </nav>
-        </header>
+        <?php
+          require './components/navbar.php';
+        ?>
         
         <main class="mallFAQs">
             <h1 class="FAQHeader">Questions and answers</h1>
@@ -86,31 +71,9 @@
             </div>
         </main>
 
-        <footer class="mallFooter">
-            <nav>
-                <div class="FooterRow">
-                    <div class="FooterColumn">
-                        <div class="footerheading">Support</div>
-                        <ul><a href="FAQs.html">FAQ</a></ul>
-                        <ul><a href="contact.html">Contact Form</a></ul>
-                        <ul><a href="fees.html">Fee</a></ul>
-                    </div>
-                    <div class="FooterColumn">
-                        <div class="footerheading">Info</div>
-                        <ul><a href="aboutUs.html">About us</a></ul>
-                        <ul><a href="tos.html">ToS</a></ul>
-                        <ul><a href="privacy.html">Privacy Policy</a></ul>
-                        <ul><a href="copyright.html">CopyRight</a></ul>
-                    </div>
-                    <div class="FooterColumn">
-                        <div class="footerheading">Join Us</div>
-                        <ul><a href="Account/registerAccount.html">Sign up</a></ul>
-                        <ul color="white" style="text-decoration: underline;"><b><p>Had an account?</p></b></ul>
-                        <ul><a href="Account/myAccount-Log-in.html">Sign in</a></ul>
-                    </div>
-                </div>
-            </nav>
-        </footer>
+        <?php
+            require './components/footer.php';
+          ?>
     </div>
 
     <script src="../scripts/mall_index.js"></script>
