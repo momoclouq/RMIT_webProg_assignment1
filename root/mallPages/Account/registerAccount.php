@@ -1,3 +1,65 @@
+<?php
+$message = '';
+$error = '';
+if(isset($_POST["submit"])){
+    // check empty inputs
+    if(empty($_POST['emailAddress'])){
+        $error = "<label class='text-danger'>Enter Email</label>";
+    }
+    elseif(empty($_POST['phone'])){
+        $error = "<label class='text-danger'>Enter Phone no.</label>";
+    }
+    elseif(empty($_POST['password'])){
+        $error = "<label class='text-danger'>Enter password</label>";
+    }
+    elseif(empty($_POST['firstName'])){
+        $error = "<label class='text-danger'>Enter your first name</label>";
+    }
+    elseif(empty($_POST['lastName'])){
+        $error = "<label class='text-danger'>Enter your last name</label>";
+    }
+    elseif(empty($_POST['address'])){
+        $error = "<label class='text-danger'>Enter address</label>";
+    }
+    elseif(empty($_POST['city'])){
+        $error = "<label class='text-danger'>Enter city name</label>";
+    }
+    elseif(empty($_POST['zipcode'])){
+        $error = "<label class='text-danger'>Enter zipcode</label>";
+    }
+    else {
+    // data storing and scans
+        if(file_exists('../../../files/account/user_pass.json')){
+            $current_data = file_get_contents('../../../files/account/user_pass.json');
+            $array_data = json_decode($current_data, true);
+            $extra = array(
+                'emailAddress'  => $_POST['emailAddress'],
+                'phone'  => $_POST['phone'],
+                'password'  => $_POST['password'],
+                'profilePic' => $_POST['profilePic'],
+                'firstName'  => $_POST['firstName'],
+                'lastName'  => $_POST['lastName'],
+                'address'  => $_POST['address'],
+                'city'  => $_POST['city'],
+                'zipcode'  => $_POST['zipcode'],
+                'busiName'  => $_POST['busiName'],
+                'storeName'  => $_POST['storeName'],
+                'storeType'  => $_POST['storeType']
+            );
+            $array_data[] = $extra;
+            $final_data = json_encode($array_data);
+            if(file_put_contents('../../../files/account/user_pass.json', $final_data)){
+                //for testing
+                $message = "<label class='text-success'>Account register successful</label>";
+            }
+        }
+        else{
+            $error = "<label class='text-danger'>Missing data file</label>";
+        }
+    }
+};
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,6 +102,14 @@
                         <h1>Sign up</h1>
                         <p>Create a user account to start shopping</p>
                         <p>Or register your store to start your business</p>
+                        <!-- display error message -->
+                    <div class="errorMessage">
+                    <?php
+                    if(isset($error)){
+                        echo $error;
+                    }
+                    ?>
+                    </div>
                     </article>
 
                     <form novalidate>
@@ -153,9 +223,17 @@
                         
                         <div class="options">
                             <input type="reset" value="Reset form">
-                            <input type="submit" id="submitBtn" value="Submit">
+                            <input type="submit" name="submit" id="submitBtn" value="Submit">
                         </div>
-                        <div class='status'></div>
+                        <!-- display feedback message -->
+                        <!-- <div class='status'></div> -->
+                        <div class="successMessage">
+                    <?php
+                    if(isset($message)){
+                        echo $message;
+                    }
+                    ?>
+                    </div>
                     </form>
                 </section>
                 <div class="cookie-container">
