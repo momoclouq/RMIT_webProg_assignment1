@@ -3,28 +3,28 @@ $message = '';
 $error = '';
 if(isset($_POST["submit"])){
     // check empty inputs
-    if(empty($_POST['emailAddress'])){
+    if(empty($_POST["emailAddress"])){
         $error = "<label class='text-danger'>Enter Email</label>";
     }
-    elseif(empty($_POST['phone'])){
+    else if(empty($_POST['phone'])){
         $error = "<label class='text-danger'>Enter Phone no.</label>";
     }
-    elseif(empty($_POST['password'])){
+    else if(empty($_POST['password'])){
         $error = "<label class='text-danger'>Enter password</label>";
     }
-    elseif(empty($_POST['firstName'])){
+    else if(empty($_POST['firstName'])){
         $error = "<label class='text-danger'>Enter your first name</label>";
     }
-    elseif(empty($_POST['lastName'])){
+    else if(empty($_POST['lastName'])){
         $error = "<label class='text-danger'>Enter your last name</label>";
     }
-    elseif(empty($_POST['address'])){
+    else if(empty($_POST['address'])){
         $error = "<label class='text-danger'>Enter address</label>";
     }
-    elseif(empty($_POST['city'])){
+    else if(empty($_POST['city'])){
         $error = "<label class='text-danger'>Enter city name</label>";
     }
-    elseif(empty($_POST['zipcode'])){
+    else if(empty($_POST['zipcode'])){
         $error = "<label class='text-danger'>Enter zipcode</label>";
     }
     else {
@@ -33,18 +33,18 @@ if(isset($_POST["submit"])){
             $current_data = file_get_contents('../../../files/account/user_pass.json');
             $array_data = json_decode($current_data, true);
             $extra = array(
-                'emailAddress'  => $_POST['emailAddress'],
-                'phone'  => $_POST['phone'],
-                'password'  => $_POST['password'],
-                'profilePic' => $_POST['profilePic'],
-                'firstName'  => $_POST['firstName'],
-                'lastName'  => $_POST['lastName'],
-                'address'  => $_POST['address'],
-                'city'  => $_POST['city'],
-                'zipcode'  => $_POST['zipcode'],
-                'busiName'  => $_POST['busiName'],
-                'storeName'  => $_POST['storeName'],
-                'storeType'  => $_POST['storeType']
+                'emailAddress'  =>  $_POST['emailAddress'],
+                'phone'         =>  $_POST['phone'],
+                'password'      =>  $_POST['password'],
+                'profilePic'    =>  $_POST['profilePic'],
+                'firstName'     =>  $_POST['firstName'],
+                'lastName'      =>  $_POST['lastName'],
+                'address'       =>  $_POST['address'],
+                'city'          =>  $_POST['city'],
+                'zipcode'       =>  $_POST['zipcode'],
+                'busiName'      =>  $_POST['busiName'],
+                'storeName'     =>  $_POST['storeName'],
+                'storeType'     =>  $_POST['storeType']
             );
             $array_data[] = $extra;
             $final_data = json_encode($array_data);
@@ -54,7 +54,7 @@ if(isset($_POST["submit"])){
             }
         }
         else{
-            $error = "<label class='text-danger'>Missing data file</label>";
+            $error = 'Missing data file';
         }
     }
 };
@@ -103,7 +103,7 @@ if(isset($_POST["submit"])){
                         <p>Create a user account to start shopping</p>
                         <p>Or register your store to start your business</p>
                         <!-- display error message -->
-                    <div class="errorMessage">
+                    <div class="ErrorMessage">
                     <?php
                     if(isset($error)){
                         echo $error;
