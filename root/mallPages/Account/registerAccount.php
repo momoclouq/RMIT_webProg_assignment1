@@ -36,15 +36,14 @@ if(isset($_POST["submit"])){
                 'emailAddress'  =>  $_POST['emailAddress'],
                 'phone'         =>  $_POST['phone'],
                 'password'      =>  $_POST['password'],
-                'profilePic'    =>  $_POST['profilePic'],
                 'firstName'     =>  $_POST['firstName'],
                 'lastName'      =>  $_POST['lastName'],
                 'address'       =>  $_POST['address'],
                 'city'          =>  $_POST['city'],
-                'zipcode'       =>  $_POST['zipcode'],
-                'busiName'      =>  $_POST['busiName'],
-                'storeName'     =>  $_POST['storeName'],
-                'storeType'     =>  $_POST['storeType']
+                'zipcode'       =>  $_POST['zipcode']
+                // 'busiName'      =>  $_POST['busiName'],
+                // 'storeName'     =>  $_POST['storeName'],
+                // 'storeType'     =>  $_POST['storeType']
             );
             $array_data[] = $extra;
             $final_data = json_encode($array_data);
@@ -112,7 +111,7 @@ if(isset($_POST["submit"])){
                     </div>
                     </article>
 
-                    <form novalidate>
+                    <form method="post" novalidate>
                         <label for="emailAddress">Email address</label>
                         <input type="email" id="emailAddress" name="emailAddress" placeholder="abcde@mail.com">
                         <span class="errorEmailMSG ErrorMessage"></span>
