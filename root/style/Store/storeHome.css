@@ -4,6 +4,9 @@ main {
 
 /* horizontal menu */
 .listScrollMenu {
+    margin: 0 auto;
+    width: fit-content;
+    max-width: 98vw;
     overflow: scroll;
     white-space: nowrap;
 }
@@ -23,7 +26,8 @@ main {
 }
 
 .listScrollMenu_item_name {
-    margin: 0 auto;
+    text-align: center;
+    font-weight: 700;
     padding: 10px;
 }
 
@@ -53,6 +57,7 @@ main {
 
 .listScrollMenu_item_store {
     width: fit-content;
+    margin-right: 20px;
 }
 
 .lislistScrollMenu_item_price {
