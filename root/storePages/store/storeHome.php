@@ -70,13 +70,10 @@
                             //print out 5 most recent items
                             for ($i = 0; $i < 5; $i++){
                                 $product = $all_product_in_store[$i];
-
-                                //get store information
-                                $store = get_store_information($product[4]);
                         
                                 $output = <<<"HTML"
                                     <div class="listScrollMenu_item">
-                                        <a href="/storePages/store/product/cate1prod1.php">
+                                        <a href="/storePages/store/product/cate1prod1.php?id=$product[0]">
                                         <div class="listScrollMenu_item_icon">
                                             <img src="/resources/images/product.jpeg">
                                         </div>
@@ -85,7 +82,7 @@
                                         </div>
                                         <div class="listScrollMenu_item_price_info">
                                             <div class="listScrollMenu_item_store">
-                                                $store[1]
+                                                fake description
                                             </div>
                                             <div class="listScrollMenu_item_price">
                                                 $product[2]\$
@@ -110,7 +107,7 @@
                                 if ($items[6] == true) {
                                     $output = <<<"HTML"
                                         <div class="list_display_product_card">
-                                            <a href="/storePages/store/product/cate1prod1.php">
+                                            <a href="/storePages/store/product/cate1prod1.php?id=$items[0]">
                                             <div class="list_display_product_icon">
                                                 <img src="/resources/images/Product Image/product_1.jpeg" alt="$items[1] pic">
                                             </div>
@@ -120,6 +117,9 @@
                                                 </div>
                                                 <div class="list_display_product_content_description">
                                                     fake description
+                                                </div>
+                                                <div>
+                                                    $items[2]\$
                                                 </div>
                                             </div>
                                             </a>
