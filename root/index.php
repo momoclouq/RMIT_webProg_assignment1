@@ -27,10 +27,29 @@
     flock($file, LOCK_UN);
     fclose($file);
 
+    $file = fopen("../files/given_data/stores.csv", "r");
+    flock($file, LOCK_SH);
+    $title = fgets($file);
+
+
+    //get all items related to the store
+    $all_store = [];
+    while($line = fgets($file)){
+        //split the data
+        $items = explode(",", $line);
+        $all_store[] = $items;
+           
+    }
+
+    flock($file, LOCK_UN);
+    fclose($file);
+
   
 
     //sort by time descending
     usort($all_product_in_store, "cmp_by_time_reverse");
+    usort($all_store, "cmp_by_time_reverse");
+  
 ?>
 
 
@@ -61,15 +80,14 @@
 
                 <div class="listScrollMenu">
                     <?php 
-                        if(!is_array($all_stores)){
-                            $all_stores = [];
+                        if(!is_array($all_store)){
+                            $all_store = [];
                         }
 
-                        $store_quantity = count($all_stores);
+                        $store_quantity = count($all_store);
                         //print out 10 most recent items
-                        for ($i = 0; $i < $store_quantity; $i++){
-                            $store = $$all_stores[$i];
-                       
+                        for ($j = 0; $j < $store_quantity; $j++){
+                            $store = $all_store[$j];
                             $output = <<<"HTML"
                                         <div class="listScrollMenu_item">
                                             <a href="storePages/store/storeHome.php?id=$store[0]">
@@ -84,7 +102,7 @@
                                     HTML;
                             
                             echo $output;
-                            if($i == 10){
+                            if($j == 10){
                                 break;
                             }
                         }
