@@ -7,12 +7,12 @@ if(isset($_POST["submit"])){
         $error = "<label class='text-danger'>Enter Email</label>";
     }
     else if(empty($_POST['phone'])){
-        $error = "<label class='text-danger'>Enter Phone no.</label>";
-    }
+         $error = "<label class='text-danger'>Enter Phone no.</label>";
+     }
     else if(empty($_POST['password'])){
         $error = "<label class='text-danger'>Enter password</label>";
     }
-    else if(empty($_POST['firstName'])){
+    /*else if(empty($_POST['firstName'])){
         $error = "<label class='text-danger'>Enter your first name</label>";
     }
     else if(empty($_POST['lastName'])){
@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
     }
     else if(empty($_POST['zipcode'])){
         $error = "<label class='text-danger'>Enter zipcode</label>";
-    }
+    }*/
     else {
     // data storing and scans
         if(file_exists('../../../files/account/user_pass.json')){
@@ -36,14 +36,14 @@ if(isset($_POST["submit"])){
                 'emailAddress'  =>  $_POST['emailAddress'],
                 'phone'         =>  $_POST['phone'],
                 'password'      =>  $_POST['password'],
-                'firstName'     =>  $_POST['firstName'],
-                'lastName'      =>  $_POST['lastName'],
-                'address'       =>  $_POST['address'],
-                'city'          =>  $_POST['city'],
-                'zipcode'       =>  $_POST['zipcode']
-                // 'busiName'      =>  $_POST['busiName'],
-                // 'storeName'     =>  $_POST['storeName'],
-                // 'storeType'     =>  $_POST['storeType']
+                // 'firstName'     =>  $_POST['firstName'],
+                // 'lastName'      =>  $_POST['lastName'],
+                // 'address'       =>  $_POST['address'],
+                // 'city'          =>  $_POST['city'],
+                // 'zipcode'       =>  $_POST['zipcode']
+                // // 'busiName'      =>  $_POST['busiName'],
+                // // 'storeName'     =>  $_POST['storeName'],
+                // // 'storeType'     =>  $_POST['storeType']
             );
             $array_data[] = $extra;
             $final_data = json_encode($array_data);
@@ -57,6 +57,8 @@ if(isset($_POST["submit"])){
         }
     }
 };
+//password hash
+$password = password_hash('password', PASSWORD_DEFAULT);
 ?>
 
 <!DOCTYPE html>
@@ -102,16 +104,16 @@ if(isset($_POST["submit"])){
                         <p>Create a user account to start shopping</p>
                         <p>Or register your store to start your business</p>
                         <!-- display error message -->
-                    <div class="ErrorMessage">
-                    <?php
-                    if(isset($error)){
-                        echo $error;
-                    }
-                    ?>
-                    </div>
+                        <div class="">
+                            <?php
+                            if(isset($error)){
+                                echo $error;
+                            }
+                            ?>
+                        </div>
                     </article>
 
-                    <form method="post" novalidate>
+                    <form method = post novalidate>
                         <label for="emailAddress">Email address</label>
                         <input type="email" id="emailAddress" name="emailAddress" placeholder="abcde@mail.com">
                         <span class="errorEmailMSG ErrorMessage"></span>
@@ -123,11 +125,11 @@ if(isset($_POST["submit"])){
                         <br>
     
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" minlength="8" required>
+                        <input type="password" id="password" name="password" required>
                         <span class="errorPasswordMSG ErrorMessage"></span>
                         <br>
                         <label for="passwordRe">Retype password</label>
-                        <input type="password" id="passwordRe" name="passwordRe" minlength="8" required>
+                        <input type="password" id="passwordRe" name="passwordRe" required>
                         <span class="errorPasswordReMSG ErrorMessage"></span>
                         <br>
 
@@ -227,12 +229,12 @@ if(isset($_POST["submit"])){
                         <!-- display feedback message -->
                         <!-- <div class='status'></div> -->
                         <div class="successMessage">
-                    <?php
-                    if(isset($message)){
-                        echo $message;
-                    }
-                    ?>
-                    </div>
+                            <?php
+                            if(isset($message)){
+                                echo $message;
+                            }
+                            ?>
+                        </div>
                     </form>
                 </section>
                 <div class="cookie-container">
