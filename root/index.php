@@ -49,6 +49,7 @@
     //sort by time descending
     usort($all_product_in_store, "cmp_by_time_reverse");
     usort($all_store, "cmp_by_time_reverse");
+    
   
 ?>
 
@@ -157,139 +158,42 @@
             <section id="newStoreList">
                 <div class="listHeader">Featured Stores</div>
                 <div class="listScrollMenu">
-                    <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store1.jpeg" alt="Louis Vuition">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    Louis Vuition
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Luxury Clothing
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-
-                    <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store_2.jpeg" alt="Gucci">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    Gucci
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Luxury Clothing
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-
-
-                    <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store_3.jpeg" alt="IKEA">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    IKEA
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Home Furniture
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-
-
-                    <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store_4.png" alt="Best Buy">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    Best Buy
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Gadget Retailer
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-
-
-                    <!-- <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store5.jpeg" alt="h&M">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    H&M
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Fast Fashion
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-
-
-                    <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store_6.png" alt="Zara">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    Zara
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Fast Fashion
-                            </div>
-                        </div>
-                        </a>
-                    </div> -->
-
-
-                    <!-- <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store_7.png" alt="Bosch">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    Bosch
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Electronics Store
-                            </div>
-                        </div>
-                        </a>
-                    </div> -->
-
-
-                    <!-- <div class="list_display_store_card">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="list_display_store_icon">
-                            <img src="resources/images/Store Image/store_8.png" alt="Apple">
-                        </div>
-                        <div class="list_display_store_content">
-                            <div class="list_display_store_content_title">
-                                    Apple
-                            </div>
-                            <div class="list_display_store_content_description">
-                                Electronics Store
-                            </div>
-                        </div>
-                        </a>
-                    </div> -->
+                    <?php
+                        if(!is_array($all_store)){
+                            $all_store = [];
+                        }
+                        
+                        $store_quantity = count($all_store);
+                        $count = 0;
+                        for ($j = 0; $j < $store_quantity; $j++){
+                            $store = $all_store[$j];
+                            
+                            if(strcasecmp($store[4], 'TRUE') === 1){
+                                $output = <<<"HTML"
+                                <div class="list_display_store_card">
+                                    <a href="storePages/store/storeHome.php?id=$store[0]">
+                                    <div class="list_display_store_icon">
+                                        <img src="resources/images/Store Image/store_2.jpeg" alt="$store[1]">
+                                    </div>
+                                    <div class="list_display_store_content">
+                                        <div class="list_display_store_content_title">
+                                                $store[1]
+                                        </div>
+                                        <div class="list_display_store_content_description">
+                                            Fake Clothing
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>  
+                            HTML;
+                            $count++;    
+                            echo $output;
+                            if($count == 10){
+                                break;
+                            }
+                            } 
+                        }
+                    ?>
                 </div>
                 
             </section>
