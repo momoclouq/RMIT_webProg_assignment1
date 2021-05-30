@@ -24,7 +24,9 @@
 </head>
 
 <body>
-    <?php require '../components/navbar.php' ?>
+    <?php
+        require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
+    ?>
 
     <main>
         <h1 class="dashboard_title">Dashboard for Admin</h1>
@@ -36,10 +38,12 @@
         </section>
     </main>
 
-    <?php require '../components/footer.php' ?>
+    <?php
+        require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
+    ?>
 
-    <script src="../../scripts/mall_index.js"></script>
-    <script src="../../scripts/cookie-consent.js"></script>
+    <script src="/scripts/mall_index.js"></script>
+    <script src="/scripts/cookie-consent.js"></script>
 </body>
 
 </html>

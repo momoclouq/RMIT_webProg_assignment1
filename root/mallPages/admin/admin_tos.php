@@ -46,10 +46,12 @@
         </form>
     </main>
 
-    <?php require '../components/footer.php' ?>
+    <?php
+        require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
+    ?>
 
-    <script src="../../scripts/mall_index.js"></script>
-    <script src="../../scripts/cookie-consent.js"></script>
+    <script src="/scripts/mall_index.js"></script>
+    <script src="/scripts/cookie-consent.js"></script>
 </body>
 
 </html>

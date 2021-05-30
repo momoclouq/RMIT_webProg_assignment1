@@ -57,10 +57,10 @@
 
     <body>
         <div class="boxWrapper">
-            <?php 
-                require "./components/navbar.php";
-                get_navbar($_GET['id']);
-            ?>
+        <?php
+            require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/components/navbar.php";
+            get_navbar($_GET['id']);
+        ?>
     
             <main>
                 <section id="newProductList">
@@ -104,7 +104,7 @@
                         <?php
                             //print out all featured products
                             foreach($all_product_in_store as $items){
-                                if ($items[6] == true) {
+                                if (preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $items[6]) === "TRUE") {
                                     $output = <<<"HTML"
                                         <div class="list_display_product_card">
                                             <a href="/storePages/store/product/cate1prod1.php?id=$items[0]">
@@ -140,7 +140,7 @@
             </main>
     
             <?php
-                require "./components/footer.php";
+                require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/components/footer.php";
                 get_footer($_GET['id']);
             ?>
         </div>

@@ -8,8 +8,10 @@
         $title = fgets($file);
 
         while($line = fgets($file)){
+            //process line
+            $processed_line = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $line);
             //split the data
-            $items = explode(",", $line);
+            $items = explode(",", $processed_line);
             if ($items[0] == $store_id) {
                 $store = $items;
                 break;

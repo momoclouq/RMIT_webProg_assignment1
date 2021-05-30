@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -5,31 +8,18 @@
         <title>Store Product By Time</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../style/Store/common.css">
-        <link rel="stylesheet" href="../../style/Store/storeBrowseCatergoryTime.css">
-        <link rel="stylesheet" href="../../style/cookie-consent/cookie-consent.css">
+        <link rel="stylesheet" href="/style/Store/common.css">
+        <link rel="stylesheet" href="/style/Store/storeBrowseCatergoryTime.css">
+        <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
     </head>
 
     <body>
         <div class="boxWrapper">
-            <header class="mallHeader">
-                <nav>
-                    <ul class="menu">
-                        <li class="logo"><a href="../../storePages/store/storeHome.html">Store</a></li>
-                        <li class="item mallName"><a href="storeHome.html">Home</a></li>
-        
-                        <li class="item"><a href="storeAboutUs.html">About us</a></li>
-                        <li class="item subMenu2"><a href="#">Products</a></li>
-                        <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
-                        <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
-                        <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
-                        <li class="item account_mall_nav"><a>My Account</a></li>
-                        <li class="item cart_mall_nav"><a href="../storeOrderPlacement.html">Cart<span id="cart_nav"></span></a></li>
-                        <li class="toggle"><span class="bars"></span><li>
-                    </ul>
-                </nav>
-            </header>
+            <?php
+                require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/components/navbar.php";
+                get_navbar($_GET['id']);
+            ?>
     
             <main>
                 <div class="main-content">

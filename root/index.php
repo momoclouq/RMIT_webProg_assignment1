@@ -21,7 +21,7 @@
 <body>
     <div class ="boxWrapper">
         <?php
-            require "./mallPages/components/navbar.php";
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
         ?>
     
         <main>
@@ -512,7 +512,7 @@
         </div>
     
         <?php
-            require "./mallPages/components/footer.php";
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
         ?>
     </div>
 

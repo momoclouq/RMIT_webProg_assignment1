@@ -2,7 +2,7 @@
     session_start();
 
     //check if the cart is empty or does not exist
-    if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
+    if(!isset($_SESSION['cart'])){
         header("location: /storePages/store/product/cate1prod1.php?id=1");
     }
 
@@ -63,11 +63,16 @@
                                         </div>
                                     </div>
 
-                                        <div class="prodQuanity">
-                                            <ion-icon class="adjustBtn decreaseQuantity" name="remove-outline"></ion-icon>
-                                            <input type="tel" id="quanity" name="quanity" maxlength="10" readonly value="$quanity">
-                                            <ion-icon class="adjustBtn increaseQuantity" name="add-outline"></ion-icon>
-                                        </div>
+                                        <form action="./helper/cart_related.php" method="POST" class="prodQuanity">
+                                            <button type="submit" name="remove" value="1">remove</button>
+                                            <div>
+                                                <button type="submit" name="subtractOnly1" value="1"><ion-icon class="adjustBtn decreaseQuantity" name="remove-outline"></ion-icon></button>
+                                                <input type="tel" id="quanityFake" name="quanityFake" maxlength="10" readonly value="$quanity">
+                                                <button type="submit" name="addOnly1" value="1"><ion-icon class="adjustBtn increaseQuantity" name="add-outline"></ion-icon></button>
+                                                <input type="hidden" id="productId" name="id" value=$information[0]>
+                                                <input type="hidden" id="quanity" name="quanity" value="1">
+                                            </div>
+                                        </form>
                                 </div>
                             </li>
                         HTML;
@@ -108,6 +113,7 @@
                         <input type="text" name="coupon" id="coupon" placeholder="Coupon code" />
                         <button type="submit" class="couponBtn">Apply</button>
                     </form>
+
                     <?php 
                     //display the error/success message
                         if($error_mes != ""){

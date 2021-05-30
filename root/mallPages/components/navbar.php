@@ -11,7 +11,7 @@
             <li class="item item2"><a href="/mallPages/BrowseStoreCategory.php">Browse By category</a></li>
             <li class="item"><a href="/mallPages/FAQs.php">FAQs</a></li>
             <li class="item"><a href="/mallPages/contact.php">Contact</a></li>
-            <li class="item account_mall_nav"><a href="#">My Account</a></li>
+            <li class="item account_mall_nav"><a href="/mallPages/Account/myAccount-logged-in.php">My Account</a></li>
             <li class="toggle"><span class="bars"></span><li>
         </ul>
     </nav>
