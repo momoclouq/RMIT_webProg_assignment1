@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    //check if the user is already loggedin
+    if(isset($_SESSION['loggedin'])) header('location: /mallPages/Account/myAccount-logged-in.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,31 +14,17 @@
         <meta name="author" content="Team Developers">
         <title>Register a new account</title>
 
-        <link rel="stylesheet" href="../../style/mall/common.css">
-        <link rel="stylesheet" href="../../style/mall/registerAcc/register.css">
-        <link rel="stylesheet" href="../../style/cookie-consent/cookie-consent.css">
+        <link rel="stylesheet" href="/style/mall/common.css">
+        <link rel="stylesheet" href="/style/mall/registerAcc/register.css">
+        <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
     </head>
 
     <body>
         <div class="boxWrapper">
-            <header class="mallHeader">
-                <nav>
-                    <ul class="menu">
-                        <li class="logo"><a href="/index.php">Logo</a></li>
-                        <li class="item mallName"><a href="/index.php">Shopping mall</a></li>
-        
-                        <li class="item"><a href="/mallPages/aboutUs.php">About us</a></li>
-                        <li class="item"><a href="/mallPages/fees.php">Copyright</a></li>
-                        <li class="item subMenu2"><a href="#">Browse</a></li>
-                        <li class="item item2"><a href="/mallPages/BrowseStoreLetter.php">Browse By name</a></li>
-                        <li class="item item2"><a href="/mallPages/BrowseStoreCategory.php">Browse By category</a></li>
-                        <li class="item"><a href="/mallPages/FAQs.php">FAQs</a></li>
-                        <li class="item"><a href="/mallPages/contact.php">Contact</a></li>
-                        <li class="toggle"><span class="bars"></span><li>
-                    </ul>
-                </nav>
-            </header>
+            <?php
+                require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
+            ?>
     
             <main class="mallRegister">
                 <section class="registerForm">
@@ -42,7 +34,7 @@
                         <p>Or register your store to start your business</p>
                     </article>
 
-                    <form novalidate>
+                    <form action="./process/process_register.php" method="POST">
                         <label for="emailAddress">Email address</label>
                         <input type="email" id="emailAddress" name="emailAddress" placeholder="abcde@mail.com">
                         <span class="errorEmailMSG ErrorMessage"></span>
@@ -94,7 +86,7 @@
                         <br>
     
                         <label for="country">Country</label>
-                        <select>
+                        <select name="country">
                             <option value="AF">Afghanistan</option>
                             <option value="AL">Albania</option>
                             <option value="AI">Anguilla</option>
@@ -155,7 +147,20 @@
                             <input type="reset" value="Reset form">
                             <input type="submit" id="submitBtn" value="Submit">
                         </div>
-                        <div class='status'></div>
+                        <?php
+                            if(isset($_GET['success'])) {
+                                $success_mes = <<<"HTML"
+                                    <div class='status'>Account created</div>
+                                HTML;
+                                echo $success_mes;
+                            }
+                            else if(isset($_GET['fail'])){
+                                $success_mes = <<<"HTML"
+                                    <div class='status'>Account not created</div>
+                                HTML;
+                                echo $success_mes;
+                            }
+                        ?>
                     </form>
                 </section>
                 <div class="cookie-container">
@@ -167,11 +172,11 @@
             </main>
     
             <?php
-                require '../components/footer.php';
+                require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
             ?>
         </div>
         
-        <script src="../../scripts/mall_registerAccount.js"></script>
-        <script src="../../scripts/cookie-consent.js"></script>
+        <!-- <script src="/scripts/mall_registerAccount.js"></script> -->
+        <script src="/scripts/cookie-consent.js"></script>
     </body>
 </html>
