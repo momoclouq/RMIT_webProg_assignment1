@@ -16,11 +16,11 @@
 
 
     //get all items related to the store
-    $all_product_in_store = [];
+    $all_product = [];
     while($line = fgets($file)){
         //split the data
         $items = explode(",", $line);
-         $all_product_in_store[] = $items;
+        $all_product[] = $items;
            
     }
 
@@ -47,7 +47,7 @@
   
 
     //sort by time descending
-    usort($all_product_in_store, "cmp_by_time_reverse");
+    usort($all_product, "cmp_by_time_reverse");
     usort($all_store, "cmp_by_time_reverse");
     
   
@@ -116,14 +116,14 @@
                 <div class="listScrollMenu">
                     <?php 
 
-                        if(!is_array($all_product_in_store)){
-                            $all_product_in_store = [];
+                        if(!is_array($all_product)){
+                            $all_product= [];
                         }
 
-                        $item_quantity = count($all_product_in_store);
+                        $item_quantity = count($all_product);
                         //print out 10 most recent items
                         for ($i = 0; $i < $item_quantity; $i++){
-                            $product = $all_product_in_store[$i];
+                            $product = $all_product[$i];
                        
                             $output2 = <<<"HTML"
                                         <div class="listScrollMenu_item">
@@ -203,101 +203,45 @@
                 <div class="listHeader">Featured Products</div>
                 <div class="listScrollMenu">
                     <div class="list_display_products">
-                        <div class="list_display_product_card">
-                            <a href="storePages/store/product/cate1prod1.html">
-                            <div class="list_display_product_icon">
-                                <img src="resources/images/Product Image/product_1.jpeg" alt="Flannel Shirt">
-                            </div>
-                            <div class="list_display_product_content">
-                                <div class="list_display_product_content_title">
-                                        Blue Flannel Shirt
-                                </div>
-                                <div class="list_display_product_content_description">
-                                    by H&M (Real)
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-    
-                        <div class="list_display_product_card">
-                            <a href="storePages/store/product/cate1prod2.html">
-                            <div class="list_display_product_icon">
-                                <img src="resources/images/Product Image/product_2.jpeg" alt="Colorful Running Shoes">
-                            </div>
-                            <div class="list_display_product_content">
-                                <div class="list_display_product_content_title">
-                                    Colorful Running Shoe
-                                </div>
-                                <div class="list_display_product_content_description">
-                                    by Nike (Real)
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-    
-                        <div class="list_display_product_card">
-                            <a href="storePages/store/product/cate1prod1.html">
-                            <div class="list_display_product_icon">
-                                <img src="resources/images/Product Image/product_3.webp" alt="Black Running Shoe">
-                            </div>
-                            <div class="list_display_product_content">
-                                <div class="list_display_product_content_title">
-                                    Black Running Shoe
-                                </div>
-                                <div class="list_display_product_content_description">
-                                    by Nike
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-    
-                        <!-- <div class="list_display_product_card">
-                            <a href="storePages/store/product/cate1prod1.html">
-                            <div class="list_display_product_icon">
-                                <img src="resources/images/Product Image/product_4.jpeg" alt="Colorful Phone Toy">
-                            </div>
-                            <div class="list_display_product_content">
-                                <div class="list_display_product_content_title">
-                                    Colorful Phone Toy"
-                                </div>
-                                <div class="list_display_product_content_description">
-                                    by H&M
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-    
-                        <div class="list_display_product_card">
-                            <a href="storePages/store/product/cate1prod1.html">
-                            <div class="list_display_product_icon">
-                                <img src="resources/images/Product Image/product_5.jpeg" alt="Teddy Bear">
-                            </div>
-                            <div class="list_display_product_content">
-                                <div class="list_display_product_content_title">
-                                        Cute Teddy Bear
-                                </div>
-                                <div class="list_display_product_content_description">
-                                    by H&M
-                                </div>
-                            </div>
-                            </a>
-                        </div> -->
-    
-                        <!-- <div class="list_display_product_card">
-                            <a href="storePages/store/product/cate1prod1.html">
-                            <div class="list_display_product_icon">
-                                <img src="resources/images/Product Image/product_6.jpeg" alt="Corn Peeler">
-                            </div>
-                            <div class="list_display_product_content">
-                                <div class="list_display_product_content_title">
-                                        Corn Peeler
-                                </div>
-                                <div class="list_display_product_content_description">
-                                    by BestBuy
-                                </div>
-                            </div>
-                            </a>
-                        </div> -->
+                        <?php
+                            if(!is_array($all_product)){
+                                $all_product = [];
+                            }
+                            
+                            $item_quantity = count($all_product);
+                            $count = 0;
+                            for ($j = 0; $j < $item_quantity; $j++){
+                                $product = $all_product[$j];
+                                
+                                if(strcasecmp($product[5], 'TRUE') === 0){
+                                    
+                                    $output = <<<"HTML"
+                                        <div class="list_display_product_card">
+                                            <a href="/storePages/store/product/cate1prod1.php?id=$product[0]">
+                                            <div class="list_display_product_icon">
+                                                <img src="resources/images/Product Image/product_1.jpeg" alt="$product[1]">
+                                            </div>
+                                            <div class="list_display_product_content">
+                                                <div class="list_display_product_content_title">
+                                                    $product[1]
+                                                </div>
+                                                <div class="list_display_product_content_description">
+                                                    $product[2]
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                    HTML;
+                                    $count++;    
+                                    echo $output;
+                                    if($count == 10){
+                                        break;
+                                    }
+                                }
+                            } 
+                            
+                        ?>
+                        
                 </div>
                 
             </section>
