@@ -101,9 +101,9 @@
                         <form method="GET">
                             <div class="catergory">
                                 <h3>Sort by time</h3>
-                                <ul>
-                                    <li><a href="?id=<?=$_GET['id'];?>&sort=new">Newest Items</a></li>
-                                    <li><a href="?id=<?=$_GET['id'];?>&sort=old">Oldest Items</a></li>
+                                <ul class="sort">
+                                    <li><a href="?id=<?=$_GET['id'];?>&sort=new">Newest</a></li>
+                                    <li><a href="?id=<?=$_GET['id'];?>&sort=old">Oldest</a></li>
                                 </ul>
 
                             </div>            
@@ -113,23 +113,18 @@
                         <div class="product-list">
                             <!--a random list of products-->
                             <?php
-
-                                
-
-                                
-
                                 foreach($items_per_page as $item){
                                     $hype_price = doubleval($item[2]) + 500;
                                     $output = <<<"HTML"
                                         <div class="card">
-                                            <a href="../store/product/cate1prod1.html">
+                                            <a href="/storePages/store/product/cate1prod1.php?id=$item[0]">
                                                 <div class="product-imgage">
                                                     <img src="../../resources/images/Product Image/product_1.jpeg" alt="Shirt">
                                                 </div>
                                                 <div class="product-content">
                                                     <div class="product-text">
                                                         <div class="product-title">
-                                                            <a href="../store/product/cate1prod1.html">$item[1]</a>
+                                                            <a href="/storePages/store/product/cate1prod1.php?id=$item[0]">$item[1]</a>
                                                         </div>
                                                         <div class="product-description">Fake description</div>
                                                     </div>
@@ -158,15 +153,15 @@
                         </div>
 
                         <div class="pagination_container">
-                            <ul class="pagination">
-                                <li><a href="?id=<?=$_GET['id'];?>&page=1&sort=<?=$_GET['sort'];?>">First</a></li>
+                            <ul>
+                                <li><a  class="pagination" href="?id=<?=$_GET['id'];?>&page=1&sort=<?=$_GET['sort'];?>">First</a></li>
                                 <li class="<?php if($page <= 1){ echo 'disabled'; } ?>">
-                                    <a href="<?php if($page <= 1){ echo '#'; } else { echo "?id=" . $_GET['id']. "&page=".($page - 1)."&sort=" . $_GET['sort']; } ?>">Prev</a>
+                                    <a  class="pagination" href="<?php if($page <= 1){ echo '#'; } else { echo "?id=" . $_GET['id']. "&page=".($page - 1)."&sort=" . $_GET['sort']; } ?>">Prev</a>
                                 </li>
                                 <li class="<?php if($page >= $total_pages){ echo 'disabled'; } ?>">
-                                    <a href="<?php if($page >= $total_pages){ echo '#'; } else { echo "?id=" . $_GET['id']. "&page=".($page + 1)."&sort=" . $_GET['sort']; } ?>">Next</a>
+                                    <a class="pagination"href="<?php if($page >= $total_pages){ echo '#'; } else { echo "?id=" . $_GET['id']. "&page=".($page + 1)."&sort=" . $_GET['sort']; } ?>">Next</a>
                                 </li>
-                                <li><a href="?id=<?=$_GET['id'];?>&page=<?php echo $total_pages; ?>&sort=<?=$_GET['sort'];?>">Last</a></li>
+                                <li><a  class="pagination" href="?id=<?=$_GET['id'];?>&page=<?php echo $total_pages; ?>&sort=<?=$_GET['sort'];?>">Last</a></li>
                             </ul>
                         </div>
 
