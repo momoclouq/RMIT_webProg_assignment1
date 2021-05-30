@@ -1,3 +1,15 @@
+<?php
+    session_start();
+
+    //check if the cart is empty or does not exist
+    if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
+        header("location: /storePages/store/product/cate1prod1.php?id=1");
+    }
+
+    require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/helper/product_related.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,58 +20,109 @@
         <meta name="keywords" content="Shopping product cart placement store">
         <meta name="author" content="Team Developers">
 
-        <link rel="stylesheet" href="../../style/Store/common.css">
-        <link rel="stylesheet" href="../../style/cookie-consent/cookie-consent.css">
-        <link rel="stylesheet" href="../../style/Store/orderPlacement/orderPlacement.css">
-        <link rel="stylesheet" href="../../style/cookie-consent/cookie-consent.css">
+        <link rel="stylesheet" href="/style/Store/common.css">
+        <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
+        <link rel="stylesheet" href="/style/Store/orderPlacement/orderPlacement.css">
+        <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
 
     <body>
         <div class="boxWrapper">
-            <header class="mallHeader">
-                <nav>
-                    <ul class="menu">
-                        <li class="logo"><a href="../store/storeHome.html">Store 1</a></li>
-                        <li class="item mallName"><a href="../store/storeHome.html">Home</a></li>
-        
-                        <li class="item"><a href="storeAboutUs.html">About us</a></li>
-                        <li class="item subMenu2"><a href="#">Products</a></li>
-                        <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
-                        <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
-                        <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
-                        <li class="item account_mall_nav"><a>My Account</a></li>
-                        <li class="item cart_mall_nav"><a href="../../storePages/store/storeOrderPlacement.html">Cart<span id="cart_nav"></span></a></li>
-                        <li class="toggle"><span class="bars"></span><li>
-                    </ul>
-                </nav>
-            </header>
+            <?php
+                require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/components/navbar.php";
+                get_navbar();
+            ?>
     
             <main>
                 <section class="introduction">
                     <div><span class="title">Shopping cart</span> <span class="itemnumber"></span></div>
-                    <div class="storeName">Store ABC</div>
                 </section>
     
                 <section class="storeCart">
                     <ul class="product-list">
-                            
+
+                    <!--php section-->
+            <?php
+                $totalCost = 0;
+
+                foreach($_SESSION['cart'] as $product_id => $quanity){
+                    $information = get_product_information($product_id);
+
+                    $totalCost += (float)$information[2] * $quanity;
+
+                    if(count($information) > 0){
+                        $output = <<<"HTML"
+                            <li class="product">
+                                <div class="prodImg"><img src="/resources/images/Product Image/product_1.jpeg" alt="$information[1] on display"></div>
+                                <div class="prodContent">
+                                    <div class="prodDesc">
+                                        <div class="prodName">
+                                            <h3>$information[1]</h3>    
+                                        </div>
+                                        <div class="productPrice">
+                                            \$$information[2]
+                                        </div>
+                                    </div>
+
+                                        <div class="prodQuanity">
+                                            <ion-icon class="adjustBtn decreaseQuantity" name="remove-outline"></ion-icon>
+                                            <input type="tel" id="quanity" name="quanity" maxlength="10" readonly value="$quanity">
+                                            <ion-icon class="adjustBtn increaseQuantity" name="add-outline"></ion-icon>
+                                        </div>
+                                </div>
+                            </li>
+                        HTML;
+
+                        echo $output;
+                    }
+                }
+            ?>
+
+            <!--php section-->
                     </ul>
                 </section>
     
                 <section class="checkout">
+                    <?php 
+                        //apply coupon if possible
+                        $error_mes = "";
+                        if(isset($_POST['coupon'])){
+                            $coupon = $_POST['coupon'];
+                            if($coupon == "COSC2430-HD") {
+                                $totalCost *= 80/100;
+                                $error_mes = "coupon used: 20% reduction";
+                            }
+                            else if($coupon == "COSC2430-DI") {
+                                $totalCost *= 90/100;
+                                $error_mes = "coupon used: 10% reduction";
+                            }
+                            else $error_mes = "Coupon code is invalid";
+                        }
+                    ?>
+
                     <div class="summary">
                             <span class="priceText">Total amount: </span>
-                            <span class="priceTotalText"></span>
+                            <span class="priceTotalText"><?php echo $totalCost; ?></span>
                     </div>
 
-                    <div class="checkout_coupon">
+                    <form action="" method="POST" class="checkout_coupon">
                         <input type="text" name="coupon" id="coupon" placeholder="Coupon code" />
-                        <button class="couponBtn">Apply</button>
-                    </div>
-                    <div class="errorCoupon"></div>
+                        <button type="submit" class="couponBtn">Apply</button>
+                    </form>
+                    <?php 
+                    //display the error/success message
+                        if($error_mes != ""){
+                            $output = <<<"HTML"
+                                <div class="errorCoupon">
+                                    $error_mes
+                                </div>
+                            HTML;
+                            echo $output;
+                        }
+                    ?>
                     
-                    <form class="options">
-                        <button class="continueBtn">Continue Shopping</button>
-                        <button class="orderBtn">Order</button>
+                    <form action="processOrder.php" method="POST" class="options">
+                        <button type="submit" name="continue" value="1" class="continueBtn">Continue Shopping</button>
+                        <button type="submit" name="process" value="1" class="orderBtn">Order</button>
                     </form>
                 </section>
                 <div class="cookie-container">
@@ -70,34 +133,15 @@
                 </div>
             </main>
     
-            <footer class="mallFooter">
-                <nav>
-                  <div class="FooterRow">
-                  <div class="FooterColumn">
-                  <div class="footerheading">Navigation</div>
-                  <ul><a href="storeHome.html">Home</a></ul>
-                  <ul><a href="storeContact.html">Contact</a></ul>
-                  </div>
-                  <div class="FooterColumn">
-                  <div class="footerheading">Info</div>
-                  <ul><a href="storeAboutUs.html">About us</a></ul>
-                  <ul><a href="storeCopyright.html">CopyRight</a></ul>
-                  </div>
-                  <div class="FooterColumn">
-                  <div class="footerheading">Back To Mall</div>
-                  <ul><a href="../../index.html">Home</a></ul>
-                  <ul><a href="../../mallPages/BrowseStoreCategory.html">Browse</a></ul>
-                  <ul><a href="../../mallPages/contact.html">Mall Support</a></ul>
-                  </div>
-                  </div>
-                </nav>
-                </footer>
+            <?php
+                require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/components/footer.php";
+                get_footer();
+            ?>
         </div>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-        <script src="../../scripts/store_index.js"></script>
-        <script src="../../scripts/cookie-consent.js"></script>
-        <script src="../../scripts/cart_quantity.js"></script>
-        <script src="../../scripts/store_order_placement.js"></script>
-        <script src="../../scripts/cookie-consent.js"></script>
+        <script src="/scripts/store_index.js"></script>
+        <script src="/scripts/cookie-consent.js"></script>
+        <script src="/scripts/cart_quantity.js"></script>
+        <!-- <script src="/scripts/store_order_placement.js"></script> -->
     </body>
 </html>

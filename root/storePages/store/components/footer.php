@@ -1,6 +1,6 @@
 <?php
 
-function get_footer($store_id){
+function get_footer($store_id = "1"){
     $output = <<<"HTML"
         <footer class="mallFooter">
             <nav>

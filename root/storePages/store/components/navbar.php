@@ -1,11 +1,12 @@
 <?php
 
-function get_navbar($store_id){
+function get_navbar($store_id = "empty"){
     require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/helper/store_related.php";
     $store_name = "empty";
 
     //access file to get store name
-    $store_name = get_store_information($store_id)[1];
+    if($store_id == "empty") $store_name = "";
+    else $store_name = get_store_information($store_id)[1];
 
     //get items in the cart
     if(!isset($_SESSION['cart'])) $cart_value = 0;
@@ -24,7 +25,7 @@ function get_navbar($store_id){
                     <li class="item item2"><a href="/storePages/store/storeBrowseTime.php">Browse By Created time</a></li>
                     <li class="item lastItem"><a href="/storePages/store/storeContact.php">Contact</a></li>
                     <li class="item account_mall_nav"><a>My Account</a></li>
-                    <li class="item cart_mall_nav"><a href="/storePages/store/storeOrderPlacement.php">Cart<span id="cart_nav">$cart_value</span></a></li>
+                    <li class="item cart_mall_nav"><a href="/storePages/store/storeOrderPlacement.php">Cart<span id="cart_nav">($cart_value)</span></a></li>
                     <li class="toggle"><span class="bars"></span><li>
                 </ul>
             </nav>

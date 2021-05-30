@@ -18,7 +18,7 @@
     <meta name="description" content="item 1 from store">
       <meta name="keywords" content="item product store">
       <meta name="author" content="Team Developers">
-    <title>Product 1</title>
+    <title><?php echo $product_main[1]; ?></title>
 
     <link rel="stylesheet" href="/style/Store/common.css">
     <link rel="stylesheet" href="/style/mall/Product/product.css">
@@ -44,7 +44,6 @@
                 HTML;
 
                 echo $successMes;
-                echo $_SESSION['cart'];
               }
           ?>
           
@@ -68,6 +67,11 @@
 
                   <div class="card_content_product_description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nesciunt totam similique quasi commodi tempora ab earum! Dignissimos, accusantium. Repellat delectus rerum, illum nam accusantium nostrum nemo tempore. Itaque fugiat animi omnis enim recusandae, labore vero veniam ullam numquam esse totam molestiae explicabo dolorum tenetur quia fugit praesentium id laudantium?     
+                    <?php
+                        foreach($_SESSION['cart'] as $product_id => $quanity){
+                          echo "id: " . $product_id . " - " . $quanity ."\n";
+                        }
+                    ?>
                   </div>
 
                   <div class="card_content_buying">
@@ -79,7 +83,7 @@
                           <option>S</option>
                         </select>
                         <input type="number" name="quanity" min="1" placeholder="Quantity" value="1" id="product1_quantity">
-                        <input type="hidden" id="productId" name="id" value=<?php echo $_GET['id'] ?>$>
+                        <input type="hidden" id="productId" name="id" value=<?php echo $_GET['id'] ?>>
                         <div class="card_content_buying_button">
                           <button type="submit" name="add1" value="1" id="add_product_to_cart1">Add to Cart</button> 
                           <button type="submit" name="addX" value="1" id="buy_now_product1">Buy Now</button>

@@ -177,7 +177,6 @@ main section {
 }
 
 .errorCoupon {
-    display: none;
     padding: 10px;
     background-color: snow;
     text-align: center;

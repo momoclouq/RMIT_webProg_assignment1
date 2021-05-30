@@ -2,21 +2,18 @@
     session_start();
 
     function redirect(){
-        if(isset($_POST["id"])) {
-            $current_id = $_POST["id"];
-            $url = "/storePages/store/product/cate1prod1.php?id=$current_id" . "?success=1";
-            header("location: $url");
-        } else header("location: /storePages/store/product/cate1prod1.php?id=1");
+        $current_id = $_POST["id"];
+        $url = "/storePages/store/product/cate1prod1.php?id=$current_id" . "&success=1";
+        header("location: $url");
     }
 
     function add_product_to_cart($product_id, $quanity){
-        foreach($_SESSION['cart'] as $item){
-            if($item["product_id"] == $product_id) {
-                $item["quanity"] = $item["quanity"] + $quanity;
-                return;
-            }
+        if(isset($_SESSION["cart"][$product_id])){
+            $_SESSION['cart'][$product_id] = (int)$_SESSION['cart'][$product_id] + (int) $quanity;
+            return;
         }
-        $_SESSION['cart'][] = array("product_id"=>$product_id, "quanity"=>$quanity);
+
+        $_SESSION['cart'][$product_id] = $quanity;
     }
 
     //initialize cart if not yet available
@@ -32,7 +29,6 @@
 
     //redirect
     if(isset($_POST['add1'])) redirect(); 
-
 
     if(isset($_POST['addX'])) header("location: /storePages/store/storeOrderPlacement.php");
 
