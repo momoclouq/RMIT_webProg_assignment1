@@ -129,17 +129,14 @@
                                         <div class="listScrollMenu_item">
                                             <a href="/storePages/store/product/cate1prod1.php?id=$product[0]">
                                             <div class="listScrollMenu_item_icon">
-                                                <img src="resources/images/Product Image/product_1.jpeg">
+                                                <img src="resources/images/Product Image/product_5.jpeg">
                                             </div>
                                             <div class="listScrollMenu_item_name">
                                                 $product[1]
                                             </div>
                                             <div class="listScrollMenu_item_price_info">
-                                                <div class="listScrollMenu_item_store">
-                                                    $product[4]
-                                                </div>
                                                 <div class="listScrollMenu_item_price">
-                                                    $product[2]
+                                                    $product[2]\$
                                                 </div>
                                             </div>
                                             </a>
@@ -226,7 +223,7 @@
                                                     $product[1]
                                                 </div>
                                                 <div class="list_display_product_content_description">
-                                                    $product[2]
+                                                    $product[2]\$
                                                 </div>
                                             </div>
                                             </a>
