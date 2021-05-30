@@ -1,3 +1,39 @@
+<?php
+    //process file first
+    function cmp_by_time_reverse($prod1, $prod2){
+        $time1 = DateTime::createFromFormat('Y-m-d H:i:s', substr($prod1[3], 0, -1));
+        $time2 = DateTime::createFromFormat('Y-m-d H:i:s', substr($prod2[3], 0, -1));
+
+        if ($time1 == $time2) return 0;
+        if ($time1 > $time2) return -1;
+        if ($time1 < $time2) return 1;
+    }
+
+    //access file
+    $file = fopen("../files/given_data/products.csv", "r");
+    flock($file, LOCK_SH);
+    $title = fgets($file);
+
+
+    //get all items related to the store
+    $all_product_in_store = [];
+    while($line = fgets($file)){
+        //split the data
+        $items = explode(",", $line);
+         $all_product_in_store[] = $items;
+           
+    }
+
+    flock($file, LOCK_UN);
+    fclose($file);
+
+  
+
+    //sort by time descending
+    usort($all_product_in_store, "cmp_by_time_reverse");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,234 +58,81 @@
         <main>
             <section id="newStoreList">
                 <div class="listHeader">New stores</div>
+
                 <div class="listScrollMenu">
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                    </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
+                    <?php 
+                        if(!is_array($all_stores)){
+                            $all_stores = [];
+                        }
 
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
-
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
-
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/storeHome.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/logo.png">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Apple: sells electronics
-                        </div>
-                        </a>
-                    </div>
+                        $store_quantity = count($all_stores);
+                        //print out 10 most recent items
+                        for ($i = 0; $i < $store_quantity; $i++){
+                            $store = $$all_stores[$i];
+                       
+                            $output = <<<"HTML"
+                                        <div class="listScrollMenu_item">
+                                            <a href="storePages/store/storeHome.php?id=$store[0]">
+                                            <div class="listScrollMenu_item_icon">
+                                                <img src="resources/images/Store Image/store_2.jpeg">
+                                            </div>
+                                            <div class="listScrollMenu_item_name">
+                                                $store[1]
+                                            </div>
+                                            </a> 
+                                        </div>    
+                                    HTML;
+                            
+                            echo $output;
+                            if($i == 10){
+                                break;
+                            }
+                        }
+                    ?> 
                 </div>
             </section>
     
             <section id="newProductList">
                 <div class="listHeader">New Products</div>
                 <div class="listScrollMenu">
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/product/cate1prod1.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/product.jpeg">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Macbook pro 2020 256gb 8gb
-                        </div>
-                        <div class="listScrollMenu_item_price_info">
-                            <div class="listScrollMenu_item_store">
-                                Apple
-                            </div>
-                            <div class="listScrollMenu_item_price">
-                                33.000.000vnd
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/product/cate1prod1.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/product.jpeg">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Macbook pro 2020 256gb 8gb
-                        </div>
-                        <div class="listScrollMenu_item_price_info">
-                            <div class="listScrollMenu_item_store">
-                                Apple
-                            </div>
-                            <div class="listScrollMenu_item_price">
-                                33.000.000vnd
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/product/cate1prod1.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/product.jpeg">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Macbook pro 2020 256gb 8gb
-                        </div>
-                        <div class="listScrollMenu_item_price_info">
-                            <div class="listScrollMenu_item_store">
-                                Apple
-                            </div>
-                            <div class="listScrollMenu_item_price">
-                                33.000.000vnd
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/product/cate1prod1.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/product.jpeg">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Macbook pro 2020 256gb 8gb
-                        </div>
-                        <div class="listScrollMenu_item_price_info">
-                            <div class="listScrollMenu_item_store">
-                                Apple
-                            </div>
-                            <div class="listScrollMenu_item_price">
-                                33.000.000vnd
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/product/cate1prod1.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/product.jpeg">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Macbook pro 2020 256gb 8gb
-                        </div>
-                        <div class="listScrollMenu_item_price_info">
-                            <div class="listScrollMenu_item_store">
-                                Apple
-                            </div>
-                            <div class="listScrollMenu_item_price">
-                                33.000.000vnd
-                            </div>
-                        </div>
-                        </a>
-                    </div>
+                    <?php 
 
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/product/cate1prod1.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="resources/images/product.jpeg">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Macbook pro 2020 256gb 8gb
-                        </div>
-                        <div class="listScrollMenu_item_price_info">
-                            <div class="listScrollMenu_item_store">
-                                Apple
-                            </div>
-                            <div class="listScrollMenu_item_price">
-                                33.000.000vnd
-                            </div>
-                        </div>
-                        </a>
-                    </div>
+                        if(!is_array($all_product_in_store)){
+                            $all_product_in_store = [];
+                        }
 
-                    <div class="listScrollMenu_item">
-                        <a href="storePages/store/product/cate1prod1.html">
-                        <div class="listScrollMenu_item_icon">
-                            <img src="../resources/images/product.jpeg">
-                        </div>
-                        <div class="listScrollMenu_item_name">
-                            Macbook pro 2020 256gb 8gb
-                        </div>
-                        <div class="listScrollMenu_item_price_info">
-                            <div class="listScrollMenu_item_store">
-                                Apple
-                            </div>
-                            <div class="listScrollMenu_item_price">
-                                33.000.000vnd
-                            </div>
-                        </div>
-                        </a>
-                    </div>
+                        $item_quantity = count($all_product_in_store);
+                        //print out 10 most recent items
+                        for ($i = 0; $i < $item_quantity; $i++){
+                            $product = $all_product_in_store[$i];
+                       
+                            $output2 = <<<"HTML"
+                                        <div class="listScrollMenu_item">
+                                            <a href="/storePages/store/product/cate1prod1.php?id=$product[0]">
+                                            <div class="listScrollMenu_item_icon">
+                                                <img src="resources/images/Product Image/product_1.jpeg">
+                                            </div>
+                                            <div class="listScrollMenu_item_name">
+                                                $product[1]
+                                            </div>
+                                            <div class="listScrollMenu_item_price_info">
+                                                <div class="listScrollMenu_item_store">
+                                                    $product[4]
+                                                </div>
+                                                <div class="listScrollMenu_item_price">
+                                                    $product[2]
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                    HTML;
+                            
+                            echo $output2;
+                            if($i == 10){
+                                break;
+                            }
+                        }
+                    ?>
                 </div>
             </section>
 

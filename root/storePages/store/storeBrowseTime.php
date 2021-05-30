@@ -1,4 +1,43 @@
+<?php
+    //redirect
+    if (!$_GET['id']) header('location: /storePages/store/storeHome.php?id=1');
+    
+    //process file first
+    function cmp_by_time_reverse($prod1, $prod2){
+        $time1 = DateTime::createFromFormat('Y-m-d H:i:s', substr($prod1[3], 0, -1));
+        $time2 = DateTime::createFromFormat('Y-m-d H:i:s', substr($prod2[3], 0, -1));
 
+        if ($time1 == $time2) return 0;
+        if ($time1 > $time2) return -1;
+        if ($time1 < $time2) return 1;
+    }
+
+    //access file
+    $file = fopen("../../../files/given_data/products.csv", "r");
+    flock($file, LOCK_SH);
+    $title = fgets($file);
+    $foundStore = false;
+
+    //get all items related to the store
+    $all_product_in_store = [];
+    while($line = fgets($file)){
+        //split the data
+        $items = explode(",", $line);
+
+        if ($items[4] == $_GET['id']){
+            $all_product_in_store[] = $items;
+            $foundStore = true;
+        }
+    }
+    flock($file, LOCK_UN);
+    fclose($file);
+
+    //if store does not exist, redirect to the first store
+    // if (!$foundStore) header('location: /storePages/store/storeHome.php?id=1');
+
+    //sort by time descending
+    usort($all_product_in_store, "cmp_by_time_reverse");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,23 +52,10 @@
 
     <body>
         <div class="boxWrapper">
-            <header class="mallHeader">
-                <nav>
-                    <ul class="menu">
-                        <li class="logo"><a href="../../storePages/store/storeHome.html">Store</a></li>
-                        <li class="item mallName"><a href="storeHome.html">Home</a></li>
-        
-                        <li class="item"><a href="storeAboutUs.html">About us</a></li>
-                        <li class="item subMenu2"><a href="#">Products</a></li>
-                        <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
-                        <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
-                        <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
-                        <li class="item account_mall_nav"><a>My Account</a></li>
-                        <li class="item cart_mall_nav"><a href="../storeOrderPlacement.html">Cart<span id="cart_nav"></span></a></li>
-                        <li class="toggle"><span class="bars"></span><li>
-                    </ul>
-                </nav>
-            </header>
+            <?php 
+                require "./components/navbar.php";
+                get_navbar($_GET['id']);
+            ?>
     
             <main>
                 <div class="main-content">
@@ -325,6 +351,10 @@
                    
                         </div>
 
+                        <div class="pagination">
+                            <a href="/storePages/store/storeBrowseTime.php?page=1">Next</a>
+                        </div>
+
                 </div>
                 <div class="cookie-container">
                     <p>
@@ -335,28 +365,10 @@
             
             </main>
 
-            <footer class="mallFooter">
-                <nav>
-                  <div class="FooterRow">
-                  <div class="FooterColumn">
-                  <div class="footerheading">Navigation</div>
-                  <ul><a href="storeHome.html">Home</a></ul>
-                  <ul><a href="storeContact.html">Contact</a></ul>
-                  </div>
-                  <div class="FooterColumn">
-                  <div class="footerheading">Info</div>
-                  <ul><a href="storeAboutUs.html">About us</a></ul>
-                  <ul><a href="storeCopyright.html">CopyRight</a></ul>
-                  </div>
-                  <div class="FooterColumn">
-                  <div class="footerheading">Back To Mall</div>
-                  <ul><a href="../../index.html">Home</a></ul>
-                  <ul><a href="../../mallPages/BrowseStoreCategory.html">Browse</a></ul>
-                  <ul><a href="../../mallPages/contact.html">Mall Support</a></ul>
-                  </div>
-                  </div>
-                </nav>
-                </footer>
+            <?php
+                require "./components/footer.php";
+                get_footer($_GET['id']);
+            ?>
         </div>
 
         <script src="../../scripts/store_index.js"></script>
