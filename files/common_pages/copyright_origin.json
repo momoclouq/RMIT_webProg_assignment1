@@ -1,0 +1,23 @@
+{
+    "title": "Copyright policies",
+    "intro": {
+        "text": [
+            "Mall provides translated versions of our Help Center as a convenience, though they are not meant to change the content of our policies. The English version is the official language we use to enforce our policies. To view this article in a different language, use the language dropdown at the bottom of the page.",
+            "We abide by local copyright laws and protect the rights of copyright holders, so we don’t allow ads that are unauthorized to use copyrighted content. If you are legally authorized to use copyrighted content, apply for certification to advertise. If you see unauthorized content, submit a copyright-related complaint."
+        ]
+    },
+    "content": {
+        "title": "Copyrighted content",
+        "text": [
+            "Unauthorized sites or software that capture, copy, or provide access to copyrighted content",
+            "Sites or apps that facilitate unauthorized offline distribution of copyrighted content",
+            "Software, sites, or tools that remove digital rights management (DRM) technology from copyrighted material or otherwise circumvent copyright (irrespective of whether the intended use is legitimate or not"
+        ]
+    },
+    "lastword": {
+        "title": "Need help?",
+        "content": [
+            "If you have questions about our policies, let us know: <a href=\"contact.html\">Contact Mall Support</a>"
+        ]
+    }
+}

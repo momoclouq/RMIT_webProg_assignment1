@@ -30,6 +30,7 @@
 
     <main>
         <h1 class="dashboard_title">Dashboard for Admin</h1>
+        <h2 class="dashboard_hello">Hello <?php echo $_SESSION['loggedin']['username'] ?></h2>
         <section class="dashboard_options">
             <div><a href="admin_tos.php">Change Term of service content</a></div>
             <div><a href="admin_copyright.php">Change copyright terms</a></div>

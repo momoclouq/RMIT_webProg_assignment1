@@ -24,3 +24,8 @@
 .dashboard_options div a{
     text-decoration: none;
 }
+
+.dashboard_hello {
+    text-align: center;
+    background-color: aliceblue;
+}

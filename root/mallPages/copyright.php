@@ -1,3 +1,10 @@
+<?php
+    //get data from file
+    $source_link = $_SERVER["DOCUMENT_ROOT"] . "/../files/common_pages/copyright.json";
+    $source_str = file_get_contents($source_link);
+    $source = json_decode($source_str);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,37 +15,52 @@
     <meta name="author" content="Team Developers">
     <title>Copyright</title>
 
-    <link rel="stylesheet" href="../style/mall/common.css">
-    <link rel="stylesheet" href="../style/mall/copyright/copyright.css">
-    <link rel="stylesheet" href="../style/cookie-consent/cookie-consent.css">
+    <link rel="stylesheet" href="/style/mall/common.css">
+    <link rel="stylesheet" href="/style/mall/copyright/copyright.css">
+    <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://kit.fontawesome.com/6af8588f7a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="boxWrapper">
         <?php
-            require './components/navbar.php';
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
         ?>
     
         <main> 
             <div class="wrapper">
-                <section class="copyright_title">Copyright policies</section>
+                <section class="copyright_title"><?php echo $source->title; ?></section>
     
                 <section class="copyright_intro">
-                    <div class="copyright_intro_text">Mall provides translated versions of our Help Center as a convenience, though they are not meant to change the content of our policies. The English version is the official language we use to enforce our policies. To view this article in a different language, use the language dropdown at the bottom of the page.</div>
-                    <div class="copyright_intro_text">We abide by local copyright laws and protect the rights of copyright holders, so we don’t allow ads that are unauthorized to use copyrighted content. If you are legally authorized to use copyrighted content, apply for certification to advertise. If you see unauthorized content, submit a copyright-related complaint.</div>
+                    <?php
+                        $index = 0;
+                        foreach($source->intro->text as $text){
+                            echo "<div class=\"copyright_intro_text\">$text</div>";
+                            $index++;
+                        }
+                    ?>
                 </section>
     
                 <section class="copyright_content">
-                    <div class="copyright_content_title">Copyrighted content</div>
-                    <p class="copyright_content_text"><i class="fas fa-times redColor"></i> Unauthorized sites or software that capture, copy, or provide access to copyrighted content</p>
-                    <p class="copyright_content_text"><i class="fas fa-times redColor"></i> Sites or apps that facilitate unauthorized offline distribution of copyrighted content</p>
-                    <p class="copyright_content_text"><i class="fas fa-times redColor"></i> Software, sites, or tools that remove digital rights management (DRM) technology from copyrighted material or otherwise circumvent copyright (irrespective of whether the intended use is legitimate or not</p>
+                    <div class="copyright_content_title"><?php echo $source->content->title; ?></div>
+                    <?php
+                        $index = 0;
+                        foreach($source->content->text as $text){
+                            echo "<p class=\"copyright_content_text\"><i class=\"fas fa-times redColor\"></i>$text</li>";
+                            $index++;
+                        }
+                    ?>
                 </section>
     
                 <section class="copyright_lastword">
-                    <div class="copyright_lastword_title">Need help?</div>
-                    <div class="copyright_lastword_content">If you have questions about our policies, let us know: <a href="contact.html">Contact Mall Support</a></div>
+                    <div class="copyright_lastword_title"><?php echo $source->lastword->title; ?></div>
+                    <?php
+                        $index = 0;
+                        foreach($source->lastword->content as $text){
+                            echo "<div class=\"copyright_lastword_content\">$text</li>";
+                            $index++;
+                        }
+                    ?>
                 </section>
             </div>
             <div class="cookie-container">
@@ -50,11 +72,11 @@
         </main>
            
         <?php
-            require './components/footer.php';
-          ?>
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
+        ?>
     </div>
 
-    <script src="../scripts/mall_index.js"></script>
-    <script src="../scripts/cookie-consent.js"></script>
+    <script src="/scripts/mall_index.js"></script>
+    <script src="/scripts/cookie-consent.js"></script>
 </body>
 </html>

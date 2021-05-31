@@ -1,3 +1,11 @@
+<?php
+    //get data from file
+    $source_link = $_SERVER["DOCUMENT_ROOT"] . "/../files/common_pages/aboutus.json";
+    $source_str = file_get_contents($source_link);
+    $source = json_decode($source_str);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
