@@ -22,8 +22,8 @@ function get_navbar($store_id = "empty"){
                     <li class="item"><a href="/storePages/store/storeAboutUs.php">About us</a></li>
                     <li class="item subMenu2"><a href="#">Products</a></li>
                     <li class="item item2"><a href="/storePages/store/storeBrowseCategory.php">Browse By Category</a></li>
-                    <li class="item item2"><a href="/storePages/store/storeBrowseTime.php">Browse By Created time</a></li>
-                    <li class="item lastItem"><a href="/storePages/store/storeContact.php">Contact</a></li>
+                    <li class="item item2"><a href="/storePages/store/storeBrowseTime.php?id=$store_id">Browse By Created time</a></li>
+                    <li class="item lastItem"><a href="/storePages/store/storeContact.php?id=$store_id">Contact</a></li>
                     <li class="item account_mall_nav"><a>My Account</a></li>
                     <li class="item cart_mall_nav"><a href="/storePages/store/storeOrderPlacement.php">Cart<span id="cart_nav">($cart_value)</span></a></li>
                     <li class="toggle"><span class="bars"></span><li>

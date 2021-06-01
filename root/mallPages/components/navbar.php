@@ -16,6 +16,11 @@
                     echo "<li class=\"item\"><a href=\"/mallPages/admin/admin_dashboard.php\">Admin Dash</a></li>";
                 }
             ?>
+            <?php
+                if(isset($_SESSION['loggedin'])){
+                    echo "<li class=\"item\"><a href=\"/mallPages/Account/logout.php\">sign out</a></li>";
+                }
+            ?>
             <li class="item account_mall_nav"><a href="/mallPages/Account/myAccount-logged-in.php">My Account</a></li>
             <li class="toggle"><span class="bars"></span><li>
         </ul>

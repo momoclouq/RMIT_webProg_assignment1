@@ -1,4 +1,5 @@
 <?php
+    session_start();
     //get data from file
     $source_link = $_SERVER["DOCUMENT_ROOT"] . "/../files/common_pages/tos.json";
     $source_str = file_get_contents($source_link);

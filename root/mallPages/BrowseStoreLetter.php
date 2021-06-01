@@ -100,3 +100,4 @@
         <script src="/scripts/cookie-consent.js"></script>
         <script src="/scripts/mall_index.js"></script>
     </body>
+</html>

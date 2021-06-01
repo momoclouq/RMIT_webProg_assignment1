@@ -9,6 +9,6 @@
         }
 
         unset($_SESSION['loggedin']);
-        header("location: ../myAccount-log-in.php");
+        header("location: /mallPages/Account/myAccount-log-in.php");
     }
 ?>

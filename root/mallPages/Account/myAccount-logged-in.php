@@ -1,5 +1,8 @@
 <?php
     session_start();
+
+    //if the user was not logged in:
+    if(!isset($_SESSION['loggedin'])) header('location: /mallPages/Account/myAccount-Log-in.php');
     
     //get user information
     require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/Account/helper/account_related.php"; 

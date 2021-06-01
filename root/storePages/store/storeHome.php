@@ -1,4 +1,5 @@
 <?php
+    session_start();
     //redirect
     if (!$_GET['id']) header('location: /storePages/store/storeHome.php?id=1');
 

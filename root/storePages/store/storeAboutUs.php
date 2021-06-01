@@ -15,22 +15,10 @@
 </head>
 <body>
       <div class="boxWrapper">
-        <header class="mallHeader">
-          <nav>
-              <ul class="menu">
-                  <li class="logo"><a href="storeHome.html">Store 1</a></li>
-                  <li class="item mallName"><a href="storeHome.html">Home</a></li>
-                  <li class="item"><a href="storeAboutUs.html">About us</a></li>
-                  <li class="item subMenu2"><a href="#">Products</a></li>
-                  <li class="item item2"><a href="storeBrowseCategory.html">Browse By Category</a></li>
-                  <li class="item item2"><a href="storeBrowseTime.html">Browse By Created time</a></li>
-                  <li class="item lastItem"><a href="storeContact.html">Contact</a></li>
-                  <li class="item account_mall_nav"><a>My Account</a></li>
-                  <li class="item cart_mall_nav"><a href="../store/storeOrderPlacement.html">Cart<span id="cart_nav"></span></a></li>
-                  <li class="toggle"><span class="bars"></span><li>
-              </ul>
-          </nav>
-      </header>
+        <?php
+              require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/components/navbar.php";
+              get_navbar($_GET['id']);
+          ?>
 
       <main>
         <h3 class="aboutUsHeader">Store Information</h3>
@@ -56,32 +44,14 @@
       </div>
       </main>
             
-            <footer class="mallFooter">
-              <nav>
-                <div class="FooterRow">
-                <div class="FooterColumn">
-                <div class="footerheading">Navigation</div>
-                <ul><a href="storeHome.html">Home</a></ul>
-                <ul><a href="storeContact.html">Contact</a></ul>
-                </div>
-                <div class="FooterColumn">
-                <div class="footerheading">Info</div>
-                <ul><a href="storeAboutUs.html">About us</a></ul>
-                <ul><a href="storeCopyright.html">CopyRight</a></ul>
-                </div>
-                <div class="FooterColumn">
-                <div class="footerheading">Back To Mall</div>
-                <ul><a href="../../index.html">Home</a></ul>
-                <ul><a href="../../mallPages/BrowseStoreCategory.html">Browse</a></ul>
-                <ul><a href="../../mallPages/contact.html">Mall Support</a></ul>
-                </div>
-                </div>
-              </nav>
-              </footer>
+            <?php
+                require $_SERVER["DOCUMENT_ROOT"] . "/storePages/store/components/footer.php";
+                get_footer($_GET['id']);
+            ?>
 
-          <script src="../../scripts/store_index.js"></script>
-          <script src="../../scripts/cookie-consent.js"></script>
-          <script src="../../scripts/cart_quantity.js"></script>
+          <script src="/scripts/store_index.js"></script>
+          <script src="/scripts/cookie-consent.js"></script>
+          <script src="/scripts/cart_quantity.js"></script>
     </div>
 </body>
 </html>
