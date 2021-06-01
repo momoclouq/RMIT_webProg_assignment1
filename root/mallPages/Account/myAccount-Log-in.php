@@ -12,12 +12,12 @@
         return false;
      }
 
-     function check_combination_user($username, $password){
+     function check_combination_user($email, $password){
         $source_str = file_get_contents("../../../files/account/user_pass.json");
         $source = json_decode($source_str);
 
         foreach ($source as $combination){
-            if ($combination->name == $username && $combination->pass == hash("sha256", $password)) return true;
+            if ($combination->email == $email && $combination->pass == hash("sha256", $password)) return true;
         }
 
         return false;

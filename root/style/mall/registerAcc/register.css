@@ -155,3 +155,12 @@ input[type="submit"], input[type="reset"] {
 input[type=radio]:link{
     background-color: red;
 }
+
+.success {
+    text-align: center;
+}
+
+.fail {
+    text-align: center;
+    color: red;
+}

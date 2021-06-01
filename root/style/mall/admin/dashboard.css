@@ -2,6 +2,7 @@
     background-color: aliceblue;
     text-align: center;
     padding: 20px;
+    width: 100vw;
 }
 
 .dashboard_options {
@@ -13,7 +14,7 @@
 .dashboard_options div {
     padding: 20px;
     background-color: azure;
-    width: 100%;
+    width: 100vw;
     text-align: center;
 }
 
@@ -28,4 +29,53 @@
 .dashboard_hello {
     text-align: center;
     background-color: aliceblue;
+    width: 100vw;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.profile_pic {
+    width: 200px;
+    height: 200px;
+}
+
+.back_btn {
+    width: 100vw;
+    padding: 10px 10px 10px 30px;
+    background-color: black;
+}
+
+.back_btn a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.change_panel {
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+.change_panel label {
+    text-decoration: underline;
+}
+
+.input_field{
+    padding: 3px;
+    font-size: 1em;
+    max-width: 90vw;
+}
+
+.submit_btn {
+    margin-top: 30px;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1em;
+    background-color: black;
+    color: white;
 }

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +30,7 @@
             
             <div class="main-container">
                 <div class="left-container">
-                    <img src="../../resources/images/MyAccount/avatar1.jpeg" alt="Profile Picture">
+                    <img src="/resources/images/MyAccount/avatar1.jpeg" alt="Profile Picture">
                 </div>
 
                 <div class="right-container">

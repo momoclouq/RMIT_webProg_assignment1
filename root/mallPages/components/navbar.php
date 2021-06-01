@@ -11,6 +11,11 @@
             <li class="item item2"><a href="/mallPages/BrowseStoreCategory.php">Browse By category</a></li>
             <li class="item"><a href="/mallPages/FAQs.php">FAQs</a></li>
             <li class="item"><a href="/mallPages/contact.php">Contact</a></li>
+            <?php
+                if($_SESSION['loggedin']['type'] == "admin"){
+                    echo "<li class=\"item\"><a href=\"/mallPages/admin/admin_dashboard.php\">Admin Dash</a></li>";
+                }
+            ?>
             <li class="item account_mall_nav"><a href="/mallPages/Account/myAccount-logged-in.php">My Account</a></li>
             <li class="toggle"><span class="bars"></span><li>
         </ul>

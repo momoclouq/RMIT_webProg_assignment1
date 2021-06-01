@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +12,15 @@
     <meta name="author" content="Team Developers">
     <title>FAQ</title>
 
-    <link rel="stylesheet" href="../style/mall/common.css">
-    <link rel="stylesheet" href="../style/mall/FAQ/FAQ.css">
-    <link rel="stylesheet" href="../style/cookie-consent/cookie-consent.css">
+    <link rel="stylesheet" href="/style/mall/common.css">
+    <link rel="stylesheet" href="/style/mall/FAQ/FAQ.css">
+    <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
     <div class="boxWrapper">
         <?php
-          require './components/navbar.php';
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
         ?>
         
         <main class="mallFAQs">
@@ -72,11 +76,11 @@
         </main>
 
         <?php
-            require './components/footer.php';
-          ?>
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
+        ?>
     </div>
 
-    <script src="../scripts/mall_index.js"></script>
-    <script src="../scripts/cookie-consent.js"></script>
+    <script src="/scripts/mall_index.js"></script>
+    <script src="/scripts/cookie-consent.js"></script>
 </body>
 </html>

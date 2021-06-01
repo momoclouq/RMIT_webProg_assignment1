@@ -7,18 +7,19 @@
     }
 
     //get data from file
-    $source_link = $_SERVER["DOCUMENT_ROOT"] . "/../files/common_pages/tos.json";
+    $source_link = $_SERVER["DOCUMENT_ROOT"] . "/../files/common_pages/aboutus.json";
     $source_str = file_get_contents($source_link);
     $source = json_decode($source_str);
 
     //process the change_request
     if($_POST['change_request'] == "1"){
-        $source->title = $_POST['title'];
-        $source->intro->text = $_POST['intro_text'];
-        $source->content->title = $_POST['content_title'];
-        $source->content->text = $_POST['content_text'];
-        $source->lastword->title = $_POST['lastword_title'];
-        $source->lastword->content = $_POST['lastword_content'];
+        foreach($source as $name => $image_link){
+            $path_separated = explode("/", $image_link);
+            $path_separated[count($path_separated)-1] = $_POST[$name];
+            $path = implode("/",$path_separated);
+
+            $source->$name = $path;
+        }
     }
 
     $newSource = json_encode($source);
@@ -41,87 +42,51 @@
 </head>
 
 <body>
+<div class="boxWrapper">
     <?php
         require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
     ?>
 
     <main>
         <div><a href="admin_dashboard.php">Back to dashboard</a></div>
-        <h1 class="dashboard_title">Adjust term of service</h1>
+        <h1 class="dashboard_title">Adjust developer's profile pics</h1>
         <?php 
-            if($_POST['change_request'] == "1") echo "<h2 class=\"status_success\">Term of service updated</h2>";
+            if($_POST['change_request'] == "1") echo "<h2 class=\"status_success\">Profile pics updated</h2>";
         ?>
         <br>
-
-
     <!--create form from source data-->
+        <h2>To update the profile pic, please add the pic into this directory first:</h2>
+        <h3>/resources/image/profilePic/</h3>
         <form action="" method="POST">
-            <section>
-                <label for="title">Title</label>
-                <textarea id="title" name="title" rows="1" cols="50"><?php echo $source->title; ?></textarea>
-            </section>
+            <?php
+                foreach($source as $name => $image_link){
+                    $path_separated = explode("/", $image_link);
+                    $filename = $path_separated[count($path_separated)-1];
 
-            <section>
-                <label>Intro content</label>
-                <br>
-                <?php
-                    $index = 0;
-                    foreach($source->intro->text as $text){
-                        echo "<textarea id=\"intro_text$index\" name=\"intro_text[]\" rows=\"1\" cols=\"50\">$text</textarea>";
-                        echo "<br>";
-                        $index++;
-                    }
-                ?>
-            </section>
-            <br>
-
-            <section>
-                <label for="content_title">Content title</label>
-                <br>
-                <textarea id="content_title" name="content_title" rows="1" cols="50"><?php echo $source->content->title; ?></textarea>
-            </section>
-
-            <section>
-                <label>Content text</label>
-                <br>
-                <?php
-                    $index = 0;
-                    foreach($source->content->text as $text){
-                        echo "<textarea id=\"content_text$index\" name=\"content_text[]\" rows=\"1\" cols=\"50\">$text</textarea>";
-                        echo "<br>";
-                        $index++;
-                    }
-                ?>
-            </section>
-
-            <br>
-            <section>
-                <label for="lasword_title">lastword title</label>
-                <br>
-                <textarea id="lasword_title" name="lastword_title" rows="1" cols="50"><?php echo $source->lastword->title; ?></textarea>
-            </section>
-
-            <section>
-                <label>lastword content</label>
-                <br>
-                <?php
-                    $index = 0;
-                    foreach($source->lastword->content as $text){
-                        echo "<textarea id=\"lastword_content$index\" name=\"lastword_content[]\" rows=\"1\" cols=\"50\">$text</textarea>";
-                        echo "<br>";
-                        $index++;
-                    }
-                ?>
-            </section>
+                    $output = <<<"HTML"
+                        <section>
+                            <h2>Developer: $name</h2>
+                            <label for=$name>Enter new filename</label>
+                            <input type="text" id=$name value=$filename name=$name>
+                            <br>
+                            <img class="profile_pic" src=$image_link alt=$name>
+                        </section>
+                    HTML;
+                    echo $output;
+                }
+            ?>
             
             <input type="hidden" name="change_request" value="1">
             <button type="submit">Submit changes</button>
         </form>
+
+         
     </main>
 
     <?php
         require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
-    ?>
+    ?> 
+    </div>
 
     <script src="/scripts/mall_index.js"></script>
     <script src="/scripts/cookie-consent.js"></script>

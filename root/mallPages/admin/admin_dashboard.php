@@ -24,24 +24,26 @@
 </head>
 
 <body>
-    <?php
-        require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
-    ?>
+    <div class="boxWrapper">
+        <?php
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
+        ?>
 
-    <main>
-        <h1 class="dashboard_title">Dashboard for Admin</h1>
-        <h2 class="dashboard_hello">Hello <?php echo $_SESSION['loggedin']['username'] ?></h2>
-        <section class="dashboard_options">
-            <div><a href="admin_tos.php">Change Term of service content</a></div>
-            <div><a href="admin_copyright.php">Change copyright terms</a></div>
-            <div><a href="admin_privacy.php">Change privacy terms</a></div>
-            <div><a href="admin_aboutus.php">Change about us photo</a></div>
-        </section>
-    </main>
+        <main>
+            <h1 class="dashboard_title">Dashboard for Admin</h1>
+            <h2 class="dashboard_hello">Hello <?php echo $_SESSION['loggedin']['username'] ?></h2>
+            <section class="dashboard_options">
+                <div><a href="admin_tos.php">Change Term of service content</a></div>
+                <div><a href="admin_copyright.php">Change copyright terms</a></div>
+                <div><a href="admin_privacy.php">Change privacy terms</a></div>
+                <div><a href="admin_aboutus.php">Change about us photo</a></div>
+            </section>
+        </main>
 
-    <?php
-        require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
-    ?>
+        <?php
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
+        ?>
+    </div>
 
     <script src="/scripts/mall_index.js"></script>
     <script src="/scripts/cookie-consent.js"></script>

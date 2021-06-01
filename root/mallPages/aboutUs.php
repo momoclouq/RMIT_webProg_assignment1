@@ -1,4 +1,5 @@
 <?php
+    session_start();
     //get data from file
     $source_link = $_SERVER["DOCUMENT_ROOT"] . "/../files/common_pages/aboutus.json";
     $source_str = file_get_contents($source_link);
@@ -23,9 +24,9 @@
 </head>
 <body>
       <div class="boxWrapper">
-      <?php
-          require './components/navbar.php';
-      ?>
+        <?php
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
+        ?>
 
           <main class="mallAboutUs">
             <h1 class="aboutUsHeader">The Team</h1>
@@ -33,7 +34,11 @@
               <div class="TeamRow">
                   <div class="TeamColumn">
                     <div class="card">
-                      <img src="../resources/images/Minh.jpg" alt="Minh">
+                      <?php 
+                          $link = $source->minh;
+                          echo "<img src=$link alt=\"minh\">";
+                      ?>
+                      <!-- <img src="../resources/images/Minh.jpg" alt="Minh"> -->
                       <div class="container">
                         <h2>Pham Hoang Minh</h2>
                         <p class="title">Head Developer</p>
@@ -43,7 +48,11 @@
                   </div>
                   <div class="TeamColumn">
                     <div class="card">
-                      <img src="../resources/images/Anh.jpg" alt="Anh">
+                      <?php 
+                          $link = $source->anh;
+                          echo "<img src=$link alt=\"anh\">";
+                      ?>
+                      <!-- <img src="../resources/images/Anh.jpg" alt="Anh"> -->
                       <div class="container">
                         <h2>Tran Quang Anh</h2>
                         <p class="title">Developer & Tester</p>
@@ -53,7 +62,11 @@
                   </div>
                   <div class="TeamColumn">
                     <div class="card">
-                      <img src="../resources/images/Dat.jpg" alt="Dat">
+                      <?php 
+                          $link = $source->dat;
+                          echo "<img src=$link alt=\"dat\">";
+                      ?>
+                      <!-- <img src="../resources/images/Dat.jpg" alt="Dat"> -->
                       <div class="container">
                         <h2>Nguyen Thanh Dat</h2>
                         <p class="title">Developer & Manager</p>
@@ -63,7 +76,11 @@
                   </div>
                   <div class="TeamColumn">
                     <div class="card">
-                      <img src="../resources/images/Phat.jpg" alt="Phat" style="width:100%">
+                      <?php 
+                          $link = $source->phat;
+                          echo "<img src=$link alt=\"phat\">";
+                      ?>
+                      <!-- <img src="../resources/images/Phat.jpg" alt="Phat" style="width:100%"> -->
                       <div class="container">
                         <h2>Tran Tan Phat</h2>
                         <p class="title">Developer</p>
@@ -112,11 +129,11 @@
               </nav>
           </footer> -->
           <?php
-            require './components/footer.php';
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
           ?>
     </div>
-    <script src="../scripts/cookie-consent.js"></script>
-    <script src="../scripts/mall_index.js"></script>
-    <script src="../scripts/mall_aboutUs.js"></script>
+    <script src="/scripts/cookie-consent.js"></script>
+    <script src="/scripts/mall_index.js"></script>
+    <script src="/scripts/mall_aboutUs.js"></script>
 </body>
 </html>

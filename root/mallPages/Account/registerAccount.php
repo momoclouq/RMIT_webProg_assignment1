@@ -32,26 +32,48 @@
                         <h1>Sign up</h1>
                         <p>Create a user account to start shopping</p>
                         <p>Or register your store to start your business</p>
+                        <?php
+                            if(isset($_GET['success'])) {
+                                $success_mes = <<<"HTML"
+                                    <div class='status success'>Account created</div>
+                                HTML;
+                                echo $success_mes;
+                            }
+                            else if(isset($_GET['fail'])){
+                                $success_mes = <<<"HTML"
+                                    <div class='status fail'>Account not created</div>
+                                HTML;
+                                echo $success_mes;
+                            }
+                        ?>
                     </article>
 
                     <form action="./process/process_register.php" method="POST">
                         <label for="emailAddress">Email address</label>
                         <input type="email" id="emailAddress" name="emailAddress" placeholder="abcde@mail.com">
-                        <span class="errorEmailMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['email'] == "1") echo "<span class=\"errorEmailMSG ErrorMessage invalid\">The email is invalid</span>";
+                        ?>
                         <br>
     
                         <label for="phone">Phone number</label>
                         <input type="tel" id="phone" name="phone" placeholder="123456789">
-                        <span class="errorPhoneMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['phone'] == "1") echo "<span class=\"errorPhoneMSG ErrorMessage invalid\">Phone number is invalid</span>";
+                        ?>
                         <br>
     
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" minlength="8" required>
-                        <span class="errorPasswordMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['pass'] == "1") echo "<span class=\"errorPasswordMSG ErrorMessage invalid\">Password must be 8-20 charaters with at least 1 upper and lower case and atleast 1 special character and no space</span>";
+                        ?>
                         <br>
                         <label for="passwordRe">Retype password</label>
                         <input type="password" id="passwordRe" name="passwordRe" minlength="8" required>
-                        <span class="errorPasswordReMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['pass'] == "1") echo "<span class=\"errorPasswordReMSG ErrorMessage invalid\">Password did not match!</span>";
+                        ?>
                         <br>
 
                         <div class="line"></div>
@@ -62,27 +84,42 @@
     
                         <label for="firstName">First name</label>
                         <input type="text" id="firstName" name="firstName" placeholder="Minh">
-                        <span class="errorFnameMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['firstName'] == "1") echo "<span class=\"ErrorMessage invalid\">Name must have more than 3 charaters</span>";
+                        ?>
+                        <!-- <span class="errorFnameMSG ErrorMessage"></span> -->
                         <br>
     
                         <label for="lastName">Last name</label>
                         <input type="text" id="lastName" name="lastName" placeholder="Pham">
-                        <span class="errorLnameMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['lastName'] == "1") echo "<span class=\"ErrorMessage invalid\">Name must have more than 3 charaters</span>";
+                        ?>
+                        <!-- <span class="errorLnameMSG ErrorMessage"></span> -->
                         <br>
     
                         <label for="address">Address</label>
                         <input type="text" id="address" name="address" placeholder="somewhere">
-                        <span class="errorAddressMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['address'] == "1") echo "<span class=\"ErrorMessage invalid\">The address is invalid (more than 3 characters)</span>";
+                        ?>
+                        <!-- <span class="errorAddressMSG ErrorMessage"></span> -->
                         <br>
     
                         <label for="city">City</label>
                         <input type="text" id="city" name="city" placeholder="Ho Chi Minh">
-                        <span class="errorCityMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['city'] == "1") echo "<span class=\"ErrorMessage invalid\">The city name is invalid (more than 3 characters)</span>";
+                        ?>
+                        <!-- <span class="errorCityMSG ErrorMessage"></span> -->
                         <br>
     
                         <label for="zipcode">Zipcode</label>
                         <input type="text" id="zipcode" name="zipcode" pattern="\d{4,6}">
-                        <span class="errorZipcodeMSG ErrorMessage"></span>
+                        <?php
+                            if ($_GET['zipcode'] == "1") echo "<span class=\"ErrorMessage invalid\">The zipcode is invalid (4-6 characters only)</span>";
+                        ?>
+                        <!-- <span class="errorZipcodeMSG ErrorMessage"></span> -->
                         <br>
     
                         <label for="country">Country</label>
@@ -147,20 +184,6 @@
                             <input type="reset" value="Reset form">
                             <input type="submit" id="submitBtn" value="Submit">
                         </div>
-                        <?php
-                            if(isset($_GET['success'])) {
-                                $success_mes = <<<"HTML"
-                                    <div class='status'>Account created</div>
-                                HTML;
-                                echo $success_mes;
-                            }
-                            else if(isset($_GET['fail'])){
-                                $success_mes = <<<"HTML"
-                                    <div class='status'>Account not created</div>
-                                HTML;
-                                echo $success_mes;
-                            }
-                        ?>
                     </form>
                 </section>
                 <div class="cookie-container">

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +21,7 @@
     <body>
         <div class="boxWrapper">
             <?php
-                require './components/navbar.php';
+                require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
             ?>
 
             <main>
@@ -169,12 +173,12 @@
             </main>
         
             <?php
-                require './components/footer.php';
+                require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
             ?>
         </div>
-        <script src="../scripts/mall_index.js"></script>
-        <script src="../scripts/mall_contact.js"></script>
-        <script src="../scripts/cookie-consent.js"></script>
+        <script src="/scripts/mall_index.js"></script>
+        <script src="/scripts/mall_contact.js"></script>
+        <script src="/scripts/cookie-consent.js"></script>
     </body>
 
 </html>

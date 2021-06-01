@@ -1,7 +1,7 @@
 <?php 
-    //session_start();
-    //session_destroy();
-?>
+    // session_start();
+    // session_destroy();
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -502,7 +502,14 @@
                 
             </section>
 
-            
+            <section>
+                <?php
+                    $testarr = [];
+                    $testarr['mot'] = array(
+                        ""
+                    ) 
+                ?>
+            </section>
         </main>
         <div class="cookie-container">
             <p>

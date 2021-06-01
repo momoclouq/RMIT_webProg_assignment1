@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,21 +14,19 @@
     <meta name="author" content="Team Developers">
     <title>Subscription plan</title>
 
-    <link rel="stylesheet" href="../style/mall/common.css">
-    <link rel="stylesheet" href="../style/mall/fee/fee.css">
-    <link rel="stylesheet" href="../style/cookie-consent/cookie-consent.css">
+    <link rel="stylesheet" href="/style/mall/common.css">
+    <link rel="stylesheet" href="/style/mall/fee/fee.css">
+    <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="boxWrapper">
-        <?php
-          require './components/navbar.php';
+    <?php
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
         ?>
-    
         <main>
-           
                 <section class="main-content">
                     <div class="introduction">
                         <h3>Choose your plan</h3>
@@ -99,11 +102,11 @@
         </main>
         
         <?php
-            require './components/footer.php';
-          ?>
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
+        ?>
     </div>
 
-    <script src="../scripts/mall_index.js"></script>
-    <script src="../scripts/cookie-consent.js"></script>
+    <script src="/scripts/mall_index.js"></script>
+    <script src="/scripts/cookie-consent.js"></script>
 </body>
 </html>

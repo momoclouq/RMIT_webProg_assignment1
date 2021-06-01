@@ -45,96 +45,99 @@
 </head>
 
 <body>
-    <?php
-        require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
-    ?>
-
-    <main>
-        <div><a href="admin_dashboard.php">Back to dashboard</a></div>
-        <h1 class="dashboard_title">Adjust privacy policies</h1>
-        <?php 
-            if($_POST['change_request'] == "1") echo "<h2 class=\"status_success\">Privacy policies updated</h2>";
+    <div class="boxWrapper">
+        <?php
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
         ?>
-        <br>
 
-
-    <!--create form from source data-->
-        <form action="" method="POST">
-            <section>
-                <label for="title">Title</label>
-                <textarea id="title" name="title" rows="1" cols="50"><?php echo $source->title; ?></textarea>
-            </section>
-
-            <section>
-                <label>Intro content</label>
-                <br>
-                <?php
-                    $index = 0;
-                    foreach($source->intro->text as $text){
-                        echo "<textarea id=\"intro_text$index\" name=\"intro_text[]\" rows=\"1\" cols=\"50\">$text</textarea>";
-                        echo "<br>";
-                        $index++;
-                    }
-                ?>
-            </section>
+        <main>
+            <div class="back_btn"><a href="admin_dashboard.php">Back to dashboard</a></div>
+            <h1 class="dashboard_title">Adjust privacy policies</h1>
+            <?php 
+                if($_POST['change_request'] == "1") echo "<h2 class=\"status_success\">Privacy policies updated</h2>";
+            ?>
             <br>
 
-            <section>
-                <label>Content</label>
-                <br>
-                <?php
-                    $index = 0;
-                    foreach($source->content as $content){
-                        $title = <<<"HTML"
-                            <label for="content_title[$index]">Content $index title</label>
-                            <br>
-                            <textarea id="content_title[$index]" name="content_title[$index]" rows="1" cols="50">$content->title</textarea>
-                        HTML;
-                        echo $title;
-                        echo "<br>";
-                        echo "<p>real content: </p>";
-                        
 
-                        $inner_index = 0;
-                        foreach($content->text as $text){
-                            echo "<textarea id=\"content_text[$index][$inner_index]\" name=\"content_text[$index][$inner_index]\" rows=\"1\" cols=\"50\">$text</textarea>";
+        <!--create form from source data-->
+            <form action="" method="POST">
+                <section class="change_panel">
+                    <label for="title">Title</label>
+                    <br>
+                    <textarea class="input_field" id="title" name="title" rows="2" cols="100"><?php echo $source->title; ?></textarea>
+                </section>
+
+                <section class="change_panel">
+                    <label>Intro content</label>
+                    <br>
+                    <?php
+                        $index = 0;
+                        foreach($source->intro->text as $text){
+                            echo "<textarea class=\"input_field\" id=\"intro_text$index\" name=\"intro_text[]\" rows=\"2\" cols=\"100\">$text</textarea>";
                             echo "<br>";
-                            $inner_index++;
+                            $index++;
                         }
-
-                        $index++;
-                    }
-                ?>
-            </section>
-
-            <br>
-            <section>
-                <label for="lasword_title">lastword title</label>
+                    ?>
+                </section>
                 <br>
-                <textarea id="lasword_title" name="lastword_title" rows="1" cols="50"><?php echo $source->lastword->title; ?></textarea>
-            </section>
 
-            <section>
-                <label>lastword content</label>
+                <section class="change_panel">
+                    <label>Content</label>
+                    <br>
+                    <?php
+                        $index = 0;
+                        foreach($source->content as $content){
+                            $title = <<<"HTML"
+                                <label for="content_title[$index]">Content $index title</label>
+                                <br>
+                                <textarea class="input_field" id="content_title[$index]" name="content_title[$index]" rows="2" cols="100">$content->title</textarea>
+                            HTML;
+                            echo $title;
+                            echo "<br>";
+                            echo "<p>real content: </p>";
+                            
+
+                            $inner_index = 0;
+                            foreach($content->text as $text){
+                                echo "<textarea class=\"input_field\" id=\"content_text[$index][$inner_index]\" name=\"content_text[$index][$inner_index]\" rows=\"2\" cols=\"100\">$text</textarea>";
+                                echo "<br>";
+                                $inner_index++;
+                            }
+
+                            $index++;
+                        }
+                    ?>
+                </section>
+
                 <br>
-                <?php
-                    $index = 0;
-                    foreach($source->lastword->content as $text){
-                        echo "<textarea id=\"lastword_content$index\" name=\"lastword_content[]\" rows=\"1\" cols=\"50\">$text</textarea>";
-                        echo "<br>";
-                        $index++;
-                    }
-                ?>
-            </section>
-            
-            <input type="hidden" name="change_request" value="1">
-            <button type="submit">Submit changes</button>
-        </form>
-    </main>
+                <section class="change_panel">
+                    <label for="lasword_title">lastword title</label>
+                    <br>
+                    <textarea class="input_field" id="lasword_title" name="lastword_title" rows="2" cols="100"><?php echo $source->lastword->title; ?></textarea>
+                </section>
 
-    <?php
-        require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
-    ?>
+                <section class="change_panel">
+                    <label>lastword content</label>
+                    <br>
+                    <?php
+                        $index = 0;
+                        foreach($source->lastword->content as $text){
+                            echo "<textarea class=\"input_field\" id=\"lastword_content$index\" name=\"lastword_content[]\" rows=\"2\" cols=\"100\">$text</textarea>";
+                            echo "<br>";
+                            $index++;
+                        }
+                    ?>
+                </section>
+                
+                <input type="hidden" name="change_request" value="1">
+                <button class="submit_btn" type="submit">Submit changes</button>
+            </form>
+        </main>
+
+        <?php
+            require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
+        ?>
+    </div>
 
     <script src="/scripts/mall_index.js"></script>
     <script src="/scripts/cookie-consent.js"></script>
