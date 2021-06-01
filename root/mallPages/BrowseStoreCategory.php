@@ -79,12 +79,12 @@
                                         $output = <<<"HTML"
                                             <div class="card">
                                                 <div class="product-imgage">
-                                                    <a href="../storePages/store/storeHome.html "><img src="../resources/images/Store Image/store1.jpeg" alt="$items[1]"></a>
+                                                    <a href="/storePages/store/storeHome.php?id=$items[0]"><img src="../resources/images/Store Image/store1.jpeg" alt="$items[1]"></a>
                                                 </div>
                                                 <div class="product-content">
                                                     <div class="product-text">
                                                         <div class="product-title">
-                                                            <a href="../storePages/store/storeHome.html">$items[1]</a>
+                                                            <a href="/storePages/store/storeHome.php?id=$items[0]">$items[1]</a>
                                                         </div>
                                                         <div class="product-description">fake description</div>
                                                     </div>     

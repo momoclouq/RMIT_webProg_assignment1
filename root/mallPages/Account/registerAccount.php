@@ -1,64 +1,7 @@
 <?php
-$message = '';
-$error = '';
-if(isset($_POST["submit"])){
-    // check empty inputs
-    if(empty($_POST["emailAddress"])){
-        $error = "<label class='text-danger'>Enter Email</label>";
-    }
-    else if(empty($_POST['phone'])){
-         $error = "<label class='text-danger'>Enter Phone no.</label>";
-     }
-    else if(empty($_POST['password'])){
-        $error = "<label class='text-danger'>Enter password</label>";
-    }
-    /*else if(empty($_POST['firstName'])){
-        $error = "<label class='text-danger'>Enter your first name</label>";
-    }
-    else if(empty($_POST['lastName'])){
-        $error = "<label class='text-danger'>Enter your last name</label>";
-    }
-    else if(empty($_POST['address'])){
-        $error = "<label class='text-danger'>Enter address</label>";
-    }
-    else if(empty($_POST['city'])){
-        $error = "<label class='text-danger'>Enter city name</label>";
-    }
-    else if(empty($_POST['zipcode'])){
-        $error = "<label class='text-danger'>Enter zipcode</label>";
-    }*/
-    else {
-    // data storing and scans
-        if(file_exists('../../../files/account/user_pass.json')){
-            $current_data = file_get_contents('../../../files/account/user_pass.json');
-            $array_data = json_decode($current_data, true);
-            $extra = array(
-                'emailAddress'  =>  $_POST['emailAddress'],
-                'phone'         =>  $_POST['phone'],
-                'password'      =>  $_POST['password'],
-                // 'firstName'     =>  $_POST['firstName'],
-                // 'lastName'      =>  $_POST['lastName'],
-                // 'address'       =>  $_POST['address'],
-                // 'city'          =>  $_POST['city'],
-                // 'zipcode'       =>  $_POST['zipcode']
-                // // 'busiName'      =>  $_POST['busiName'],
-                // // 'storeName'     =>  $_POST['storeName'],
-                // // 'storeType'     =>  $_POST['storeType']
-            );
-            $array_data[] = $extra;
-            $final_data = json_encode($array_data);
-            if(file_put_contents('../../../files/account/user_pass.json', $final_data)){
-                //for testing
-                $message = "<label class='text-success'>Account register successful</label>";
-            }
-        }
-        else{
-            $error = 'Missing data file';
-        }
-    }
-};
-//password hash
-$password = password_hash('password', PASSWORD_DEFAULT);
+    session_start();
+    //check if the user is already loggedin
+    if(isset($_SESSION['loggedin'])) header('location: /mallPages/Account/myAccount-logged-in.php');
 ?>
 
 <!DOCTYPE html>
@@ -71,31 +14,17 @@ $password = password_hash('password', PASSWORD_DEFAULT);
         <meta name="author" content="Team Developers">
         <title>Register a new account</title>
 
-        <link rel="stylesheet" href="../../style/mall/common.css">
-        <link rel="stylesheet" href="../../style/mall/registerAcc/register.css">
-        <link rel="stylesheet" href="../../style/cookie-consent/cookie-consent.css">
+        <link rel="stylesheet" href="/style/mall/common.css">
+        <link rel="stylesheet" href="/style/mall/registerAcc/register.css">
+        <link rel="stylesheet" href="/style/cookie-consent/cookie-consent.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
     </head>
 
     <body>
         <div class="boxWrapper">
-            <header class="mallHeader">
-                <nav>
-                    <ul class="menu">
-                        <li class="logo"><a href="/index.php">Logo</a></li>
-                        <li class="item mallName"><a href="/index.php">Shopping mall</a></li>
-        
-                        <li class="item"><a href="/mallPages/aboutUs.php">About us</a></li>
-                        <li class="item"><a href="/mallPages/fees.php">Copyright</a></li>
-                        <li class="item subMenu2"><a href="#">Browse</a></li>
-                        <li class="item item2"><a href="/mallPages/BrowseStoreLetter.php">Browse By name</a></li>
-                        <li class="item item2"><a href="/mallPages/BrowseStoreCategory.php">Browse By category</a></li>
-                        <li class="item"><a href="/mallPages/FAQs.php">FAQs</a></li>
-                        <li class="item"><a href="/mallPages/contact.php">Contact</a></li>
-                        <li class="toggle"><span class="bars"></span><li>
-                    </ul>
-                </nav>
-            </header>
+            <?php
+                require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/navbar.php";
+            ?>
     
             <main class="mallRegister">
                 <section class="registerForm">
@@ -103,17 +32,9 @@ $password = password_hash('password', PASSWORD_DEFAULT);
                         <h1>Sign up</h1>
                         <p>Create a user account to start shopping</p>
                         <p>Or register your store to start your business</p>
-                        <!-- display error message -->
-                        <div class="">
-                            <?php
-                            if(isset($error)){
-                                echo $error;
-                            }
-                            ?>
-                        </div>
                     </article>
 
-                    <form method = post novalidate>
+                    <form action="./process/process_register.php" method="POST" novalidate>
                         <label for="emailAddress">Email address</label>
                         <input type="email" id="emailAddress" name="emailAddress" placeholder="abcde@mail.com">
                         <span class="errorEmailMSG ErrorMessage"></span>
@@ -125,11 +46,15 @@ $password = password_hash('password', PASSWORD_DEFAULT);
                         <br>
     
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                        <span class="errorPasswordMSG ErrorMessage"></span>
+                        <input type="password" id="password" name="password" minlength="8" required>
+                        <span class="errorPasswordMSG ErrorMessage">
+                            <?php if(isset($password_error)) {?>
+                                <p><?php echo $password_error ?></p>
+                            <?php } ?>
+                        </span>
                         <br>
                         <label for="passwordRe">Retype password</label>
-                        <input type="password" id="passwordRe" name="passwordRe" required>
+                        <input type="password" id="passwordRe" name="passwordRe" minlength="8" required>
                         <span class="errorPasswordReMSG ErrorMessage"></span>
                         <br>
 
@@ -156,7 +81,11 @@ $password = password_hash('password', PASSWORD_DEFAULT);
     
                         <label for="city">City</label>
                         <input type="text" id="city" name="city" placeholder="Ho Chi Minh">
-                        <span class="errorCityMSG ErrorMessage"></span>
+                        <span class="errorCityMSG ErrorMessage">
+                            <?php if(isset($city_error)) {?>
+                                <p><?php echo $city_error ?></p>
+                            <?php } ?>
+                        </span>
                         <br>
     
                         <label for="zipcode">Zipcode</label>
@@ -165,7 +94,7 @@ $password = password_hash('password', PASSWORD_DEFAULT);
                         <br>
     
                         <label for="country">Country</label>
-                        <select>
+                        <select name="country">
                             <option value="AF">Afghanistan</option>
                             <option value="AL">Albania</option>
                             <option value="AI">Anguilla</option>
@@ -224,17 +153,22 @@ $password = password_hash('password', PASSWORD_DEFAULT);
                         
                         <div class="options">
                             <input type="reset" value="Reset form">
-                            <input type="submit" name="submit" id="submitBtn" value="Submit">
+                            <input type="submit" id="submitBtn" value="Submit">
                         </div>
-                        <!-- display feedback message -->
-                        <!-- <div class='status'></div> -->
-                        <div class="successMessage">
-                            <?php
-                            if(isset($message)){
-                                echo $message;
+                        <?php
+                            if(isset($_GET['success'])) {
+                                $success_mes = <<<"HTML"
+                                    <div class='status'>Account created</div>
+                                HTML;
+                                echo $success_mes;
                             }
-                            ?>
-                        </div>
+                            else if(isset($_GET['fail'])){
+                                $success_mes = <<<"HTML"
+                                    <div class='status'>Account not created</div>
+                                HTML;
+                                echo $success_mes;
+                            }
+                        ?>
                     </form>
                 </section>
                 <div class="cookie-container">
@@ -246,11 +180,11 @@ $password = password_hash('password', PASSWORD_DEFAULT);
             </main>
     
             <?php
-                require '../components/footer.php';
+                require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/components/footer.php";
             ?>
         </div>
         
-        <script src="../../scripts/mall_registerAccount.js"></script>
-        <script src="../../scripts/cookie-consent.js"></script>
+        <!-- <script src="/scripts/mall_registerAccount.js"></script> -->
+        <script src="/scripts/cookie-consent.js"></script>
     </body>
 </html>

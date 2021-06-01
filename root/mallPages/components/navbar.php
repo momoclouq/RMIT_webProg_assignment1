@@ -1,7 +1,7 @@
 <header class="mallHeader">
     <nav>
         <ul class="menu">
-            <li class="logo"><a href="/index.html">Logo</a></li>
+            <li class="logo"><a href="/index.php">Logo</a></li>
             <li class="item mallName"><a href="/index.php">Shopping mall</a></li>
 
             <li class="item"><a href="/mallPages/aboutUs.php">About us</a></li>

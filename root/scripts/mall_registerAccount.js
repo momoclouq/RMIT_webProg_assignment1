@@ -554,11 +554,11 @@ formElement.addEventListener('submit', function(event){
     let isPasswordValid = checkPassword();
     let isPasswordReValid = checkRePassword();
     let isCityValid = checkCity();
-    // if (isEmailValid && isFNameValid && isLNameValid && isPhoneValid && isAddressValid && isCityValid && isZipcodeValid && isPasswordValid && isPasswordReValid){
-    //     statusElement.innerHTML = 'Form send';
-    // } else {
-    //     statusElement.innerHTML = '';
-    // }
+    if (isEmailValid && isFNameValid && isLNameValid && isPhoneValid && isAddressValid && isCityValid && isZipcodeValid && isPasswordValid && isPasswordReValid){
+        statusElement.innerHTML = 'Form send';
+    } else {
+        statusElement.innerHTML = '';
+    }
 })
 
 // Handle the reset event 
