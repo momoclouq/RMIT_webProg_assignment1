@@ -23,3 +23,9 @@
 - Nguyen Thanh Dat (s3870837) - 40%
 - Tran Quang Anh (s3836276) - 25%
 - Tran Tan Phat (s3836612) - 10%
+
+# Contribution for Assignment 3 - Fullstack Assignment (PHP)
+- Pham Hoang Minh (s3871126) - 40%
+- Nguyen Thanh Dat (s3870837) - 30%
+- Tran Quang Anh (s3836276) - 30%
+- Tran Tan Phat (s3836612) - Absent due to COVID-19 isolation (notified the lecturer)
