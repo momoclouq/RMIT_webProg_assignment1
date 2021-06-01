@@ -82,9 +82,6 @@
                         <label for="city">City</label>
                         <input type="text" id="city" name="city" placeholder="Ho Chi Minh">
                         <span class="errorCityMSG ErrorMessage">
-                            <?php if(isset($city_error)) {?>
-                                <p><?php echo $city_error ?></p>
-                            <?php } ?>
                         </span>
                         <br>
     

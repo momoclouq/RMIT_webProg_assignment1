@@ -1,25 +1,39 @@
 <?php
     //validate functions
     function validate_email($email, $source){
-        preg_match('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',$email);
+        foreach($source as $line){
+            if(strcmp($email,$line["email"]) == 0) {
+                return false;
+            }
+        }
+        if(preg_match('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',$email)){
             return true;
-        // echo 'Invalid email address';        
+        }
+            return false;       
     } 
 
     function validate_phone($phone, $source){
-        preg_match('/^([0-9]{1}[-|.| ]?){9,11}$/',$phone);
+        foreach($source as $line){
+            if(strcmp($phone,$line["phone"]) == 0) {
+                return false;
+            }
+        }
+        if(preg_match('/^([0-9]{1}[-|.| ]?){9,11}$/',$phone)){
             return true;
-        // echo 'Invalid Phone number';
+        }
+            return false;
     }
 
     function validate_password($password){
-        preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/',$password);
+        if(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/',$password)){
             return true;
+        }
+            return false;
         // echo 'Invalid password';
     }
 
     function validate_passwordRe($password, $passwordRe){
-        if($password != $passwordRe){
+        if($password !== $passwordRe){
             return false;
             echo 'Password does not match';
         } else return true;
@@ -27,28 +41,39 @@
 
 
     function validate_firstName($firstName){
-        preg_match('/^[\D]{3,}$/',$firstName);
+        if(preg_match('/^[\D]{3,}$/',$firstName)){
             return true;
+        }   
+        return false;
     }
 
     function validate_lastName($lastName){
-        preg_match('/^[\D]{3,}$/',$lastName);
-        return true;
+        if(preg_match('/^[\D]{3,}$/',$lastName)){
+            return true;
+        }   
+        return false;
     }
 
     function validate_address($address){
-        preg_match('/^[\D]{3,}$/',$address);
-        return true;
+        if(preg_match('/^[\D]{3,}$/',$address)){
+            return true;
+        }
+        return false;
     }
 
     function validate_city($city){
-        preg_match('/^[\D]{3,}$/',$city);
-        return true;
+        if(preg_match('/^[\D]{3,}$/',$city)){
+            return true;
+        }
+        echo "Invalid input";
+        return false;
     }
 
     function validate_zipcode($zipcode){
-        preg_match('/^[\d]{4,6}$/',$zipcode);
+        if(preg_match('/^[\d]{4,6}$/',$zipcode)){
         return true;
+    } 
+    return false;
     }
 
     //process data
@@ -65,7 +90,7 @@
     //open file
     $source_link = $_SERVER["DOCUMENT_ROOT"] . "../../files/account/user_pass.json";
     $source_str = file_get_contents($source_link);
-    $source = json_decode($source_str);
+    $source = json_decode($source_str,true);
 
     //every section is valid
     if(validate_email($email, $source) 
