@@ -17,7 +17,7 @@
         $source = json_decode($source_str);
 
         foreach ($source as $combination){
-            if ($combination->email == $email && $combination->pass == hash("sha256", $password)) return true;
+            if ($combination->email == $email && $combination->password == hash("sha256", $password)) return true;
         }
 
         return false;

@@ -1,5 +1,9 @@
 <?php
     session_start();
+    
+    //get user information
+    require $_SERVER["DOCUMENT_ROOT"] . "/mallPages/Account/helper/account_related.php"; 
+    $account_info = get_account($_SESSION['loggedin']['username']);
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +14,7 @@
     <meta name="description" content="Profile page for mall account">
     <meta name="keywords" content="profile user information data loggedin detail">
     <meta name="author" content="Team Developers">
-    <title>My Account</title>
+    <title>Welcome <?php echo $_SESSION['username']; ?></title>
 
     <link rel="stylesheet" href="/style/mall/common.css"> 
     <link rel="stylesheet" href="/style/mall/myaccount_info/myAccountInfo.css">
@@ -35,12 +39,14 @@
 
                 <div class="right-container">
                     <div class="row">
-                        Name: Bruce Wayne
+                        Email: <?php echo $account_info->email ?>
                     </div>
-                    <div class="row">Phone: 735-185-7301</div>
-                    <div class="row email_my_account"></div>
-                    <div class="row">Gender: Male</div>
-                    <div class="row">Date of Birth: March 30, 1939</div>
+                    <div class="row">Phone: <?php echo $account_info->phone ?></div>
+                    <div class="row">First name: <?php echo $account_info->firstName ?></div>
+                    <div class="row">Last name: <?php echo $account_info->lastName ?></div>
+                    <div class="row">Address: <?php echo $account_info->address ?></div>
+                    <div class="row">City: <?php echo $account_info->city ?></div>
+                    <div class="row">Zipcode: <?php echo $account_info->zipcode ?></div>
                 </div>
             </div>
             <div class="cookie-container">
@@ -57,6 +63,6 @@
     </div>
     <script src="/scripts/cookie-consent.js"></script>
     <script src="/scripts/mall_index.js"></script>
-    <script src="/scripts/my_account.js"></script>
+    <!-- <script src="/scripts/my_account.js"></script> -->
 </body>
 </html>
