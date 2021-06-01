@@ -1,0 +1,58 @@
+.change_container {
+   display: grid;
+    grid-template-columns: repeat(4, 1fr);
+} 
+
+.status_success{
+    margin-top: 2px;
+}
+
+
+.submit_btn {
+    text-align: center;
+}
+
+.image_upload {
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 767px){
+    .change_container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    .change_container .profile_pic img{
+        width: 100%;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    .individual{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .submit_btn{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .change_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .individual{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image_upload {
+        margin: 5px 0;
+    }
+
+}
